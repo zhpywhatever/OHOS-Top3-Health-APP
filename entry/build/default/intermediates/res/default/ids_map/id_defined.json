@@ -755,5 +755,9 @@
 			"type":	"profile",
 			"name":	"main_pages",
 			"id":	"0x010000BC"
+		}, {
+			"type":	"media",
+			"name":	"user_image_frame",
+			"id":	"0x010000BD"
 		}]
 }

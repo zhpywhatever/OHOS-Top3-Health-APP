@@ -15,17 +15,24 @@
 
 @Component
 export struct UserBaseInfo {
-  @Prop nickname: string = '';
-  @Prop signature: string = '';
+  @Prop nickname: string = 'Top3';
+  @Prop signature: string = '遥遥领先遥遥领先';
 
   build() {
     Column() {
       // userIcon
-      Image($r('app.media.ic_user'))
-        .objectFit(ImageFit.Contain)
-        .height($r('app.float.default_66'))
-        .width($r('app.float.default_66'))
-        .margin({ top: $r('app.float.default_71') })
+      Stack(){
+        Image($r('app.media.ic_user'))
+          .objectFit(ImageFit.Contain)
+          .height($r('app.float.default_66'))
+          .width($r('app.float.default_66'))
+          .margin({ top: $r('app.float.default_71') })
+        //.border({width: 3, color: Color.Blue})
+        Image($r('app.media.user_image_frame'))
+          .height($r('app.float.default_100'))
+          .width($r('app.float.default_100'))
+          .margin({ top: $r('app.float.default_71') })
+      }
 
       Column() {
         Text('LV.7')

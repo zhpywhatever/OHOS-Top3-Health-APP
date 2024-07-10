@@ -184,6 +184,7 @@ media night 0x010000b6
 media search 0x010000b7
 media smile 0x010000b8
 media splash_bg 0x010000b9
+media user_image_frame 0x010000bd
 media water 0x010000ba
 profile form_config 0x010000bb
 profile main_pages 0x010000bc

@@ -18,10 +18,10 @@ export class UserBaseInfo extends ViewPU {
     }
     setInitiallyProvidedValue(params: UserBaseInfo_Params) {
         if (params.nickname === undefined) {
-            this.__nickname.set('');
+            this.__nickname.set('Top3');
         }
         if (params.signature === undefined) {
-            this.__signature.set('');
+            this.__signature.set('遥遥领先遥遥领先');
         }
     }
     updateStateVars(params: UserBaseInfo_Params) {
@@ -58,16 +58,27 @@ export class UserBaseInfo extends ViewPU {
         }, Column);
         this.observeComponentCreation2((elmtId, isInitialRender) => {
             // userIcon
+            Stack.create();
+        }, Stack);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
             Image.create({ "id": 16777394, "type": 20000, params: [], "bundleName": "com.example.healthy_life", "moduleName": "entry" });
-            // userIcon
             Image.objectFit(ImageFit.Contain);
-            // userIcon
             Image.height({ "id": 16777328, "type": 10002, params: [], "bundleName": "com.example.healthy_life", "moduleName": "entry" });
-            // userIcon
             Image.width({ "id": 16777328, "type": 10002, params: [], "bundleName": "com.example.healthy_life", "moduleName": "entry" });
-            // userIcon
             Image.margin({ top: { "id": 16777330, "type": 10002, params: [], "bundleName": "com.example.healthy_life", "moduleName": "entry" } });
         }, Image);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            //.border({width: 3, color: Color.Blue})
+            Image.create({ "id": 16777405, "type": 20000, params: [], "bundleName": "com.example.healthy_life", "moduleName": "entry" });
+            //.border({width: 3, color: Color.Blue})
+            Image.height({ "id": 16777302, "type": 10002, params: [], "bundleName": "com.example.healthy_life", "moduleName": "entry" });
+            //.border({width: 3, color: Color.Blue})
+            Image.width({ "id": 16777302, "type": 10002, params: [], "bundleName": "com.example.healthy_life", "moduleName": "entry" });
+            //.border({width: 3, color: Color.Blue})
+            Image.margin({ top: { "id": 16777330, "type": 10002, params: [], "bundleName": "com.example.healthy_life", "moduleName": "entry" } });
+        }, Image);
+        // userIcon
+        Stack.pop();
         this.observeComponentCreation2((elmtId, isInitialRender) => {
             Column.create();
             Column.width({ "id": 16777321, "type": 10002, params: [], "bundleName": "com.example.healthy_life", "moduleName": "entry" });

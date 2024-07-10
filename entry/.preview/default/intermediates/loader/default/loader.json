@@ -1,0 +1,17 @@
+{
+  "modulePathMap": {
+    "entry": "C:\\huawei\\OHOS-Top3\\entry"
+  },
+  "compileMode": "esmodule",
+  "projectRootPath": "C:\\huawei\\OHOS-Top3",
+  "nodeModulesPath": "C:\\huawei\\OHOS-Top3\\entry\\.preview\\default\\intermediates\\loader_out\\default\\node_modules",
+  "moduleName": "entry",
+  "harNameOhmMap": {},
+  "packageManagerType": "ohpm",
+  "compileEntry": [],
+  "dynamicImportLibInfo": {},
+  "routerMap": [],
+  "hspResourcesMap": {},
+  "anBuildOutPut": "C:\\huawei\\OHOS-Top3\\entry\\.preview\\default\\intermediates\\loader_out\\default\\an\\arm64-v8a",
+  "anBuildMode": "type"
+}

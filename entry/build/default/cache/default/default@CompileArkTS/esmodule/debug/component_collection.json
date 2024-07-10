@@ -191,6 +191,7 @@
   ],
   "entry\\src\\main\\ets\\view\\UserBaseInfo.ets": [
     "Column",
+    "Stack",
     "Image",
     "Text"
   ],
