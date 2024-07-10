@@ -16,6 +16,7 @@
 import { ACHIEVEMENT_LEVEL_LIST } from './TaskInitList';
 import GlobalInfo from '../viewmodel/GlobalInfo';
 import GlobalInfoApi from '../common/database/tables/GlobalInfoApi';
+import { promptAction } from '@kit.ArkUI';
 
 export const ACHIEVEMENT_LEVEL_KEY = 'AchievementLevelKey';
 
@@ -34,6 +35,7 @@ export function getAchievementLevel() {
 export function isReachNewAchievement(globalInfo: GlobalInfo): boolean {
   let achievementStr = globalInfo.achievements ?? '';
   let achievements = achievementStr.split(',');
+  // promptAction.showToast({message: "HELLO"});
   if (ACHIEVEMENT_LEVEL_LIST.indexOf(globalInfo.checkInDays) >= 0 && achievements.indexOf(String(globalInfo.checkInDays)) < 0) {
     return true;
   }

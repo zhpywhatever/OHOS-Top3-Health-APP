@@ -29,6 +29,9 @@ export struct AchievementDialog {
 
   aboutToAppear() {
     switch (this.achievementLevel) {
+      case 1:
+        this.achievementMapValue = AchievementMap.on_1;
+        break;
       case 3:
         this.achievementMapValue = AchievementMap.on_3;
         break;
