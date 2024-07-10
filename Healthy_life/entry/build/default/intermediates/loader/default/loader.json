@@ -1,0 +1,20 @@
+{
+  "modulePathMap": {
+    "entry": "C:\\Users\\eastx\\Documents\\work\\OHOS-Top3\\Healthy_life\\entry"
+  },
+  "compileMode": "esmodule",
+  "projectRootPath": "C:\\Users\\eastx\\Documents\\work\\OHOS-Top3\\Healthy_life",
+  "nodeModulesPath": "C:\\Users\\eastx\\Documents\\work\\OHOS-Top3\\Healthy_life\\entry\\build\\default\\intermediates\\loader_out\\default\\node_modules",
+  "moduleName": "entry",
+  "harNameOhmMap": {},
+  "packageManagerType": "ohpm",
+  "compileEntry": [],
+  "dynamicImportLibInfo": {},
+  "routerMap": [],
+  "hspResourcesMap": {},
+  "anBuildOutPut": "C:\\Users\\eastx\\Documents\\work\\OHOS-Top3\\Healthy_life\\entry\\build\\default\\intermediates\\loader_out\\default\\an\\arm64-v8a",
+  "anBuildMode": "type",
+  "patchConfig": {
+    "changedFileList": "C:\\Users\\eastx\\Documents\\work\\OHOS-Top3\\Healthy_life\\entry\\build\\default\\intermediates\\patch\\default\\changedFileList.json"
+  }
+}

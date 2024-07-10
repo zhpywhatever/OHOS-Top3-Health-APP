@@ -1,0 +1,19 @@
+{
+  "entry\\src\\main\\ets\\agency\\pages\\AgencyCard.ets": [
+    "Column",
+    "List",
+    "ForEach",
+    "ListItem",
+    "Image",
+    "Text",
+    "Row",
+    "If"
+  ],
+  "entry\\src\\main\\ets\\progress\\pages\\ProgressCard.ets": [
+    "Column",
+    "Stack",
+    "Progress",
+    "Row",
+    "Text"
+  ]
+}
