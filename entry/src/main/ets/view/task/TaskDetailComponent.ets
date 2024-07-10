@@ -125,9 +125,15 @@ export default struct TaskDetail {
 
           ListItem() {
             OpenRemindItem()
+            .enabled(this.settingParams?.isOpen)
           }
           .listItemStyle()
-          .enabled(this.settingParams?.isOpen)
+          .onClick(() => {
+            if(!this.settingParams.isOpen)
+              promptAction.showToast({
+                message: '请先开启任务'
+              });
+          })
 
           ListItem() {
             RemindTimeItem()
@@ -170,7 +176,3 @@ export default struct TaskDetail {
     }
   }
 }
-
-
-
-

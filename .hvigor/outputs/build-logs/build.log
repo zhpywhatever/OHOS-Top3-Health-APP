@@ -744,3 +744,1440 @@
 [2024-07-10T14:27:53.835] [DEBUG] debug-file - Update task entry:default@SignHap input file:C:\Users\eastx\Documents\work\OHOS-Top3\entry\build\default\outputs\default\entry-default-unsigned.hap cache by regenerate.
 [2024-07-10T14:27:53.835] [DEBUG] debug-file - Update task entry:default@SignHap output file:C:\Users\eastx\Documents\work\OHOS-Top3\entry\build\default\outputs\default\entry-default-signed.hap cache.
 [2024-07-10T14:27:53.836] [DEBUG] debug-file - Incremental task entry:default@SignHap post-execution cost:1 ms .
+[2024-07-10T14:36:34.137] [DEBUG] debug-file - env: nodejsVersion=v18.20.1
+[2024-07-10T14:36:34.669] [DEBUG] debug-file - hvigorfile, resolving C:\Users\Lenovo\Desktop\OHOS-Top3\hvigorfile.ts
+[2024-07-10T14:36:34.643] [DEBUG] debug-file - Hvigor init with startParameters:{
+  hvigorfileTypeCheck: false,
+  parallelExecution: true,
+  incrementalExecution: true,
+  printStackTrace: false,
+  daemon: false,
+  analyze: 0,
+  logLevel: Level { level: 20000, levelStr: 'INFO', colour: 'green' }
+}
+[2024-07-10T14:36:36.700] [DEBUG] debug-file - hvigorfile, require result:  { appTasks: [Getter] }
+[2024-07-10T14:36:36.844] [DEBUG] debug-file - Product 'default' using build option: {
+  "debuggable": true
+} in this build.
+[2024-07-10T14:36:36.850] [DEBUG] debug-file - Local scan or download HarmonyOS sdk components toolchains,ets,js,native
+[2024-07-10T14:36:36.855] [DEBUG] debug-file - Local scan or download hmscore sdk components toolchains,ets,native
+[2024-07-10T14:36:36.839] [DEBUG] debug-file - Start initialize project's product build option map with build mode debug.
+[2024-07-10T14:36:36.865] [DEBUG] debug-file - Sdk init in 20 ms 
+[2024-07-10T14:36:36.895] [DEBUG] debug-file - Project task initialization takes 28 ms 
+[2024-07-10T14:36:36.905] [DEBUG] debug-file - hvigorfile, resolving C:\Users\Lenovo\Desktop\OHOS-Top3\entry\hvigorfile.ts
+[2024-07-10T14:36:36.920] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2024-07-10T14:36:36.926] [DEBUG] debug-file - Module entry task initialization takes 3 ms 
+[2024-07-10T14:36:36.929] [DEBUG] debug-file - project has submodules:entry
+[2024-07-10T14:36:34.138] [DEBUG] debug-file - env: hvigor-config.json5 content = { modelVersion: '5.0.0', dependencies: {} }
+[2024-07-10T14:36:37.001] [DEBUG] debug-file - Current worker pool is stopped or closed.
+[2024-07-10T14:36:34.649] [DEBUG] debug-file - Cache service initialization finished in 6 ms 
+[2024-07-10T14:36:36.845] [DEBUG] debug-file - No signingConfig found, initRemoteHspCache failed.
+[2024-07-10T14:36:36.840] [DEBUG] debug-file - Picking option from product 'default' with build mode 'debug'.
+[2024-07-10T14:36:36.700] [DEBUG] debug-file - hvigorfile, binding system plugins { appTasks: [Getter] }
+[2024-07-10T14:36:36.895] [DEBUG] debug-file - hvigorfile, resolve finished C:\Users\Lenovo\Desktop\OHOS-Top3\hvigorfile.ts
+[2024-07-10T14:36:36.910] [DEBUG] debug-file - hvigorfile, require result:  { hapTasks: [Getter] }
+[2024-07-10T14:36:36.920] [DEBUG] debug-file - Target 'default' config: {}
+[2024-07-10T14:36:36.926] [DEBUG] debug-file - hvigorfile, resolve finished C:\Users\Lenovo\Desktop\OHOS-Top3\entry\hvigorfile.ts
+[2024-07-10T14:36:36.930] [DEBUG] debug-file - start to load updatedOhPackageInfo to the disk
+[2024-07-10T14:36:34.140] [DEBUG] debug-file - env: daemon=false
+[2024-07-10T14:36:37.008] [DEBUG] debug-file - Current worker pool is terminated.
+[2024-07-10T14:36:36.840] [DEBUG] debug-file - Product 'default' build option: {}
+[2024-07-10T14:36:36.910] [DEBUG] debug-file - hvigorfile, binding system plugins { hapTasks: [Getter] }
+[2024-07-10T14:36:36.920] [DEBUG] debug-file - Module 'entry' target 'default' build option: {
+  "debuggable": true,
+  "copyFrom": "default"
+}
+[2024-07-10T14:36:36.953] [DEBUG] debug-file - load to the disk finished
+[2024-07-10T14:36:34.140] [DEBUG] debug-file - no-daemon, use the parent process.execArgv --max-old-space-size=8192,--expose-gc
+[2024-07-10T14:36:36.840] [DEBUG] debug-file - End initialize project's product build option map with build mode 'debug'.
+[2024-07-10T14:36:36.920] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2024-07-10T14:36:36.955] [DEBUG] debug-file - Module OHOS-Top3 Collected Dependency: 
+[2024-07-10T14:36:36.921] [DEBUG] debug-file - Module 'entry' target 'default' using build option: {
+  "debuggable": true,
+  "copyFrom": "default"
+} in this build.
+[2024-07-10T14:36:36.955] [DEBUG] debug-file - Module OHOS-Top3's total dependency: 0
+[2024-07-10T14:36:36.957] [DEBUG] debug-file - Module entry Collected Dependency: 
+[2024-07-10T14:36:36.957] [DEBUG] debug-file - Module entry's total dependency: 0
+[2024-07-10T14:36:36.961] [DEBUG] debug-file - Configuration phase cost:2 s 303 ms 
+[2024-07-10T14:36:36.963] [DEBUG] debug-file - Configuration task cost before running: 2 s 337 ms 
+[2024-07-10T14:36:36.963] [DEBUG] debug-file - Executing task :entry:init
+[2024-07-10T14:36:36.963] [DEBUG] debug-file - entry : init cost memory 0.0112457275390625
+[2024-07-10T14:36:36.963] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 338 ms 
+[2024-07-10T14:36:36.964] [INFO] debug-file - Finished :entry:init... after 1 ms 
+[2024-07-10T14:36:36.964] [DEBUG] debug-file - Executing task ::init
+[2024-07-10T14:36:36.964] [DEBUG] debug-file - OHOS-Top3 : init cost memory 0.008453369140625
+[2024-07-10T14:36:36.964] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 339 ms 
+[2024-07-10T14:36:36.964] [INFO] debug-file - Finished ::init... after 1 ms 
+[2024-07-10T14:36:36.980] [DEBUG] debug-file - Module 'entry' target 'default' using build option: {
+  "debuggable": true,
+  "copyFrom": "default"
+} in this build.
+[2024-07-10T14:36:36.984] [DEBUG] debug-file - hvigor start cli arguments:{
+  prop: [ 'product=default' ],
+  sync: true,
+  parallel: true,
+  incremental: true,
+  daemon: false,
+  _: [ '--analyze=normal' ]
+}
+[2024-07-10T14:36:36.988] [DEBUG] debug-file - Since there is no instance or instance is terminated, create a new worker pool.
+[2024-07-10T14:36:36.988] [DEBUG] debug-file - Worker pool is initialized with config:  {
+  minPoolNum: 2,
+  maxPoolNum: undefined,
+  maxCoreSize: undefined,
+  cacheCapacity: undefined,
+  cacheTtl: undefined
+}
+[2024-07-10T14:38:52.079] [DEBUG] debug-file - env: nodejsVersion=v18.20.1
+[2024-07-10T14:38:52.231] [DEBUG] debug-file - env: daemon=true
+[2024-07-10T14:38:52.080] [DEBUG] debug-file - env: hvigor-config.json5 content = { modelVersion: '5.0.0', dependencies: {} }
+[2024-07-10T14:38:53.504] [DEBUG] debug-file - hvigor start cli arguments:{
+  prop: [],
+  sync: true,
+  parallel: true,
+  incremental: true,
+  daemon: true,
+  _: [ '--analyze=normal' ]
+}
+[2024-07-10T14:38:53.492] [DEBUG] debug-file - java daemon tryConnect failed Error: connect ECONNREFUSED ::1:45050
+[2024-07-10T14:38:53.563] [DEBUG] debug-file - java daemon started at port 45050 pid 53540
+[2024-07-10T14:38:53.604] [DEBUG] debug-file - session manager: set active socket. socketId=l1cOiJhtjyZTHZhcAAAB
+[2024-07-10T14:38:54.763] [DEBUG] debug-file - Hvigor init with startParameters:{
+  hvigorfileTypeCheck: false,
+  parallelExecution: true,
+  incrementalExecution: true,
+  printStackTrace: false,
+  daemon: true,
+  analyze: 0,
+  logLevel: Level { level: 20000, levelStr: 'INFO', colour: 'green' }
+}
+[2024-07-10T14:38:54.773] [DEBUG] debug-file - Cache service initialization finished in 9 ms 
+[2024-07-10T14:38:54.789] [DEBUG] debug-file - hvigorfile, resolving C:\Users\Lenovo\Desktop\OHOS-Top3\hvigorfile.ts
+[2024-07-10T14:38:57.082] [DEBUG] debug-file - hvigorfile, require result:  {}
+[2024-07-10T14:38:57.082] [DEBUG] debug-file - hvigorfile, binding system plugins {}
+[2024-07-10T14:38:57.301] [DEBUG] debug-file - Start initialize project's product build option map with build mode debug.
+[2024-07-10T14:38:57.301] [DEBUG] debug-file - Picking option from product 'default' with build mode 'debug'.
+[2024-07-10T14:38:57.301] [DEBUG] debug-file - Product 'default' build option: {}
+[2024-07-10T14:38:57.301] [DEBUG] debug-file - End initialize project's product build option map with build mode 'debug'.
+[2024-07-10T14:38:57.305] [DEBUG] debug-file - Product 'default' using build option: {
+  "debuggable": true
+} in this build.
+[2024-07-10T14:38:57.306] [DEBUG] debug-file - No signingConfig found, initRemoteHspCache failed.
+[2024-07-10T14:38:57.311] [DEBUG] debug-file - Local scan or download HarmonyOS sdk components toolchains,ets,js,native
+[2024-07-10T14:38:57.316] [DEBUG] debug-file - Local scan or download hmscore sdk components toolchains,ets,native
+[2024-07-10T14:38:57.323] [DEBUG] debug-file - Sdk init in 15 ms 
+[2024-07-10T14:38:57.346] [DEBUG] debug-file - Project task initialization takes 21 ms 
+[2024-07-10T14:38:57.346] [DEBUG] debug-file - hvigorfile, resolve finished C:\Users\Lenovo\Desktop\OHOS-Top3\hvigorfile.ts
+[2024-07-10T14:38:57.351] [DEBUG] debug-file - hvigorfile, resolving C:\Users\Lenovo\Desktop\OHOS-Top3\entry\hvigorfile.ts
+[2024-07-10T14:38:57.357] [DEBUG] debug-file - hvigorfile, require result:  {}
+[2024-07-10T14:38:57.357] [DEBUG] debug-file - hvigorfile, binding system plugins {}
+[2024-07-10T14:38:57.365] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2024-07-10T14:38:57.366] [DEBUG] debug-file - Target 'default' config: {}
+[2024-07-10T14:38:57.366] [DEBUG] debug-file - Module 'entry' target 'default' build option: {
+  "debuggable": true,
+  "copyFrom": "default"
+}
+[2024-07-10T14:38:57.366] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2024-07-10T14:38:57.366] [DEBUG] debug-file - Module 'entry' target 'default' using build option: {
+  "debuggable": true,
+  "copyFrom": "default"
+} in this build.
+[2024-07-10T14:38:57.371] [DEBUG] debug-file - Module entry task initialization takes 3 ms 
+[2024-07-10T14:38:57.371] [DEBUG] debug-file - hvigorfile, resolve finished C:\Users\Lenovo\Desktop\OHOS-Top3\entry\hvigorfile.ts
+[2024-07-10T14:38:57.429] [DEBUG] debug-file - hvigorfile, resolve hvigorfile dependencies in 57 ms 
+[2024-07-10T14:38:57.429] [DEBUG] debug-file - project has submodules:entry
+[2024-07-10T14:38:57.430] [DEBUG] debug-file - start to load updatedOhPackageInfo to the disk
+[2024-07-10T14:38:57.460] [DEBUG] debug-file - load to the disk finished
+[2024-07-10T14:38:57.463] [DEBUG] debug-file - Module OHOS-Top3 Collected Dependency: 
+[2024-07-10T14:38:57.463] [DEBUG] debug-file - Module OHOS-Top3's total dependency: 0
+[2024-07-10T14:38:57.467] [DEBUG] debug-file - Module entry Collected Dependency: 
+[2024-07-10T14:38:57.467] [DEBUG] debug-file - Module entry's total dependency: 0
+[2024-07-10T14:38:57.474] [DEBUG] debug-file - Configuration phase cost:2 s 693 ms 
+[2024-07-10T14:38:57.476] [DEBUG] debug-file - Configuration task cost before running: 2 s 729 ms 
+[2024-07-10T14:38:57.477] [DEBUG] debug-file - Executing task :entry:init
+[2024-07-10T14:38:57.477] [DEBUG] debug-file - entry : init cost memory 0.0151214599609375
+[2024-07-10T14:38:57.478] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 730 ms 
+[2024-07-10T14:38:57.478] [INFO] debug-file - Finished :entry:init... after 1 ms 
+[2024-07-10T14:38:57.478] [DEBUG] debug-file - Executing task ::init
+[2024-07-10T14:38:57.478] [DEBUG] debug-file - OHOS-Top3 : init cost memory 0.15052032470703125
+[2024-07-10T14:38:57.478] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 731 ms 
+[2024-07-10T14:38:57.478] [INFO] debug-file - Finished ::init... after 1 ms 
+[2024-07-10T14:38:57.503] [DEBUG] debug-file - Module 'entry' target 'default' using build option: {
+  "debuggable": true,
+  "copyFrom": "default"
+} in this build.
+[2024-07-10T14:38:58.223] [DEBUG] debug-file - Hvigor init with startParameters:{
+  hvigorfileTypeCheck: false,
+  parallelExecution: true,
+  incrementalExecution: true,
+  printStackTrace: false,
+  daemon: true,
+  analyze: 0,
+  logLevel: Level { level: 20000, levelStr: 'INFO', colour: 'green' }
+}
+[2024-07-10T14:38:58.226] [DEBUG] debug-file - Cache service initialization finished in 3 ms 
+[2024-07-10T14:38:58.236] [DEBUG] debug-file - hvigorfile, resolving C:\Users\Lenovo\Desktop\OHOS-Top3\hvigorfile.ts
+[2024-07-10T14:38:58.239] [DEBUG] debug-file - hvigorfile, require result:  {}
+[2024-07-10T14:38:58.240] [DEBUG] debug-file - hvigorfile, binding system plugins {}
+[2024-07-10T14:38:58.248] [DEBUG] debug-file - Start initialize project's product build option map with build mode debug.
+[2024-07-10T14:38:58.248] [DEBUG] debug-file - Picking option from product 'default' with build mode 'debug'.
+[2024-07-10T14:38:58.248] [DEBUG] debug-file - Product 'default' build option: {}
+[2024-07-10T14:38:58.248] [DEBUG] debug-file - End initialize project's product build option map with build mode 'debug'.
+[2024-07-10T14:38:58.249] [DEBUG] debug-file - Product 'default' using build option: {
+  "debuggable": true
+} in this build.
+[2024-07-10T14:38:58.250] [DEBUG] debug-file - No signingConfig found, initRemoteHspCache failed.
+[2024-07-10T14:38:58.259] [DEBUG] debug-file - Sdk init in 8 ms 
+[2024-07-10T14:38:58.282] [DEBUG] debug-file - Project task initialization takes 22 ms 
+[2024-07-10T14:38:58.282] [DEBUG] debug-file - hvigorfile, resolve finished C:\Users\Lenovo\Desktop\OHOS-Top3\hvigorfile.ts
+[2024-07-10T14:38:58.288] [DEBUG] debug-file - hvigorfile, resolving C:\Users\Lenovo\Desktop\OHOS-Top3\entry\hvigorfile.ts
+[2024-07-10T14:38:58.291] [DEBUG] debug-file - hvigorfile, require result:  {}
+[2024-07-10T14:38:58.291] [DEBUG] debug-file - hvigorfile, binding system plugins {}
+[2024-07-10T14:38:58.297] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2024-07-10T14:38:58.297] [DEBUG] debug-file - Target 'default' config: {}
+[2024-07-10T14:38:58.297] [DEBUG] debug-file - Module 'entry' target 'default' build option: {
+  "debuggable": true,
+  "copyFrom": "default"
+}
+[2024-07-10T14:38:58.297] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2024-07-10T14:38:58.297] [DEBUG] debug-file - Module 'entry' target 'default' using build option: {
+  "debuggable": true,
+  "copyFrom": "default"
+} in this build.
+[2024-07-10T14:38:58.299] [DEBUG] debug-file - Module entry task initialization takes 1 ms 
+[2024-07-10T14:38:58.299] [DEBUG] debug-file - hvigorfile, resolve finished C:\Users\Lenovo\Desktop\OHOS-Top3\entry\hvigorfile.ts
+[2024-07-10T14:38:58.337] [DEBUG] debug-file - hvigorfile, resolve hvigorfile dependencies in 37 ms 
+[2024-07-10T14:38:58.337] [DEBUG] debug-file - project has submodules:entry
+[2024-07-10T14:38:58.337] [DEBUG] debug-file - start to load updatedOhPackageInfo to the disk
+[2024-07-10T14:38:58.856] [DEBUG] debug-file - load to the disk finished
+[2024-07-10T14:38:58.860] [DEBUG] debug-file - Module OHOS-Top3 Collected Dependency: 
+[2024-07-10T14:38:58.860] [DEBUG] debug-file - Module OHOS-Top3's total dependency: 0
+[2024-07-10T14:38:58.864] [DEBUG] debug-file - Module entry Collected Dependency: 
+[2024-07-10T14:38:58.864] [DEBUG] debug-file - Module entry's total dependency: 0
+[2024-07-10T14:38:58.870] [DEBUG] debug-file - Configuration phase cost:639 ms 
+[2024-07-10T14:38:58.872] [DEBUG] debug-file - Configuration task cost before running: 661 ms 
+[2024-07-10T14:38:58.877] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:38:58.877] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:38:58.877] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:38:58.888] [DEBUG] debug-file - Executing task :entry:default@PreBuild
+[2024-07-10T14:38:58.907] [DEBUG] debug-file - entry:default@PreBuild is not up-to-date, since the input file 'C:\Users\Lenovo\Desktop\OHOS-Top3\AppScope\app.json5' has been changed.
+[2024-07-10T14:38:58.908] [DEBUG] debug-file - Incremental task entry:default@PreBuild pre-execution cost: 11 ms .
+[2024-07-10T14:38:59.172] [DEBUG] debug-file - current product is not Atomic service.
+[2024-07-10T14:38:59.174] [DEBUG] debug-file - Use tool [win32: JAVA_HOME, CLASSPATH]
+ [
+  { JAVA_HOME: 'D:\\Dev_eco_studio\\DevEco Studio\\jbr' },
+  { CLASSPATH: undefined }
+]
+[2024-07-10T14:38:59.175] [DEBUG] debug-file - Use tool [win32: NODE_HOME]
+ [ { NODE_HOME: 'D:\\Dev_eco_studio\\DevEco Studio\\tools\\node' } ]
+[2024-07-10T14:38:59.175] [DEBUG] debug-file - entry : default@PreBuild cost memory 3.2394485473632812
+[2024-07-10T14:38:59.176] [DEBUG] debug-file - runTaskFromQueue task cost before running: 964 ms 
+[2024-07-10T14:38:59.184] [INFO] debug-file - Finished :entry:default@PreBuild... after 288 ms 
+[2024-07-10T14:38:59.188] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:38:59.188] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:38:59.188] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:38:59.190] [DEBUG] debug-file - Executing task :entry:default@MergeProfile
+[2024-07-10T14:38:59.193] [DEBUG] debug-file - entry:default@MergeProfile is not up-to-date, since the input file 'C:\Users\Lenovo\Desktop\OHOS-Top3\AppScope\app.json5' has been changed.
+[2024-07-10T14:38:59.193] [DEBUG] debug-file - Incremental task entry:default@MergeProfile pre-execution cost: 2 ms .
+[2024-07-10T14:38:59.194] [DEBUG] debug-file - Change app api release type with 'Beta1'
+[2024-07-10T14:38:59.195] [DEBUG] debug-file - Change app compile API version with '5.0.0.25'
+[2024-07-10T14:38:59.195] [DEBUG] debug-file - Change app target API version with '50000012'
+[2024-07-10T14:38:59.195] [DEBUG] debug-file - Change app minimum API version with '50000012'
+[2024-07-10T14:38:59.196] [DEBUG] debug-file - Use cli appEnvironment
+[2024-07-10T14:38:59.203] [DEBUG] debug-file - entry : default@MergeProfile cost memory 0.41448211669921875
+[2024-07-10T14:38:59.203] [DEBUG] debug-file - runTaskFromQueue task cost before running: 992 ms 
+[2024-07-10T14:38:59.204] [INFO] debug-file - Finished :entry:default@MergeProfile... after 13 ms 
+[2024-07-10T14:38:59.208] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:38:59.208] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:38:59.209] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:38:59.211] [DEBUG] debug-file - Executing task :entry:default@CreateBuildProfile
+[2024-07-10T14:38:59.215] [DEBUG] debug-file - entry:default@CreateBuildProfile is not up-to-date, since the input file 'C:\Users\Lenovo\Desktop\OHOS-Top3\AppScope\app.json5' has been changed.
+[2024-07-10T14:38:59.215] [DEBUG] debug-file - Incremental task entry:default@CreateBuildProfile pre-execution cost: 3 ms .
+[2024-07-10T14:38:59.219] [DEBUG] debug-file - entry : default@CreateBuildProfile cost memory 0.1042633056640625
+[2024-07-10T14:38:59.220] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 8 ms 
+[2024-07-10T14:38:59.221] [INFO] debug-file - Finished :entry:default@CreateBuildProfile... after 9 ms 
+[2024-07-10T14:38:59.227] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:38:59.228] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:38:59.228] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:38:59.231] [DEBUG] debug-file - Executing task :entry:default@PreCheckSyscap
+[2024-07-10T14:38:59.232] [DEBUG] debug-file - entry : default@PreCheckSyscap cost memory 0.013458251953125
+[2024-07-10T14:38:59.232] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 21 ms 
+[2024-07-10T14:38:59.232] [INFO] debug-file - Finished :entry:default@PreCheckSyscap... after 2 ms 
+[2024-07-10T14:38:59.238] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:38:59.238] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:38:59.238] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:38:59.260] [DEBUG] debug-file - Executing task :entry:default@GeneratePkgContextInfo
+[2024-07-10T14:38:59.261] [DEBUG] debug-file - entry : default@GeneratePkgContextInfo cost memory 0.01979827880859375
+[2024-07-10T14:38:59.261] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 50 ms 
+[2024-07-10T14:38:59.261] [INFO] debug-file - Finished :entry:default@GeneratePkgContextInfo... after 1 ms 
+[2024-07-10T14:38:59.265] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:38:59.265] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:38:59.265] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:38:59.268] [DEBUG] debug-file - Executing task :entry:default@ProcessProfile
+[2024-07-10T14:38:59.270] [DEBUG] debug-file - entry:default@ProcessProfile is not up-to-date, since the input file 'C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\merge_profile\default\module.json' has been changed.
+[2024-07-10T14:38:59.271] [DEBUG] debug-file - Incremental task entry:default@ProcessProfile pre-execution cost: 2 ms .
+[2024-07-10T14:38:59.275] [DEBUG] debug-file - [
+  'D:\\Dev_eco_studio\\DevEco Studio\\tools\\node\\node.exe',
+  'D:\\Dev_eco_studio\\DevEco Studio\\sdk\\HarmonyOS-NEXT-DB1\\openharmony\\ets\\build-tools\\ets-loader\\bin\\ark\\ts2abc.js',
+  '--target-api-version',
+  '12'
+]
+[2024-07-10T14:38:59.638] [DEBUG] debug-file - 12.0.2.0
+[2024-07-10T14:38:59.640] [DEBUG] debug-file - entry : default@ProcessProfile cost memory 2.1036834716796875
+[2024-07-10T14:38:59.640] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 429 ms 
+[2024-07-10T14:38:59.640] [INFO] debug-file - Finished :entry:default@ProcessProfile... after 372 ms 
+[2024-07-10T14:38:59.643] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:38:59.643] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:38:59.643] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:38:59.646] [DEBUG] debug-file - Executing task :entry:default@ProcessRouterMap
+[2024-07-10T14:38:59.654] [DEBUG] debug-file - entry:default@ProcessRouterMap is not up-to-date, since the input file 'C:\Users\Lenovo\Desktop\OHOS-Top3\entry\oh-package.json5' has been changed.
+[2024-07-10T14:38:59.654] [DEBUG] debug-file - Incremental task entry:default@ProcessRouterMap pre-execution cost: 4 ms .
+[2024-07-10T14:38:59.659] [DEBUG] debug-file - entry : default@ProcessRouterMap cost memory 0.30265045166015625
+[2024-07-10T14:38:59.659] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 448 ms 
+[2024-07-10T14:38:59.661] [INFO] debug-file - Finished :entry:default@ProcessRouterMap... after 14 ms 
+[2024-07-10T14:38:59.663] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:38:59.663] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:38:59.663] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:38:59.665] [DEBUG] debug-file - restool module names: entry; moduleName=entry, taskName=default@PreviewProcessResource
+[2024-07-10T14:38:59.670] [DEBUG] debug-file - Executing task :entry:default@PreviewProcessResource
+[2024-07-10T14:38:59.670] [DEBUG] debug-file - entry : default@PreviewProcessResource cost memory 0.0479888916015625
+[2024-07-10T14:38:59.672] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 461 ms 
+[2024-07-10T14:38:59.673] [INFO] debug-file - Finished :entry:default@PreviewProcessResource... after 4 ms 
+[2024-07-10T14:38:59.676] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:38:59.676] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:38:59.676] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:38:59.680] [DEBUG] debug-file - Executing task :entry:default@GenerateLoaderJson
+[2024-07-10T14:38:59.695] [DEBUG] debug-file - entry:default@GenerateLoaderJson is not up-to-date, since the input file 'C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\router_map\default\intermediates_temp_routerMap.json' has been changed.
+[2024-07-10T14:38:59.695] [DEBUG] debug-file - Incremental task entry:default@GenerateLoaderJson pre-execution cost: 8 ms .
+[2024-07-10T14:38:59.700] [DEBUG] debug-file - entry : default@GenerateLoaderJson cost memory 0.6116561889648438
+[2024-07-10T14:38:59.701] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 490 ms 
+[2024-07-10T14:38:59.707] [INFO] debug-file - Finished :entry:default@GenerateLoaderJson... after 21 ms 
+[2024-07-10T14:38:59.709] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:38:59.710] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:38:59.710] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:38:59.711] [DEBUG] debug-file - restool module names: entry; moduleName=entry, taskName=default@PreviewCompileResource
+[2024-07-10T14:38:59.713] [DEBUG] debug-file - Executing task :entry:default@PreviewCompileResource
+[2024-07-10T14:38:59.828] [DEBUG] debug-file - Use tool [D:\Dev_eco_studio\DevEco Studio\sdk\HarmonyOS-NEXT-DB1\openharmony\toolchains\restool.exe]
+ [
+  'D:\\Dev_eco_studio\\DevEco Studio\\sdk\\HarmonyOS-NEXT-DB1\\openharmony\\toolchains\\restool.exe',
+  '-x',
+  'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\AppScope\\resources',
+  '-o',
+  'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\.preview\\default\\intermediates\\res\\default\\app_compiled'
+]
+[2024-07-10T14:38:59.831] [DEBUG] debug-file - current process  memoryUsage: {
+  rss: 192737280,
+  heapTotal: 142458880,
+  heapUsed: 110537344,
+  external: 1567756,
+  arrayBuffers: 101750
+} os memoryUsage :12.152515411376953
+[2024-07-10T14:38:59.981] [DEBUG] debug-file - Info: restool resources compile success.
+
+[2024-07-10T14:38:59.986] [DEBUG] debug-file - Use tool [D:\Dev_eco_studio\DevEco Studio\sdk\HarmonyOS-NEXT-DB1\openharmony\toolchains\restool.exe]
+ [
+  'D:\\Dev_eco_studio\\DevEco Studio\\sdk\\HarmonyOS-NEXT-DB1\\openharmony\\toolchains\\restool.exe',
+  '-x',
+  'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\src\\main\\resources',
+  '-o',
+  'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\.preview\\default\\intermediates\\res\\default\\module_compiled'
+]
+[2024-07-10T14:38:59.988] [DEBUG] debug-file - current process  memoryUsage: {
+  rss: 193097728,
+  heapTotal: 142458880,
+  heapUsed: 110803456,
+  external: 1469850,
+  arrayBuffers: 101891
+} os memoryUsage :12.176101684570312
+[2024-07-10T14:39:00.273] [DEBUG] debug-file - Info: restool resources compile success.
+
+[2024-07-10T14:39:00.279] [DEBUG] debug-file - Use tool [D:\Dev_eco_studio\DevEco Studio\sdk\HarmonyOS-NEXT-DB1\openharmony\toolchains\restool.exe]
+ [
+  'D:\\Dev_eco_studio\\DevEco Studio\\sdk\\HarmonyOS-NEXT-DB1\\openharmony\\toolchains\\restool.exe',
+  '-m',
+  'entry',
+  '-f',
+  '-j',
+  'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\.preview\\default\\intermediates\\process_profile\\default\\module.json',
+  '-p',
+  'com.example.healthy_life',
+  '-r',
+  'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\.preview\\default\\generated\\r\\default\\ResourceTable.h',
+  '-z',
+  '--ids',
+  'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\.preview\\default\\intermediates\\res\\default\\ids_map',
+  '-i',
+  'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\.preview\\default\\intermediates\\res\\default\\app_compiled',
+  '-i',
+  'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\.preview\\default\\intermediates\\res\\default\\module_compiled',
+  '-o',
+  'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\.preview\\default\\intermediates\\res\\default'
+]
+[2024-07-10T14:39:00.282] [DEBUG] debug-file - current process  memoryUsage: {
+  rss: 193241088,
+  heapTotal: 142458880,
+  heapUsed: 111123352,
+  external: 1469976,
+  arrayBuffers: 102771
+} os memoryUsage :12.202869415283203
+[2024-07-10T14:39:00.536] [DEBUG] debug-file - Info: restool resources compile success.
+
+[2024-07-10T14:39:00.606] [DEBUG] debug-file - entry : default@PreviewCompileResource cost memory -3.2476272583007812
+[2024-07-10T14:39:00.606] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 395 ms 
+[2024-07-10T14:39:00.607] [INFO] debug-file - Finished :entry:default@PreviewCompileResource... after 894 ms 
+[2024-07-10T14:39:00.610] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:39:00.610] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:39:00.610] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:39:00.611] [DEBUG] debug-file - Executing task :entry:default@PreviewHookCompileResource
+[2024-07-10T14:39:00.611] [DEBUG] debug-file - entry : default@PreviewHookCompileResource cost memory 0.01494598388671875
+[2024-07-10T14:39:00.611] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 400 ms 
+[2024-07-10T14:39:00.611] [INFO] debug-file - Finished :entry:default@PreviewHookCompileResource... after 1 ms 
+[2024-07-10T14:39:00.614] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:39:00.614] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:39:00.614] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:39:00.615] [DEBUG] debug-file - Executing task :entry:default@CopyPreviewProfile
+[2024-07-10T14:39:00.626] [DEBUG] debug-file - entry : default@CopyPreviewProfile cost memory 0.1560516357421875
+[2024-07-10T14:39:00.626] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 415 ms 
+[2024-07-10T14:39:00.627] [INFO] debug-file - Finished :entry:default@CopyPreviewProfile... after 12 ms 
+[2024-07-10T14:39:00.630] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:39:00.630] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:39:00.630] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:39:00.631] [DEBUG] debug-file - Executing task :entry:default@ReplacePreviewerPage
+[2024-07-10T14:39:00.631] [DEBUG] debug-file - entry : default@ReplacePreviewerPage cost memory 0.0149688720703125
+[2024-07-10T14:39:00.631] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 420 ms 
+[2024-07-10T14:39:00.632] [INFO] debug-file - Finished :entry:default@ReplacePreviewerPage... after 1 ms 
+[2024-07-10T14:39:00.634] [DEBUG] debug-file - Executing task :entry:buildPreviewerResource
+[2024-07-10T14:39:00.634] [DEBUG] debug-file - entry : buildPreviewerResource cost memory 0.0119476318359375
+[2024-07-10T14:39:00.634] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 423 ms 
+[2024-07-10T14:39:00.634] [INFO] debug-file - Finished :entry:buildPreviewerResource... after 1 ms 
+[2024-07-10T14:39:00.636] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:39:00.637] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:39:00.637] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:39:00.638] [DEBUG] debug-file - Executing task :entry:default@PreviewUpdateAssets
+[2024-07-10T14:39:00.641] [DEBUG] debug-file - entry : default@PreviewUpdateAssets cost memory 0.06716156005859375
+[2024-07-10T14:39:00.641] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 430 ms 
+[2024-07-10T14:39:00.643] [INFO] debug-file - Finished :entry:default@PreviewUpdateAssets... after 4 ms 
+[2024-07-10T14:39:00.646] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:39:00.646] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:39:00.646] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:39:00.652] [DEBUG] debug-file - Executing task :entry:default@PreviewArkTS
+[2024-07-10T14:39:00.680] [DEBUG] debug-file - session manager: binding session. socketId=37wuAgTk3vyPC0TPAAAD, threadId=1@1.
+[2024-07-10T14:39:00.680] [DEBUG] debug-file - entry : default@PreviewArkTS cost memory 1.2923126220703125
+[2024-07-10T14:39:04.271] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchStart
+[2024-07-10T14:39:09.765] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2024-07-10T14:39:13.469] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchResult
+[2024-07-10T14:39:13.470] [DEBUG] debug-file - Ark compile finished.
+[2024-07-10T14:39:13.475] [INFO] debug-file - Finished :entry:default@PreviewArkTS... after 12 s 820 ms 
+[2024-07-10T14:39:13.477] [DEBUG] debug-file - Executing task :entry:PreviewBuild
+[2024-07-10T14:39:13.477] [DEBUG] debug-file - entry : PreviewBuild cost memory 0.01149749755859375
+[2024-07-10T14:39:13.477] [DEBUG] debug-file - runTaskFromQueue task cost before running: 15 s 266 ms 
+[2024-07-10T14:39:13.477] [INFO] debug-file - Finished :entry:PreviewBuild... after 1 ms 
+[2024-07-10T14:39:13.490] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\Users\Lenovo\Desktop\OHOS-Top3\AppScope\app.json5 cache from map.
+[2024-07-10T14:39:13.490] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\src\main\module.json5 cache by regenerate.
+[2024-07-10T14:39:13.491] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\src\main\resources\base\profile\form_config.json cache by regenerate.
+[2024-07-10T14:39:13.491] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\Users\Lenovo\Desktop\OHOS-Top3\build-profile.json5 cache by regenerate.
+[2024-07-10T14:39:13.492] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build-profile.json5 cache by regenerate.
+[2024-07-10T14:39:13.492] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\src\main\resources\base\profile\main_pages.json cache by regenerate.
+[2024-07-10T14:39:13.493] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\Users\Lenovo\Desktop\OHOS-Top3\hvigor\hvigor-config.json5 cache by regenerate.
+[2024-07-10T14:39:13.493] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\oh-package.json5 cache by regenerate.
+[2024-07-10T14:39:13.494] [DEBUG] debug-file - Incremental task entry:default@PreBuild post-execution cost:5 ms .
+[2024-07-10T14:39:13.494] [DEBUG] debug-file - Update task entry:default@MergeProfile input file:C:\Users\Lenovo\Desktop\OHOS-Top3\AppScope\app.json5 cache from map.
+[2024-07-10T14:39:13.494] [DEBUG] debug-file - Update task entry:default@MergeProfile input file:C:\Users\Lenovo\Desktop\OHOS-Top3\build-profile.json5 cache by regenerate.
+[2024-07-10T14:39:13.494] [DEBUG] debug-file - Update task entry:default@MergeProfile input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\src\main\module.json5 cache by regenerate.
+[2024-07-10T14:39:13.495] [DEBUG] debug-file - Update task entry:default@MergeProfile output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\merge_profile\default\module.json cache.
+[2024-07-10T14:39:13.495] [DEBUG] debug-file - Incremental task entry:default@MergeProfile post-execution cost:2 ms .
+[2024-07-10T14:39:13.495] [DEBUG] debug-file - Update task entry:default@CreateBuildProfile input file:C:\Users\Lenovo\Desktop\OHOS-Top3\AppScope\app.json5 cache from map.
+[2024-07-10T14:39:13.495] [DEBUG] debug-file - Update task entry:default@CreateBuildProfile input file:C:\Users\Lenovo\Desktop\OHOS-Top3\build-profile.json5 cache by regenerate.
+[2024-07-10T14:39:13.496] [DEBUG] debug-file - Update task entry:default@CreateBuildProfile output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\generated\profile\default\BuildProfile.ets cache.
+[2024-07-10T14:39:13.496] [DEBUG] debug-file - Incremental task entry:default@CreateBuildProfile post-execution cost:2 ms .
+[2024-07-10T14:39:13.496] [DEBUG] debug-file - Update task entry:default@GeneratePkgContextInfo output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\loader\default\pkgContextInfo.json cache.
+[2024-07-10T14:39:13.497] [DEBUG] debug-file - Incremental task entry:default@GeneratePkgContextInfo post-execution cost:1 ms .
+[2024-07-10T14:39:13.497] [DEBUG] debug-file - Update task entry:default@ProcessProfile input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\merge_profile\default\module.json cache from map.
+[2024-07-10T14:39:13.497] [DEBUG] debug-file - Update task entry:default@ProcessProfile output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\process_profile\default\module.json cache.
+[2024-07-10T14:39:13.497] [DEBUG] debug-file - Incremental task entry:default@ProcessProfile post-execution cost:1 ms .
+[2024-07-10T14:39:13.499] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\oh-package.json5 cache from map.
+[2024-07-10T14:39:13.499] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap input file:C:\Users\Lenovo\Desktop\OHOS-Top3\oh-package.json5 cache by regenerate.
+[2024-07-10T14:39:13.500] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\src\main\module.json5 cache by regenerate.
+[2024-07-10T14:39:13.500] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\router_map\default\intermediates_temp_routerMap.json cache.
+[2024-07-10T14:39:13.501] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\router_map\default\intermediate_routerMap_for_loader.json cache.
+[2024-07-10T14:39:13.501] [DEBUG] debug-file - Incremental task entry:default@ProcessRouterMap post-execution cost:4 ms .
+[2024-07-10T14:39:13.504] [DEBUG] debug-file - Update task entry:default@GenerateLoaderJson input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\router_map\default\intermediates_temp_routerMap.json cache from map.
+[2024-07-10T14:39:13.504] [DEBUG] debug-file - Update task entry:default@GenerateLoaderJson output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\loader\default\loader.json cache.
+[2024-07-10T14:39:13.504] [DEBUG] debug-file - Incremental task entry:default@GenerateLoaderJson post-execution cost:4 ms .
+[2024-07-10T14:39:13.505] [DEBUG] debug-file - Update task entry:default@PreviewCompileResource input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\src\main\resources cache by regenerate.
+[2024-07-10T14:39:13.524] [DEBUG] debug-file - Update task entry:default@PreviewCompileResource input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\merge_profile\default\module.json cache by regenerate.
+[2024-07-10T14:39:13.524] [DEBUG] debug-file - Update task entry:default@PreviewCompileResource output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\res\default cache.
+[2024-07-10T14:39:13.545] [DEBUG] debug-file - Update task entry:default@PreviewCompileResource output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\generated\r\default cache.
+[2024-07-10T14:39:13.546] [DEBUG] debug-file - Incremental task entry:default@PreviewCompileResource post-execution cost:42 ms .
+[2024-07-10T14:39:13.546] [DEBUG] debug-file - Update task entry:default@CopyPreviewProfile input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\src\main\resources\base\profile cache by regenerate.
+[2024-07-10T14:39:13.547] [DEBUG] debug-file - Update task entry:default@CopyPreviewProfile output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\res\default\resources\base\profile cache.
+[2024-07-10T14:39:13.548] [DEBUG] debug-file - Incremental task entry:default@CopyPreviewProfile post-execution cost:2 ms .
+[2024-07-10T14:39:13.549] [DEBUG] debug-file - Update task entry:default@PreviewUpdateAssets output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\res\default\module.json cache.
+[2024-07-10T14:39:13.549] [DEBUG] debug-file - Update task entry:default@PreviewUpdateAssets output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\res\default\resources\base\profile\main_pages.json cache.
+[2024-07-10T14:39:13.550] [DEBUG] debug-file - Incremental task entry:default@PreviewUpdateAssets post-execution cost:2 ms .
+[2024-07-10T14:39:13.554] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\loader\default cache by regenerate.
+[2024-07-10T14:39:13.555] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\res\default\ResourceTable.txt cache by regenerate.
+[2024-07-10T14:39:13.555] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\res\default\module.json cache by regenerate.
+[2024-07-10T14:39:13.555] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\res\default\resources\base\profile cache by regenerate.
+[2024-07-10T14:39:13.556] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\src\main\ets cache by regenerate.
+[2024-07-10T14:39:13.577] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\src\main\resources\base\profile\form_config.json cache by regenerate.
+[2024-07-10T14:39:13.577] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\generated\profile\default\BuildProfile.ets cache by regenerate.
+[2024-07-10T14:39:13.577] [DEBUG] debug-file - Update task entry:default@PreviewArkTS output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\loader_out\default\ets cache.
+[2024-07-10T14:39:13.578] [DEBUG] debug-file - Incremental task entry:default@PreviewArkTS post-execution cost:28 ms .
+[2024-07-10T14:40:18.849] [DEBUG] debug-file - Hvigor init with startParameters:{
+  hvigorfileTypeCheck: false,
+  parallelExecution: true,
+  incrementalExecution: true,
+  printStackTrace: false,
+  daemon: true,
+  analyze: 0,
+  logLevel: Level { level: 20000, levelStr: 'INFO', colour: 'green' }
+}
+[2024-07-10T14:40:18.857] [DEBUG] debug-file - Cache service initialization finished in 8 ms 
+[2024-07-10T14:40:18.871] [DEBUG] debug-file - hvigorfile, resolving C:\Users\Lenovo\Desktop\OHOS-Top3\hvigorfile.ts
+[2024-07-10T14:40:18.882] [DEBUG] debug-file - hvigorfile, require result:  {}
+[2024-07-10T14:40:18.882] [DEBUG] debug-file - hvigorfile, binding system plugins {}
+[2024-07-10T14:40:18.893] [DEBUG] debug-file - Start initialize project's product build option map with build mode debug.
+[2024-07-10T14:40:18.894] [DEBUG] debug-file - Picking option from product 'default' with build mode 'debug'.
+[2024-07-10T14:40:18.894] [DEBUG] debug-file - Product 'default' build option: {}
+[2024-07-10T14:40:18.894] [DEBUG] debug-file - End initialize project's product build option map with build mode 'debug'.
+[2024-07-10T14:40:18.895] [DEBUG] debug-file - Product 'default' using build option: {
+  "debuggable": true
+} in this build.
+[2024-07-10T14:40:18.895] [DEBUG] debug-file - No signingConfig found, initRemoteHspCache failed.
+[2024-07-10T14:40:18.909] [DEBUG] debug-file - Sdk init in 13 ms 
+[2024-07-10T14:40:18.934] [DEBUG] debug-file - Project task initialization takes 23 ms 
+[2024-07-10T14:40:18.934] [DEBUG] debug-file - hvigorfile, resolve finished C:\Users\Lenovo\Desktop\OHOS-Top3\hvigorfile.ts
+[2024-07-10T14:40:18.941] [DEBUG] debug-file - hvigorfile, resolving C:\Users\Lenovo\Desktop\OHOS-Top3\entry\hvigorfile.ts
+[2024-07-10T14:40:18.944] [DEBUG] debug-file - hvigorfile, require result:  {}
+[2024-07-10T14:40:18.944] [DEBUG] debug-file - hvigorfile, binding system plugins {}
+[2024-07-10T14:40:18.949] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2024-07-10T14:40:18.950] [DEBUG] debug-file - Target 'default' config: {}
+[2024-07-10T14:40:18.950] [DEBUG] debug-file - Module 'entry' target 'default' build option: {
+  "debuggable": true,
+  "copyFrom": "default"
+}
+[2024-07-10T14:40:18.950] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2024-07-10T14:40:18.950] [DEBUG] debug-file - Module 'entry' target 'default' using build option: {
+  "debuggable": true,
+  "copyFrom": "default"
+} in this build.
+[2024-07-10T14:40:18.954] [DEBUG] debug-file - Module entry task initialization takes 1 ms 
+[2024-07-10T14:40:18.954] [DEBUG] debug-file - hvigorfile, resolve finished C:\Users\Lenovo\Desktop\OHOS-Top3\entry\hvigorfile.ts
+[2024-07-10T14:40:19.005] [DEBUG] debug-file - hvigorfile, resolve hvigorfile dependencies in 50 ms 
+[2024-07-10T14:40:19.005] [DEBUG] debug-file - project has submodules:entry
+[2024-07-10T14:40:19.006] [DEBUG] debug-file - start to load updatedOhPackageInfo to the disk
+[2024-07-10T14:40:19.034] [DEBUG] debug-file - load to the disk finished
+[2024-07-10T14:40:19.036] [DEBUG] debug-file - Module OHOS-Top3 Collected Dependency: 
+[2024-07-10T14:40:19.036] [DEBUG] debug-file - Module OHOS-Top3's total dependency: 0
+[2024-07-10T14:40:19.037] [DEBUG] debug-file - Module entry Collected Dependency: 
+[2024-07-10T14:40:19.037] [DEBUG] debug-file - Module entry's total dependency: 0
+[2024-07-10T14:40:19.040] [DEBUG] debug-file - Configuration phase cost:177 ms 
+[2024-07-10T14:40:19.041] [DEBUG] debug-file - Configuration task cost before running: 205 ms 
+[2024-07-10T14:40:19.043] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.043] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.043] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:40:19.048] [DEBUG] debug-file - Executing task :entry:default@PreBuild
+[2024-07-10T14:40:19.062] [DEBUG] debug-file - Incremental task entry:default@PreBuild pre-execution cost: 9 ms .
+[2024-07-10T14:40:19.062] [DEBUG] debug-file - entry : default@PreBuild cost memory 0.40114593505859375
+[2024-07-10T14:40:19.065] [INFO] debug-file - UP-TO-DATE :entry:default@PreBuild...  
+[2024-07-10T14:40:19.068] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.069] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.069] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:40:19.070] [DEBUG] debug-file - Executing task :entry:default@GenerateMetadata
+[2024-07-10T14:40:19.073] [DEBUG] debug-file - entry:default@GenerateMetadata is not up-to-date, since the output file 'C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\hap_metadata\default\output_metadata.json' has been changed.
+[2024-07-10T14:40:19.073] [DEBUG] debug-file - Incremental task entry:default@GenerateMetadata pre-execution cost: 3 ms .
+[2024-07-10T14:40:19.075] [DEBUG] debug-file - entry : default@GenerateMetadata cost memory 0.1608123779296875
+[2024-07-10T14:40:19.075] [DEBUG] debug-file - runTaskFromQueue task cost before running: 240 ms 
+[2024-07-10T14:40:19.076] [INFO] debug-file - Finished :entry:default@GenerateMetadata... after 6 ms 
+[2024-07-10T14:40:19.078] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.079] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.079] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:40:19.079] [DEBUG] debug-file - Executing task :entry:default@ConfigureCmake
+[2024-07-10T14:40:19.079] [DEBUG] debug-file - entry : default@ConfigureCmake cost memory 0.01285552978515625
+[2024-07-10T14:40:19.079] [DEBUG] debug-file - runTaskFromQueue task cost before running: 244 ms 
+[2024-07-10T14:40:19.080] [INFO] debug-file - Finished :entry:default@ConfigureCmake... after 1 ms 
+[2024-07-10T14:40:19.083] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.083] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.083] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:40:19.084] [DEBUG] debug-file - Executing task :entry:default@MergeProfile
+[2024-07-10T14:40:19.086] [DEBUG] debug-file - entry:default@MergeProfile is not up-to-date, since the output file 'C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\merge_profile\default\module.json' has been changed.
+[2024-07-10T14:40:19.087] [DEBUG] debug-file - Incremental task entry:default@MergeProfile pre-execution cost: 3 ms .
+[2024-07-10T14:40:19.087] [DEBUG] debug-file - Change app api release type with 'Beta1'
+[2024-07-10T14:40:19.087] [DEBUG] debug-file - Change app compile API version with '5.0.0.25'
+[2024-07-10T14:40:19.087] [DEBUG] debug-file - Change app target API version with '50000012'
+[2024-07-10T14:40:19.087] [DEBUG] debug-file - Change app minimum API version with '50000012'
+[2024-07-10T14:40:19.087] [DEBUG] debug-file - Use cli appEnvironment
+[2024-07-10T14:40:19.090] [DEBUG] debug-file - entry : default@MergeProfile cost memory 0.25955963134765625
+[2024-07-10T14:40:19.090] [DEBUG] debug-file - runTaskFromQueue task cost before running: 255 ms 
+[2024-07-10T14:40:19.090] [INFO] debug-file - Finished :entry:default@MergeProfile... after 7 ms 
+[2024-07-10T14:40:19.093] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.093] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.093] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:40:19.094] [DEBUG] debug-file - Executing task :entry:default@CreateBuildProfile
+[2024-07-10T14:40:19.097] [DEBUG] debug-file - entry:default@CreateBuildProfile is not up-to-date, since the output file 'C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\generated\profile\default\BuildProfile.ets' has been changed.
+[2024-07-10T14:40:19.097] [DEBUG] debug-file - Incremental task entry:default@CreateBuildProfile pre-execution cost: 3 ms .
+[2024-07-10T14:40:19.099] [DEBUG] debug-file - entry : default@CreateBuildProfile cost memory 0.13983154296875
+[2024-07-10T14:40:19.099] [DEBUG] debug-file - runTaskFromQueue task cost before running: 263 ms 
+[2024-07-10T14:40:19.100] [INFO] debug-file - Finished :entry:default@CreateBuildProfile... after 6 ms 
+[2024-07-10T14:40:19.102] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.102] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.102] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:40:19.103] [DEBUG] debug-file - Executing task :entry:default@PreCheckSyscap
+[2024-07-10T14:40:19.103] [DEBUG] debug-file - entry : default@PreCheckSyscap cost memory 0.01322174072265625
+[2024-07-10T14:40:19.103] [DEBUG] debug-file - runTaskFromQueue task cost before running: 268 ms 
+[2024-07-10T14:40:19.103] [INFO] debug-file - Finished :entry:default@PreCheckSyscap... after 1 ms 
+[2024-07-10T14:40:19.106] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.106] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.106] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:40:19.110] [DEBUG] debug-file - Executing task :entry:default@GeneratePkgContextInfo
+[2024-07-10T14:40:19.110] [DEBUG] debug-file - entry : default@GeneratePkgContextInfo cost memory 0.01941680908203125
+[2024-07-10T14:40:19.110] [DEBUG] debug-file - runTaskFromQueue task cost before running: 274 ms 
+[2024-07-10T14:40:19.110] [INFO] debug-file - Finished :entry:default@GeneratePkgContextInfo... after 1 ms 
+[2024-07-10T14:40:19.113] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.113] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.113] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:40:19.117] [DEBUG] debug-file - Executing task :entry:default@ProcessIntegratedHsp
+[2024-07-10T14:40:19.119] [DEBUG] debug-file - entry:default@ProcessIntegratedHsp is not up-to-date, since the output file 'C:\Users\Lenovo\Desktop\OHOS-Top3\build\cache\default\integrated_hsp\integratedHspCache.json' does not exist.
+[2024-07-10T14:40:19.119] [DEBUG] debug-file - Incremental task entry:default@ProcessIntegratedHsp pre-execution cost: 2 ms .
+[2024-07-10T14:40:19.119] [DEBUG] debug-file - entry : default@ProcessIntegratedHsp cost memory 0.08502197265625
+[2024-07-10T14:40:19.119] [DEBUG] debug-file - runTaskFromQueue task cost before running: 284 ms 
+[2024-07-10T14:40:19.120] [INFO] debug-file - Finished :entry:default@ProcessIntegratedHsp... after 3 ms 
+[2024-07-10T14:40:19.123] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.123] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.123] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:40:19.125] [DEBUG] debug-file - Executing task :entry:default@BuildNativeWithCmake
+[2024-07-10T14:40:19.125] [DEBUG] debug-file - entry : default@BuildNativeWithCmake cost memory 0.0139923095703125
+[2024-07-10T14:40:19.126] [DEBUG] debug-file - runTaskFromQueue task cost before running: 290 ms 
+[2024-07-10T14:40:19.126] [INFO] debug-file - Finished :entry:default@BuildNativeWithCmake... after 1 ms 
+[2024-07-10T14:40:19.128] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.128] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.128] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:40:19.129] [DEBUG] debug-file - Executing task :entry:default@MakePackInfo
+[2024-07-10T14:40:19.133] [DEBUG] debug-file - entry:default@MakePackInfo is not up-to-date, since the output file 'C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\outputs\default\pack.info' has been changed.
+[2024-07-10T14:40:19.133] [DEBUG] debug-file - Incremental task entry:default@MakePackInfo pre-execution cost: 4 ms .
+[2024-07-10T14:40:19.135] [DEBUG] debug-file - Module Pack Info:  {
+  summary: {
+    app: {
+      bundleName: 'com.example.healthy_life',
+      bundleType: 'app',
+      version: [Object]
+    },
+    modules: [ [Object] ]
+  },
+  packages: [
+    {
+      deviceType: [Array],
+      moduleType: 'entry',
+      deliveryWithInstall: true,
+      name: 'entry-default'
+    }
+  ]
+}
+[2024-07-10T14:40:19.136] [DEBUG] debug-file - entry : default@MakePackInfo cost memory 0.2501220703125
+[2024-07-10T14:40:19.136] [DEBUG] debug-file - runTaskFromQueue task cost before running: 300 ms 
+[2024-07-10T14:40:19.137] [INFO] debug-file - Finished :entry:default@MakePackInfo... after 8 ms 
+[2024-07-10T14:40:19.138] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.138] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.139] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:40:19.139] [DEBUG] debug-file - Executing task :entry:default@ProcessProfile
+[2024-07-10T14:40:19.140] [DEBUG] debug-file - entry:default@ProcessProfile is not up-to-date, since the input file 'C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\merge_profile\default\module.json' has been changed.
+[2024-07-10T14:40:19.140] [DEBUG] debug-file - Incremental task entry:default@ProcessProfile pre-execution cost: 1 ms .
+[2024-07-10T14:40:19.141] [DEBUG] debug-file - [
+  'D:\\Dev_eco_studio\\DevEco Studio\\tools\\node\\node.exe',
+  'D:\\Dev_eco_studio\\DevEco Studio\\sdk\\HarmonyOS-NEXT-DB1\\openharmony\\ets\\build-tools\\ets-loader\\bin\\ark\\ts2abc.js',
+  '--target-api-version',
+  '12'
+]
+[2024-07-10T14:40:19.472] [DEBUG] debug-file - 12.0.2.0
+[2024-07-10T14:40:19.473] [DEBUG] debug-file - entry : default@ProcessProfile cost memory 0.2753143310546875
+[2024-07-10T14:40:19.473] [DEBUG] debug-file - runTaskFromQueue task cost before running: 637 ms 
+[2024-07-10T14:40:19.473] [INFO] debug-file - Finished :entry:default@ProcessProfile... after 334 ms 
+[2024-07-10T14:40:19.476] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.476] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.476] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:40:19.477] [DEBUG] debug-file - Executing task :entry:default@SyscapTransform
+[2024-07-10T14:40:19.480] [DEBUG] debug-file - entry:default@SyscapTransform is not up-to-date, since the input file 'D:\Dev_eco_studio\DevEco Studio\sdk\HarmonyOS-NEXT-DB1\openharmony\toolchains\syscap_tool.exe' has been changed.
+[2024-07-10T14:40:19.480] [DEBUG] debug-file - Incremental task entry:default@SyscapTransform pre-execution cost: 2 ms .
+[2024-07-10T14:40:19.481] [DEBUG] debug-file - entry : default@SyscapTransform cost memory 0.0842132568359375
+[2024-07-10T14:40:19.481] [DEBUG] debug-file - runTaskFromQueue task cost before running: 645 ms 
+[2024-07-10T14:40:19.482] [INFO] debug-file - Finished :entry:default@SyscapTransform... after 4 ms 
+[2024-07-10T14:40:19.484] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.484] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.484] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:40:19.486] [DEBUG] debug-file - Executing task :entry:default@ProcessRouterMap
+[2024-07-10T14:40:19.492] [DEBUG] debug-file - entry:default@ProcessRouterMap is not up-to-date, since the output file 'C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\router_map\default\intermediates_temp_routerMap.json' has been changed.
+[2024-07-10T14:40:19.492] [DEBUG] debug-file - Incremental task entry:default@ProcessRouterMap pre-execution cost: 5 ms .
+[2024-07-10T14:40:19.494] [DEBUG] debug-file - entry : default@ProcessRouterMap cost memory 0.30577850341796875
+[2024-07-10T14:40:19.494] [DEBUG] debug-file - runTaskFromQueue task cost before running: 658 ms 
+[2024-07-10T14:40:19.495] [INFO] debug-file - Finished :entry:default@ProcessRouterMap... after 8 ms 
+[2024-07-10T14:40:19.498] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.498] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.498] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:40:19.499] [DEBUG] debug-file - Executing task :entry:default@BuildNativeWithNinja
+[2024-07-10T14:40:19.501] [DEBUG] debug-file - entry : default@BuildNativeWithNinja cost memory 0.03614044189453125
+[2024-07-10T14:40:19.501] [DEBUG] debug-file - runTaskFromQueue task cost before running: 665 ms 
+[2024-07-10T14:40:19.501] [INFO] debug-file - Finished :entry:default@BuildNativeWithNinja... after 3 ms 
+[2024-07-10T14:40:19.503] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.503] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.503] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:40:19.505] [DEBUG] debug-file - restool module names: entry; moduleName=entry, taskName=default@ProcessResource
+[2024-07-10T14:40:19.507] [DEBUG] debug-file - Executing task :entry:default@ProcessResource
+[2024-07-10T14:40:19.508] [DEBUG] debug-file - entry:default@ProcessResource is not up-to-date, since the output file 'C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\res\default\resConfig.json' has been changed.
+[2024-07-10T14:40:19.508] [DEBUG] debug-file - Incremental task entry:default@ProcessResource pre-execution cost: 1 ms .
+[2024-07-10T14:40:19.510] [DEBUG] debug-file - entry : default@ProcessResource cost memory 0.11716461181640625
+[2024-07-10T14:40:19.512] [DEBUG] debug-file - runTaskFromQueue task cost before running: 676 ms 
+[2024-07-10T14:40:19.514] [INFO] debug-file - Finished :entry:default@ProcessResource... after 5 ms 
+[2024-07-10T14:40:19.516] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.516] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.516] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:40:19.519] [DEBUG] debug-file - Executing task :entry:default@GenerateLoaderJson
+[2024-07-10T14:40:19.532] [DEBUG] debug-file - entry:default@GenerateLoaderJson is not up-to-date, since the input file 'C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\router_map\default\intermediates_temp_routerMap.json' has been changed.
+[2024-07-10T14:40:19.533] [DEBUG] debug-file - Incremental task entry:default@GenerateLoaderJson pre-execution cost: 8 ms .
+[2024-07-10T14:40:19.539] [DEBUG] debug-file - entry : default@GenerateLoaderJson cost memory 0.6103744506835938
+[2024-07-10T14:40:19.540] [DEBUG] debug-file - runTaskFromQueue task cost before running: 704 ms 
+[2024-07-10T14:40:19.545] [INFO] debug-file - Finished :entry:default@GenerateLoaderJson... after 21 ms 
+[2024-07-10T14:40:19.547] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.548] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.548] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:40:19.550] [DEBUG] debug-file - Executing task :entry:default@ProcessLibs
+[2024-07-10T14:40:19.553] [DEBUG] debug-file - entry:default@ProcessLibs is not up-to-date, since the output file 'C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\libs\default' does not exist.
+[2024-07-10T14:40:19.553] [DEBUG] debug-file - Incremental task entry:default@ProcessLibs pre-execution cost: 3 ms .
+[2024-07-10T14:40:19.557] [DEBUG] debug-file - default@ProcessLibs work[0] is submitted.
+[2024-07-10T14:40:19.558] [DEBUG] debug-file - default@ProcessLibs work[0] is pushed to ready queue.
+[2024-07-10T14:40:19.559] [DEBUG] debug-file - A work dispatched to worker[19] failed because unable to get work from ready queue.
+[2024-07-10T14:40:19.560] [DEBUG] debug-file - default@ProcessLibs work[0] has been dispatched to worker[18].
+[2024-07-10T14:40:19.560] [DEBUG] debug-file - default@ProcessLibs work[0] is dispatched.
+[2024-07-10T14:40:19.560] [DEBUG] debug-file - entry : default@ProcessLibs cost memory 0.4658355712890625
+[2024-07-10T14:40:19.563] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.563] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:19.563] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:40:19.564] [DEBUG] debug-file - restool module names: entry; moduleName=entry, taskName=default@CompileResource
+[2024-07-10T14:40:19.566] [DEBUG] debug-file - Executing task :entry:default@CompileResource
+[2024-07-10T14:40:19.593] [DEBUG] debug-file - entry:default@CompileResource is not up-to-date, since the input file 'C:\Users\Lenovo\Desktop\OHOS-Top3\AppScope\resources' has been changed.
+[2024-07-10T14:40:19.594] [DEBUG] debug-file - Incremental task entry:default@CompileResource pre-execution cost: 26 ms .
+[2024-07-10T14:40:19.739] [DEBUG] debug-file - Use tool [D:\Dev_eco_studio\DevEco Studio\sdk\HarmonyOS-NEXT-DB1\openharmony\toolchains\restool.exe]
+ [
+  'D:\\Dev_eco_studio\\DevEco Studio\\sdk\\HarmonyOS-NEXT-DB1\\openharmony\\toolchains\\restool.exe',
+  '-l',
+  'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\build\\default\\intermediates\\res\\default\\resConfig.json'
+]
+[2024-07-10T14:40:19.742] [DEBUG] debug-file - current process  memoryUsage: {
+  rss: 689094656,
+  heapTotal: 112836608,
+  heapUsed: 90243136,
+  external: 1450349,
+  arrayBuffers: 51860
+} os memoryUsage :14.265533447265625
+[2024-07-10T14:40:20.231] [DEBUG] debug-file - Info: restool resources compile success.
+
+[2024-07-10T14:40:20.240] [DEBUG] debug-file - entry : default@CompileResource cost memory -6.151771545410156
+[2024-07-10T14:40:20.240] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 404 ms 
+[2024-07-10T14:40:20.241] [INFO] debug-file - Finished :entry:default@CompileResource... after 674 ms 
+[2024-07-10T14:40:20.244] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:20.244] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:20.244] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:40:20.248] [DEBUG] debug-file - Executing task :entry:default@CompileArkTS
+[2024-07-10T14:40:20.258] [DEBUG] debug-file - entry:default@CompileArkTS is not up-to-date, since the input file 'C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\loader\default' has been changed.
+[2024-07-10T14:40:20.258] [DEBUG] debug-file - Incremental task entry:default@CompileArkTS pre-execution cost: 6 ms .
+[2024-07-10T14:40:20.289] [DEBUG] debug-file - build config:
+[2024-07-10T14:40:20.289] [DEBUG] debug-file - {
+  moduleType: 'entry',
+  perf: 0,
+  targetName: '.default',
+  packageManagerType: 'ohpm',
+  localPropertiesPath: 'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\local.properties',
+  isPreview: false,
+  isOhosTest: false,
+  buildMode: 'Debug',
+  watchMode: 'false',
+  aceProfilePath: 'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\build\\default\\intermediates\\res\\default\\resources\\base\\profile',
+  etsLoaderPath: 'D:\\Dev_eco_studio\\DevEco Studio\\sdk\\HarmonyOS-NEXT-DB1\\openharmony\\ets\\build-tools\\ets-loader',
+  modulePath: 'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry',
+  testFrameworkPar: {
+    testMode: undefined,
+    coveragePathFilter: undefined,
+    coverageMode: undefined
+  },
+  needCoverageInsert: false,
+  debugLine: false,
+  projectTopDir: 'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3',
+  compileSdkVersion: 12,
+  compatibleSdkVersion: 12,
+  bundleName: 'com.example.healthy_life',
+  etsLoaderVersion: '5.0.0.25',
+  etsLoaderReleaseType: 'Beta1',
+  aotCompileMode: 'type',
+  apPath: 'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\modules.ap',
+  entryModuleName: 'entry',
+  entryModuleVersion: '1.0.0',
+  entryPackageName: 'entry',
+  allModuleNameHash: 'de534faf19365de4dd410ec3e7b1ccaf',
+  externalApiPaths: [
+    'D:\\Dev_eco_studio\\DevEco Studio\\sdk\\HarmonyOS-NEXT-DB1\\hms\\ets'
+  ],
+  compilerTypes: undefined,
+  isCrossplatform: false,
+  hvigorPluginFile: undefined,
+  buildGeneratedProfilePath: 'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\build\\default\\generated\\profile\\default',
+  bundleType: 'app',
+  arkTSVersion: undefined,
+  apiVersion: 12,
+  needCompleteSourcesMap: false,
+  isFaMode: false,
+  strictMode: undefined,
+  buildDir: 'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\build',
+  deviceTypes: [ 'phone' ],
+  moduleDependencies: { dependency: {} },
+  projectDependencies: { dependency: {} },
+  useNormalizedOHMUrl: false,
+  pkgContextInfo: undefined,
+  ohPackagePathMap: {},
+  dependencyAliasMap: {},
+  permission: { requestPermissions: [ [Object] ], definePermissions: undefined },
+  integratedHsp: false,
+  projectArkOption: undefined,
+  sourceMapDir: undefined,
+  branchElimination: false,
+  transformLib: undefined,
+  caseSensitiveCheck: false,
+  tsImportSendable: false,
+  resolveConflictMode: true,
+  depName2RootPath: {},
+  aceModuleJsonPath: 'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\build\\default\\intermediates\\res\\default\\module.json',
+  appResource: 'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\build\\default\\intermediates\\res\\default\\ResourceTable.txt',
+  rawFileResource: 'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\build\\default\\intermediates\\res\\default\\resources\\rawfile',
+  resourceTableHash: 'f68aff736333edfe6eddf0708a7e4f06',
+  runtimeOS: 'HarmonyOS',
+  sdkInfo: 'false:12:5.0.0.25:Beta1',
+  aceModuleRoot: 'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\src\\main\\ets',
+  compileMode: 'esmodule',
+  aceSuperVisualPath: 'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\src\\main\\supervisual',
+  aceBuildJson: 'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\build\\default\\intermediates\\loader\\default\\loader.json',
+  cachePath: 'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\build\\default\\cache\\default\\default@CompileArkTS\\esmodule\\debug',
+  aceModuleBuild: 'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\build\\default\\intermediates\\loader_out\\default\\ets',
+  supportChunks: true,
+  pkgNameToPkgBriefInfo: {
+    entry: {
+      pkgRoot: 'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry',
+      originalSourceRoots: undefined,
+      sourceRoots: [Array],
+      pkgName: 'entry'
+    }
+  },
+  projectModel: {
+    'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\src\\main': {
+      moduleName: 'entry',
+      modulePkgPath: 'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry'
+    },
+    'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry': {
+      moduleName: 'entry',
+      modulePkgPath: 'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry'
+    },
+    'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3': {
+      moduleName: 'OHOS-Top3',
+      modulePkgPath: 'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3'
+    }
+  },
+  pkgJsonFileHash: '52c5f33230ea56a2aeae467df5dcdd03',
+  allModulePaths: [ 'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry' ],
+  routerMap: {},
+  obfuscationOptions: undefined,
+  mockParams: {
+    decorator: '@MockSetup',
+    packageName: '@ohos/hamock',
+    etsSourceRootPath: 'src/main/ets',
+    mockConfigPath: undefined,
+    mockConfigKey2ModuleInfo: {}
+  },
+  otherPaths: {
+    'entry/*': [
+      '..\\*',
+      '..\\..\\..\\build\\default\\generated\\profile\\default\\*'
+    ]
+  },
+  collectImportersConfig: undefined
+}
+[2024-07-10T14:40:20.290] [DEBUG] debug-file - Compile arkts with external api path: D:\Dev_eco_studio\DevEco Studio\sdk\HarmonyOS-NEXT-DB1\hms\ets
+[2024-07-10T14:40:20.291] [DEBUG] debug-file - default@CompileArkTS work[1] is submitted.
+[2024-07-10T14:40:20.292] [DEBUG] debug-file - default@CompileArkTS work[1] is pushed to ready queue.
+[2024-07-10T14:40:20.293] [DEBUG] debug-file - A work dispatched to worker[19] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.293] [DEBUG] debug-file - A work dispatched to worker[18] failed because of worker busy.
+[2024-07-10T14:40:20.293] [DEBUG] debug-file - A work dispatched to worker[17] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.293] [DEBUG] debug-file - A work dispatched to worker[16] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.293] [DEBUG] debug-file - A work dispatched to worker[15] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.293] [DEBUG] debug-file - A work dispatched to worker[14] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.293] [DEBUG] debug-file - A work dispatched to worker[13] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.293] [DEBUG] debug-file - A work dispatched to worker[12] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.293] [DEBUG] debug-file - A work dispatched to worker[11] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.293] [DEBUG] debug-file - A work dispatched to worker[10] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.294] [DEBUG] debug-file - A work dispatched to worker[9] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.294] [DEBUG] debug-file - A work dispatched to worker[8] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.294] [DEBUG] debug-file - A work dispatched to worker[7] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.294] [DEBUG] debug-file - A work dispatched to worker[6] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.294] [DEBUG] debug-file - A work dispatched to worker[5] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.294] [DEBUG] debug-file - A work dispatched to worker[4] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.294] [DEBUG] debug-file - A work dispatched to worker[3] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.294] [DEBUG] debug-file - A work dispatched to worker[2] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.294] [DEBUG] debug-file - A work dispatched to worker[1] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.295] [DEBUG] debug-file - default@CompileArkTS work[1] has been dispatched to worker[0].
+[2024-07-10T14:40:20.295] [DEBUG] debug-file - default@CompileArkTS work[1] is dispatched.
+[2024-07-10T14:40:20.296] [DEBUG] debug-file - CopyResources startTime: 14523025704000
+[2024-07-10T14:40:20.296] [DEBUG] debug-file - default@CompileArkTS work[2] is submitted.
+[2024-07-10T14:40:20.297] [DEBUG] debug-file - default@CompileArkTS work[2] is pushed to ready queue.
+[2024-07-10T14:40:20.297] [DEBUG] debug-file - A work dispatched to worker[19] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.297] [DEBUG] debug-file - A work dispatched to worker[18] failed because of worker busy.
+[2024-07-10T14:40:20.298] [DEBUG] debug-file - default@CompileArkTS work[2] has been dispatched to worker[17].
+[2024-07-10T14:40:20.298] [DEBUG] debug-file - default@CompileArkTS work[2] is dispatched.
+[2024-07-10T14:40:20.307] [DEBUG] debug-file - default@CompileArkTS work[3] is submitted.
+[2024-07-10T14:40:20.308] [DEBUG] debug-file - default@CompileArkTS work[3] is pushed to ready queue.
+[2024-07-10T14:40:20.308] [DEBUG] debug-file - A work dispatched to worker[19] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.308] [DEBUG] debug-file - A work dispatched to worker[18] failed because of worker busy.
+[2024-07-10T14:40:20.308] [DEBUG] debug-file - A work dispatched to worker[17] failed because of worker busy.
+[2024-07-10T14:40:20.308] [DEBUG] debug-file - A work dispatched to worker[16] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.308] [DEBUG] debug-file - A work dispatched to worker[15] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.308] [DEBUG] debug-file - A work dispatched to worker[14] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.308] [DEBUG] debug-file - A work dispatched to worker[13] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.308] [DEBUG] debug-file - A work dispatched to worker[12] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.308] [DEBUG] debug-file - A work dispatched to worker[11] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.308] [DEBUG] debug-file - A work dispatched to worker[10] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.308] [DEBUG] debug-file - A work dispatched to worker[9] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.308] [DEBUG] debug-file - A work dispatched to worker[8] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.308] [DEBUG] debug-file - A work dispatched to worker[7] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.308] [DEBUG] debug-file - A work dispatched to worker[6] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.308] [DEBUG] debug-file - A work dispatched to worker[5] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.308] [DEBUG] debug-file - A work dispatched to worker[4] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.308] [DEBUG] debug-file - A work dispatched to worker[3] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.308] [DEBUG] debug-file - A work dispatched to worker[2] failed because unable to get work from ready queue.
+[2024-07-10T14:40:20.310] [DEBUG] debug-file - default@CompileArkTS work[3] has been dispatched to worker[1].
+[2024-07-10T14:40:20.310] [DEBUG] debug-file - default@CompileArkTS work[3] is dispatched.
+[2024-07-10T14:40:20.310] [DEBUG] debug-file - entry : default@CompileArkTS cost memory 2.252716064453125
+[2024-07-10T14:40:20.313] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:20.313] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:20.313] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:40:20.318] [DEBUG] debug-file - Executing task :entry:default@BuildJS
+[2024-07-10T14:40:20.323] [DEBUG] debug-file - entry : default@BuildJS cost memory 0.13581085205078125
+[2024-07-10T14:40:20.323] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 487 ms 
+[2024-07-10T14:40:20.323] [INFO] debug-file - Finished :entry:default@BuildJS... after 6 ms 
+[2024-07-10T14:40:21.174] [DEBUG] debug-file - default@ProcessLibs work[0] done.
+[2024-07-10T14:40:21.175] [DEBUG] debug-file - A work dispatched to worker[18] failed because unable to get work from ready queue.
+[2024-07-10T14:40:21.177] [INFO] debug-file - Finished :entry:default@ProcessLibs... after 1 s 625 ms 
+[2024-07-10T14:40:21.182] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:21.182] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:21.182] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:40:21.188] [DEBUG] debug-file - Executing task :entry:default@DoNativeStrip
+[2024-07-10T14:40:21.190] [DEBUG] debug-file - entry:default@DoNativeStrip is not up-to-date, since the input file 'C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\libs\default' has been changed.
+[2024-07-10T14:40:21.190] [DEBUG] debug-file - Incremental task entry:default@DoNativeStrip pre-execution cost: 2 ms .
+[2024-07-10T14:40:21.192] [DEBUG] debug-file - default@DoNativeStrip work[4] is submitted.
+[2024-07-10T14:40:21.193] [DEBUG] debug-file - default@DoNativeStrip work[4] is pushed to ready queue.
+[2024-07-10T14:40:21.194] [DEBUG] debug-file - A work dispatched to worker[19] failed because unable to get work from ready queue.
+[2024-07-10T14:40:21.194] [DEBUG] debug-file - default@DoNativeStrip work[4] has been dispatched to worker[18].
+[2024-07-10T14:40:21.194] [DEBUG] debug-file - default@DoNativeStrip work[4] is dispatched.
+[2024-07-10T14:40:21.194] [DEBUG] debug-file - entry : default@DoNativeStrip cost memory 0.19556427001953125
+[2024-07-10T14:40:21.243] [DEBUG] debug-file - Do not need strip, copying .so files to stripped_native_libs
+[2024-07-10T14:40:21.253] [DEBUG] debug-file - default@DoNativeStrip work[4] done.
+[2024-07-10T14:40:21.253] [DEBUG] debug-file - A work dispatched to worker[18] failed because unable to get work from ready queue.
+[2024-07-10T14:40:21.254] [INFO] debug-file - Finished :entry:default@DoNativeStrip... after 66 ms 
+[2024-07-10T14:40:21.258] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:21.258] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:21.258] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:40:21.261] [DEBUG] debug-file - Executing task :entry:default@CacheNativeLibs
+[2024-07-10T14:40:21.265] [DEBUG] debug-file - entry:default@CacheNativeLibs is not up-to-date, since the input file 'C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\libs\default' has been changed.
+[2024-07-10T14:40:21.265] [DEBUG] debug-file - Incremental task entry:default@CacheNativeLibs pre-execution cost: 3 ms .
+[2024-07-10T14:40:21.265] [DEBUG] debug-file - default@CacheNativeLibs work[5] is submitted.
+[2024-07-10T14:40:21.266] [DEBUG] debug-file - default@CacheNativeLibs work[5] is pushed to ready queue.
+[2024-07-10T14:40:21.266] [DEBUG] debug-file - A work dispatched to worker[19] failed because unable to get work from ready queue.
+[2024-07-10T14:40:21.266] [DEBUG] debug-file - default@CacheNativeLibs work[5] has been dispatched to worker[18].
+[2024-07-10T14:40:21.266] [DEBUG] debug-file - default@CacheNativeLibs work[5] is dispatched.
+[2024-07-10T14:40:21.266] [DEBUG] debug-file - entry : default@CacheNativeLibs cost memory 0.1992950439453125
+[2024-07-10T14:40:21.776] [DEBUG] debug-file - CopyResources is end, endTime: 14524505727300
+[2024-07-10T14:40:21.776] [DEBUG] debug-file - default@CompileArkTS work[2] done.
+[2024-07-10T14:40:21.776] [DEBUG] debug-file - A work dispatched to worker[17] failed because unable to get work from ready queue.
+[2024-07-10T14:40:22.095] [DEBUG] debug-file - default@CacheNativeLibs work[5] done.
+[2024-07-10T14:40:22.095] [DEBUG] debug-file - A work dispatched to worker[18] failed because unable to get work from ready queue.
+[2024-07-10T14:40:22.096] [INFO] debug-file - Finished :entry:default@CacheNativeLibs... after 834 ms 
+[2024-07-10T14:40:28.429] [DEBUG] debug-file - Ark compile task finished.finished time is 14531158164200
+[2024-07-10T14:40:28.435] [DEBUG] debug-file - default@CompileArkTS work[3] done.
+[2024-07-10T14:40:28.435] [DEBUG] debug-file - A work dispatched to worker[1] failed because unable to get work from ready queue.
+[2024-07-10T14:40:33.390] [INFO] debug-file - [33mWARN: [33mArkTS:WARN File: C:/Users/Lenovo/Desktop/OHOS-Top3/entry/src/main/ets/view/HomeComponent.ets:162:8
+ 'onScroll' has been deprecated.
+[39m
+
+[2024-07-10T14:40:33.391] [DEBUG] debug-file - Ark compile task finished.finished time is 14536120410100
+[2024-07-10T14:40:33.397] [DEBUG] debug-file - default@CompileArkTS work[1] done.
+[2024-07-10T14:40:33.397] [DEBUG] debug-file - A work dispatched to worker[0] failed because unable to get work from ready queue.
+[2024-07-10T14:40:33.401] [INFO] debug-file - Finished :entry:default@CompileArkTS... after 13 s 150 ms 
+[2024-07-10T14:40:33.403] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:33.403] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:33.403] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:40:33.404] [DEBUG] debug-file - Executing task :entry:default@GeneratePkgModuleJson
+[2024-07-10T14:40:33.407] [DEBUG] debug-file - entry:default@GeneratePkgModuleJson is not up-to-date, since the input file 'C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\res\default\module.json' has been changed.
+[2024-07-10T14:40:33.407] [DEBUG] debug-file - Incremental task entry:default@GeneratePkgModuleJson pre-execution cost: 2 ms .
+[2024-07-10T14:40:33.408] [DEBUG] debug-file - entry : default@GeneratePkgModuleJson cost memory 0.1003570556640625
+[2024-07-10T14:40:33.408] [DEBUG] debug-file - runTaskFromQueue task cost before running: 14 s 572 ms 
+[2024-07-10T14:40:33.409] [INFO] debug-file - Finished :entry:default@GeneratePkgModuleJson... after 5 ms 
+[2024-07-10T14:40:33.412] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:33.412] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:33.412] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:40:33.417] [DEBUG] debug-file - Executing task :entry:default@PackageHap
+[2024-07-10T14:40:33.423] [DEBUG] debug-file - entry:default@PackageHap is not up-to-date, since the input file 'C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\stripped_native_libs\default' has been changed.
+[2024-07-10T14:40:33.423] [DEBUG] debug-file - Incremental task entry:default@PackageHap pre-execution cost: 4 ms .
+[2024-07-10T14:40:33.426] [DEBUG] debug-file - Use tool [D:\Dev_eco_studio\DevEco Studio\sdk\HarmonyOS-NEXT-DB1\openharmony\toolchains\lib\app_packing_tool.jar]
+ [
+  'java',
+  '-Dfile.encoding=GBK',
+  '-jar',
+  'D:\\Dev_eco_studio\\DevEco Studio\\sdk\\HarmonyOS-NEXT-DB1\\openharmony\\toolchains\\lib\\app_packing_tool.jar',
+  '--mode',
+  'hap',
+  '--force',
+  'true',
+  '--lib-path',
+  'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\build\\default\\intermediates\\stripped_native_libs\\default',
+  '--json-path',
+  'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\build\\default\\intermediates\\package\\default\\module.json',
+  '--resources-path',
+  'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\build\\default\\intermediates\\res\\default\\resources',
+  '--index-path',
+  'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\build\\default\\intermediates\\res\\default\\resources.index',
+  '--pack-info-path',
+  'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\build\\default\\outputs\\default\\pack.info',
+  '--out-path',
+  'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\build\\default\\outputs\\default\\entry-default-unsigned.hap',
+  '--ets-path',
+  'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\build\\default\\intermediates\\loader_out\\default\\ets'
+]
+[2024-07-10T14:40:33.427] [DEBUG] debug-file - default@PackageHap work[6] is submitted.
+[2024-07-10T14:40:33.428] [DEBUG] debug-file - default@PackageHap work[6] is pushed to ready queue.
+[2024-07-10T14:40:33.428] [DEBUG] debug-file - A work dispatched to worker[19] failed because unable to get work from ready queue.
+[2024-07-10T14:40:33.428] [DEBUG] debug-file - default@PackageHap work[6] has been dispatched to worker[18].
+[2024-07-10T14:40:33.428] [DEBUG] debug-file - default@PackageHap work[6] is dispatched.
+[2024-07-10T14:40:33.430] [DEBUG] debug-file - entry : default@PackageHap cost memory -0.13976287841796875
+[2024-07-10T14:40:33.441] [DEBUG] debug-file - current process  memoryUsage: {
+  rss: 1538240512,
+  heapTotal: 56864768,
+  heapUsed: 53728488,
+  external: 2099763,
+  arrayBuffers: 25066
+} os memoryUsage :14.86007308959961
+[2024-07-10T14:40:34.068] [DEBUG] debug-file - default@PackageHap work[6] done.
+[2024-07-10T14:40:34.068] [DEBUG] debug-file - A work dispatched to worker[18] failed because unable to get work from ready queue.
+[2024-07-10T14:40:34.071] [INFO] debug-file - Finished :entry:default@PackageHap... after 651 ms 
+[2024-07-10T14:40:34.075] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:34.075] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:40:34.075] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:40:34.077] [DEBUG] debug-file - Executing task :entry:default@SignHap
+[2024-07-10T14:40:34.078] [WARN] debug-file - Will skip sign 'hos_hap'. No signingConfigs profile is configured in current project.
+             If needed, configure the signingConfigs in C:\Users\Lenovo\Desktop\OHOS-Top3\build-profile.json5.
+[2024-07-10T14:40:34.079] [DEBUG] debug-file - entry:default@SignHap is not up-to-date, since the input file 'C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\outputs\default\entry-default-unsigned.hap' has been changed.
+[2024-07-10T14:40:34.079] [DEBUG] debug-file - Incremental task entry:default@SignHap pre-execution cost: 2 ms .
+[2024-07-10T14:40:34.080] [DEBUG] debug-file - entry : default@SignHap cost memory 0.1349945068359375
+[2024-07-10T14:40:34.080] [DEBUG] debug-file - runTaskFromQueue task cost before running: 15 s 245 ms 
+[2024-07-10T14:40:34.081] [INFO] debug-file - Finished :entry:default@SignHap... after 4 ms 
+[2024-07-10T14:40:34.082] [DEBUG] debug-file - Executing task :entry:assembleHap
+[2024-07-10T14:40:34.082] [DEBUG] debug-file - entry : assembleHap cost memory 0.01142120361328125
+[2024-07-10T14:40:34.083] [DEBUG] debug-file - runTaskFromQueue task cost before running: 15 s 247 ms 
+[2024-07-10T14:40:34.083] [INFO] debug-file - Finished :entry:assembleHap... after 1 ms 
+[2024-07-10T14:40:34.095] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@PreBuild is up-to-date.
+[2024-07-10T14:40:34.095] [DEBUG] debug-file - Update task entry:default@GenerateMetadata input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\src\main\module.json5 cache by regenerate.
+[2024-07-10T14:40:34.096] [DEBUG] debug-file - Update task entry:default@GenerateMetadata output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\hap_metadata\default\output_metadata.json cache.
+[2024-07-10T14:40:34.096] [DEBUG] debug-file - Incremental task entry:default@GenerateMetadata post-execution cost:2 ms .
+[2024-07-10T14:40:34.096] [DEBUG] debug-file - Update task entry:default@MergeProfile input file:C:\Users\Lenovo\Desktop\OHOS-Top3\AppScope\app.json5 cache by regenerate.
+[2024-07-10T14:40:34.096] [DEBUG] debug-file - Update task entry:default@MergeProfile input file:C:\Users\Lenovo\Desktop\OHOS-Top3\build-profile.json5 cache by regenerate.
+[2024-07-10T14:40:34.097] [DEBUG] debug-file - Update task entry:default@MergeProfile input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\src\main\module.json5 cache by regenerate.
+[2024-07-10T14:40:34.097] [DEBUG] debug-file - Update task entry:default@MergeProfile output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\merge_profile\default\module.json cache.
+[2024-07-10T14:40:34.097] [DEBUG] debug-file - Incremental task entry:default@MergeProfile post-execution cost:2 ms .
+[2024-07-10T14:40:34.097] [DEBUG] debug-file - Update task entry:default@CreateBuildProfile input file:C:\Users\Lenovo\Desktop\OHOS-Top3\AppScope\app.json5 cache by regenerate.
+[2024-07-10T14:40:34.098] [DEBUG] debug-file - Update task entry:default@CreateBuildProfile input file:C:\Users\Lenovo\Desktop\OHOS-Top3\build-profile.json5 cache by regenerate.
+[2024-07-10T14:40:34.099] [DEBUG] debug-file - Update task entry:default@CreateBuildProfile output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\generated\profile\default\BuildProfile.ets cache.
+[2024-07-10T14:40:34.099] [DEBUG] debug-file - Incremental task entry:default@CreateBuildProfile post-execution cost:2 ms .
+[2024-07-10T14:40:34.099] [DEBUG] debug-file - Update task entry:default@GeneratePkgContextInfo output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\loader\default\pkgContextInfo.json cache.
+[2024-07-10T14:40:34.099] [DEBUG] debug-file - Incremental task entry:default@GeneratePkgContextInfo post-execution cost:1 ms .
+[2024-07-10T14:40:34.100] [DEBUG] debug-file - Update task entry:default@ProcessIntegratedHsp output file:C:\Users\Lenovo\Desktop\OHOS-Top3\build\cache\default\integrated_hsp\integratedHspCache.json cache.
+[2024-07-10T14:40:34.100] [DEBUG] debug-file - Incremental task entry:default@ProcessIntegratedHsp post-execution cost:1 ms .
+[2024-07-10T14:40:34.100] [DEBUG] debug-file - Update task entry:default@MakePackInfo input file:C:\Users\Lenovo\Desktop\OHOS-Top3\AppScope\app.json5 cache by regenerate.
+[2024-07-10T14:40:34.101] [DEBUG] debug-file - Update task entry:default@MakePackInfo input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\src\main\module.json5 cache by regenerate.
+[2024-07-10T14:40:34.101] [DEBUG] debug-file - Update task entry:default@MakePackInfo input file:C:\Users\Lenovo\Desktop\OHOS-Top3\build-profile.json5 cache by regenerate.
+[2024-07-10T14:40:34.101] [DEBUG] debug-file - Update task entry:default@MakePackInfo input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\src\main\resources\base\profile\form_config.json cache by regenerate.
+[2024-07-10T14:40:34.102] [DEBUG] debug-file - Update task entry:default@MakePackInfo output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\outputs\default\pack.info cache.
+[2024-07-10T14:40:34.102] [DEBUG] debug-file - Incremental task entry:default@MakePackInfo post-execution cost:2 ms .
+[2024-07-10T14:40:34.102] [DEBUG] debug-file - Update task entry:default@ProcessProfile input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\merge_profile\default\module.json cache from map.
+[2024-07-10T14:40:34.102] [DEBUG] debug-file - Update task entry:default@ProcessProfile output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\process_profile\default\module.json cache.
+[2024-07-10T14:40:34.103] [DEBUG] debug-file - Incremental task entry:default@ProcessProfile post-execution cost:1 ms .
+[2024-07-10T14:40:34.104] [DEBUG] debug-file - Update task entry:default@SyscapTransform input file:D:\Dev_eco_studio\DevEco Studio\sdk\HarmonyOS-NEXT-DB1\openharmony\toolchains\syscap_tool.exe cache from map.
+[2024-07-10T14:40:34.104] [DEBUG] debug-file - Update task entry:default@SyscapTransform input file:D:\Dev_eco_studio\DevEco Studio\sdk\HarmonyOS-NEXT-DB1\openharmony\ets\api\device-define cache by regenerate.
+[2024-07-10T14:40:34.105] [DEBUG] debug-file - Update task entry:default@SyscapTransform output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\syscap\default\rpcid.sc cache.
+[2024-07-10T14:40:34.105] [DEBUG] debug-file - Incremental task entry:default@SyscapTransform post-execution cost:3 ms .
+[2024-07-10T14:40:34.106] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\oh-package.json5 cache by regenerate.
+[2024-07-10T14:40:34.107] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap input file:C:\Users\Lenovo\Desktop\OHOS-Top3\oh-package.json5 cache by regenerate.
+[2024-07-10T14:40:34.107] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\src\main\module.json5 cache by regenerate.
+[2024-07-10T14:40:34.107] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\router_map\default\intermediates_temp_routerMap.json cache.
+[2024-07-10T14:40:34.108] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\router_map\default\intermediate_routerMap_for_loader.json cache.
+[2024-07-10T14:40:34.108] [DEBUG] debug-file - Incremental task entry:default@ProcessRouterMap post-execution cost:3 ms .
+[2024-07-10T14:40:34.108] [DEBUG] debug-file - Update task entry:default@ProcessResource output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\res\default\resConfig.json cache.
+[2024-07-10T14:40:34.108] [DEBUG] debug-file - Incremental task entry:default@ProcessResource post-execution cost:1 ms .
+[2024-07-10T14:40:34.110] [DEBUG] debug-file - Update task entry:default@GenerateLoaderJson input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\router_map\default\intermediates_temp_routerMap.json cache from map.
+[2024-07-10T14:40:34.110] [DEBUG] debug-file - Update task entry:default@GenerateLoaderJson output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\loader\default\loader.json cache.
+[2024-07-10T14:40:34.111] [DEBUG] debug-file - Incremental task entry:default@GenerateLoaderJson post-execution cost:3 ms .
+[2024-07-10T14:40:34.111] [DEBUG] debug-file - Update task entry:default@ProcessLibs input file:C:\Users\Lenovo\Desktop\OHOS-Top3\build-profile.json5 cache by regenerate.
+[2024-07-10T14:40:34.112] [DEBUG] debug-file - Update task entry:default@ProcessLibs input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build-profile.json5 cache by regenerate.
+[2024-07-10T14:40:34.112] [DEBUG] debug-file - Update task entry:default@ProcessLibs output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\libs\default cache.
+[2024-07-10T14:40:34.112] [DEBUG] debug-file - Incremental task entry:default@ProcessLibs post-execution cost:2 ms .
+[2024-07-10T14:40:34.113] [DEBUG] debug-file - Update task entry:default@CompileResource input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\src\main\resources cache by regenerate.
+[2024-07-10T14:40:34.127] [DEBUG] debug-file - Update task entry:default@CompileResource input file:C:\Users\Lenovo\Desktop\OHOS-Top3\AppScope\resources cache from map.
+[2024-07-10T14:40:34.127] [DEBUG] debug-file - Update task entry:default@CompileResource input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\process_profile\default\module.json cache by regenerate.
+[2024-07-10T14:40:34.128] [DEBUG] debug-file - Update task entry:default@CompileResource input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\res\default\resConfig.json cache by regenerate.
+[2024-07-10T14:40:34.128] [DEBUG] debug-file - Update task entry:default@CompileResource output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\res\default cache.
+[2024-07-10T14:40:34.140] [DEBUG] debug-file - Update task entry:default@CompileResource output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\generated\r\default\ResourceTable.h cache.
+[2024-07-10T14:40:34.141] [DEBUG] debug-file - Update task entry:default@CompileResource output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\generated\r\default cache.
+[2024-07-10T14:40:34.141] [DEBUG] debug-file - Incremental task entry:default@CompileResource post-execution cost:29 ms .
+[2024-07-10T14:40:34.143] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\loader\default cache from map.
+[2024-07-10T14:40:34.143] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\res\default\ResourceTable.txt cache by regenerate.
+[2024-07-10T14:40:34.143] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\res\default\module.json cache by regenerate.
+[2024-07-10T14:40:34.144] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\res\default\resources\base\profile cache by regenerate.
+[2024-07-10T14:40:34.144] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\src\main\ets cache by regenerate.
+[2024-07-10T14:40:34.161] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\src\main\resources\base\profile\form_config.json cache by regenerate.
+[2024-07-10T14:40:34.161] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\generated\profile\default\BuildProfile.ets cache by regenerate.
+[2024-07-10T14:40:34.161] [DEBUG] debug-file - Update task entry:default@CompileArkTS output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\loader_out\default\ets cache.
+[2024-07-10T14:40:34.163] [DEBUG] debug-file - Incremental task entry:default@CompileArkTS post-execution cost:22 ms .
+[2024-07-10T14:40:34.165] [DEBUG] debug-file - Update task entry:default@BuildJS input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\loader\default cache by regenerate.
+[2024-07-10T14:40:34.165] [DEBUG] debug-file - Update task entry:default@BuildJS input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\res\default\ResourceTable.txt cache by regenerate.
+[2024-07-10T14:40:34.165] [DEBUG] debug-file - Update task entry:default@BuildJS input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\res\default\module.json cache by regenerate.
+[2024-07-10T14:40:34.166] [DEBUG] debug-file - Update task entry:default@BuildJS input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\res\default\resources\base\profile cache by regenerate.
+[2024-07-10T14:40:34.167] [DEBUG] debug-file - Update task entry:default@BuildJS output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\loader_out\default\js cache.
+[2024-07-10T14:40:34.167] [DEBUG] debug-file - Incremental task entry:default@BuildJS post-execution cost:5 ms .
+[2024-07-10T14:40:34.167] [DEBUG] debug-file - Update task entry:default@DoNativeStrip input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\libs\default cache from map.
+[2024-07-10T14:40:34.167] [DEBUG] debug-file - Update task entry:default@DoNativeStrip output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\stripped_native_libs\default cache.
+[2024-07-10T14:40:34.168] [DEBUG] debug-file - Incremental task entry:default@DoNativeStrip post-execution cost:1 ms .
+[2024-07-10T14:40:34.168] [DEBUG] debug-file - Update task entry:default@CacheNativeLibs input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\libs\default cache from map.
+[2024-07-10T14:40:34.168] [DEBUG] debug-file - Update task entry:default@CacheNativeLibs input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\stripped_native_libs\default cache by regenerate.
+[2024-07-10T14:40:34.169] [DEBUG] debug-file - Update task entry:default@CacheNativeLibs output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\patch\default\base_native_libs.json cache.
+[2024-07-10T14:40:34.169] [DEBUG] debug-file - Incremental task entry:default@CacheNativeLibs post-execution cost:2 ms .
+[2024-07-10T14:40:34.170] [DEBUG] debug-file - Update task entry:default@GeneratePkgModuleJson input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\res\default\module.json cache from map.
+[2024-07-10T14:40:34.170] [DEBUG] debug-file - Update task entry:default@GeneratePkgModuleJson output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\package\default\module.json cache.
+[2024-07-10T14:40:34.171] [DEBUG] debug-file - Incremental task entry:default@GeneratePkgModuleJson post-execution cost:1 ms .
+[2024-07-10T14:40:34.172] [DEBUG] debug-file - Update task entry:default@PackageHap input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\stripped_native_libs\default cache from map.
+[2024-07-10T14:40:34.172] [DEBUG] debug-file - Update task entry:default@PackageHap input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\res\default\module.json cache by regenerate.
+[2024-07-10T14:40:34.172] [DEBUG] debug-file - Update task entry:default@PackageHap input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\res\default\resources cache by regenerate.
+[2024-07-10T14:40:34.184] [DEBUG] debug-file - Update task entry:default@PackageHap input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\res\default\resources.index cache by regenerate.
+[2024-07-10T14:40:34.185] [DEBUG] debug-file - Update task entry:default@PackageHap input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\outputs\default\pack.info cache by regenerate.
+[2024-07-10T14:40:34.185] [DEBUG] debug-file - Update task entry:default@PackageHap input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\intermediates\loader_out\default\ets cache by regenerate.
+[2024-07-10T14:40:34.186] [DEBUG] debug-file - Update task entry:default@PackageHap input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\generated\profile\default\BuildProfile.ets cache by regenerate.
+[2024-07-10T14:40:34.186] [DEBUG] debug-file - Update task entry:default@PackageHap output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\outputs\default\entry-default-unsigned.hap cache.
+[2024-07-10T14:40:34.187] [DEBUG] debug-file - Update task entry:default@PackageHap output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\outputs\default\mapping\sourceMaps.map cache.
+[2024-07-10T14:40:34.187] [DEBUG] debug-file - Incremental task entry:default@PackageHap post-execution cost:17 ms .
+[2024-07-10T14:40:34.188] [DEBUG] debug-file - Update task entry:default@SignHap input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\outputs\default\entry-default-unsigned.hap cache from map.
+[2024-07-10T14:40:34.188] [DEBUG] debug-file - Update task entry:default@SignHap output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\build\default\outputs\default\entry-default-signed.hap cache.
+[2024-07-10T14:40:34.188] [DEBUG] debug-file - Incremental task entry:default@SignHap post-execution cost:1 ms .
+[2024-07-10T14:41:27.863] [DEBUG] debug-file - Hvigor init with startParameters:{
+  hvigorfileTypeCheck: false,
+  parallelExecution: true,
+  incrementalExecution: true,
+  printStackTrace: false,
+  daemon: true,
+  analyze: 0,
+  logLevel: Level { level: 20000, levelStr: 'INFO', colour: 'green' }
+}
+[2024-07-10T14:41:27.870] [DEBUG] debug-file - Cache service initialization finished in 7 ms 
+[2024-07-10T14:41:27.882] [DEBUG] debug-file - hvigorfile, resolving C:\Users\Lenovo\Desktop\OHOS-Top3\hvigorfile.ts
+[2024-07-10T14:41:27.888] [DEBUG] debug-file - hvigorfile, require result:  {}
+[2024-07-10T14:41:27.889] [DEBUG] debug-file - hvigorfile, binding system plugins {}
+[2024-07-10T14:41:27.897] [DEBUG] debug-file - Start initialize project's product build option map with build mode debug.
+[2024-07-10T14:41:27.897] [DEBUG] debug-file - Picking option from product 'default' with build mode 'debug'.
+[2024-07-10T14:41:27.897] [DEBUG] debug-file - Product 'default' build option: {}
+[2024-07-10T14:41:27.897] [DEBUG] debug-file - End initialize project's product build option map with build mode 'debug'.
+[2024-07-10T14:41:27.899] [DEBUG] debug-file - Product 'default' using build option: {
+  "debuggable": true
+} in this build.
+[2024-07-10T14:41:27.899] [DEBUG] debug-file - No signingConfig found, initRemoteHspCache failed.
+[2024-07-10T14:41:27.909] [DEBUG] debug-file - Sdk init in 9 ms 
+[2024-07-10T14:41:27.931] [DEBUG] debug-file - Project task initialization takes 21 ms 
+[2024-07-10T14:41:27.931] [DEBUG] debug-file - hvigorfile, resolve finished C:\Users\Lenovo\Desktop\OHOS-Top3\hvigorfile.ts
+[2024-07-10T14:41:27.938] [DEBUG] debug-file - hvigorfile, resolving C:\Users\Lenovo\Desktop\OHOS-Top3\entry\hvigorfile.ts
+[2024-07-10T14:41:27.941] [DEBUG] debug-file - hvigorfile, require result:  {}
+[2024-07-10T14:41:27.941] [DEBUG] debug-file - hvigorfile, binding system plugins {}
+[2024-07-10T14:41:27.946] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2024-07-10T14:41:27.946] [DEBUG] debug-file - Target 'default' config: {}
+[2024-07-10T14:41:27.946] [DEBUG] debug-file - Module 'entry' target 'default' build option: {
+  "debuggable": true,
+  "copyFrom": "default"
+}
+[2024-07-10T14:41:27.946] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2024-07-10T14:41:27.946] [DEBUG] debug-file - Module 'entry' target 'default' using build option: {
+  "debuggable": true,
+  "copyFrom": "default"
+} in this build.
+[2024-07-10T14:41:27.949] [DEBUG] debug-file - Module entry task initialization takes 1 ms 
+[2024-07-10T14:41:27.949] [DEBUG] debug-file - hvigorfile, resolve finished C:\Users\Lenovo\Desktop\OHOS-Top3\entry\hvigorfile.ts
+[2024-07-10T14:41:27.989] [DEBUG] debug-file - hvigorfile, resolve hvigorfile dependencies in 39 ms 
+[2024-07-10T14:41:27.989] [DEBUG] debug-file - project has submodules:entry
+[2024-07-10T14:41:27.989] [DEBUG] debug-file - start to load updatedOhPackageInfo to the disk
+[2024-07-10T14:41:28.813] [DEBUG] debug-file - load to the disk finished
+[2024-07-10T14:41:28.814] [DEBUG] debug-file - Module OHOS-Top3 Collected Dependency: 
+[2024-07-10T14:41:28.814] [DEBUG] debug-file - Module OHOS-Top3's total dependency: 0
+[2024-07-10T14:41:28.816] [DEBUG] debug-file - Module entry Collected Dependency: 
+[2024-07-10T14:41:28.816] [DEBUG] debug-file - Module entry's total dependency: 0
+[2024-07-10T14:41:28.819] [DEBUG] debug-file - Configuration phase cost:943 ms 
+[2024-07-10T14:41:28.821] [DEBUG] debug-file - Configuration task cost before running: 970 ms 
+[2024-07-10T14:41:28.823] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:28.823] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:28.824] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:41:28.830] [DEBUG] debug-file - Executing task :entry:default@PreBuild
+[2024-07-10T14:41:28.845] [DEBUG] debug-file - Incremental task entry:default@PreBuild pre-execution cost: 11 ms .
+[2024-07-10T14:41:28.845] [DEBUG] debug-file - entry : default@PreBuild cost memory 0.34548187255859375
+[2024-07-10T14:41:28.850] [INFO] debug-file - UP-TO-DATE :entry:default@PreBuild...  
+[2024-07-10T14:41:28.852] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:28.852] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:28.852] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:41:28.854] [DEBUG] debug-file - Executing task :entry:default@MergeProfile
+[2024-07-10T14:41:28.858] [DEBUG] debug-file - entry:default@MergeProfile is not up-to-date, since the task snapshots are different.
+[2024-07-10T14:41:28.859] [DEBUG] debug-file - Incremental task entry:default@MergeProfile pre-execution cost: 5 ms .
+[2024-07-10T14:41:28.859] [DEBUG] debug-file - Change app api release type with 'Beta1'
+[2024-07-10T14:41:28.859] [DEBUG] debug-file - Change app compile API version with '5.0.0.25'
+[2024-07-10T14:41:28.859] [DEBUG] debug-file - Change app target API version with '50000012'
+[2024-07-10T14:41:28.859] [DEBUG] debug-file - Change app minimum API version with '50000012'
+[2024-07-10T14:41:28.860] [DEBUG] debug-file - Use cli appEnvironment
+[2024-07-10T14:41:28.862] [DEBUG] debug-file - entry : default@MergeProfile cost memory 0.26056671142578125
+[2024-07-10T14:41:28.862] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 12 ms 
+[2024-07-10T14:41:28.863] [INFO] debug-file - Finished :entry:default@MergeProfile... after 9 ms 
+[2024-07-10T14:41:28.865] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:28.865] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:28.866] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:41:28.867] [DEBUG] debug-file - Executing task :entry:default@CreateBuildProfile
+[2024-07-10T14:41:28.870] [DEBUG] debug-file - entry:default@CreateBuildProfile is not up-to-date, since the task snapshots are different.
+[2024-07-10T14:41:28.870] [DEBUG] debug-file - Incremental task entry:default@CreateBuildProfile pre-execution cost: 4 ms .
+[2024-07-10T14:41:28.872] [DEBUG] debug-file - entry : default@CreateBuildProfile cost memory 0.13797760009765625
+[2024-07-10T14:41:28.872] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 22 ms 
+[2024-07-10T14:41:28.873] [INFO] debug-file - Finished :entry:default@CreateBuildProfile... after 6 ms 
+[2024-07-10T14:41:28.876] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:28.876] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:28.876] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:41:28.877] [DEBUG] debug-file - Executing task :entry:default@PreCheckSyscap
+[2024-07-10T14:41:28.877] [DEBUG] debug-file - entry : default@PreCheckSyscap cost memory 0.01309967041015625
+[2024-07-10T14:41:28.877] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 26 ms 
+[2024-07-10T14:41:28.877] [INFO] debug-file - Finished :entry:default@PreCheckSyscap... after 1 ms 
+[2024-07-10T14:41:28.880] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:28.880] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:28.880] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:41:28.884] [DEBUG] debug-file - Executing task :entry:default@GeneratePkgContextInfo
+[2024-07-10T14:41:28.884] [DEBUG] debug-file - entry : default@GeneratePkgContextInfo cost memory 0.01923370361328125
+[2024-07-10T14:41:28.885] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 34 ms 
+[2024-07-10T14:41:28.885] [INFO] debug-file - Finished :entry:default@GeneratePkgContextInfo... after 1 ms 
+[2024-07-10T14:41:28.888] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:28.888] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:28.888] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:41:28.889] [DEBUG] debug-file - Executing task :entry:default@ProcessProfile
+[2024-07-10T14:41:28.889] [DEBUG] debug-file - entry:default@ProcessProfile is not up-to-date, since the input file 'C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\merge_profile\default\module.json' has been changed.
+[2024-07-10T14:41:28.889] [DEBUG] debug-file - Incremental task entry:default@ProcessProfile pre-execution cost: 1 ms .
+[2024-07-10T14:41:28.891] [DEBUG] debug-file - [
+  'D:\\Dev_eco_studio\\DevEco Studio\\tools\\node\\node.exe',
+  'D:\\Dev_eco_studio\\DevEco Studio\\sdk\\HarmonyOS-NEXT-DB1\\openharmony\\ets\\build-tools\\ets-loader\\bin\\ark\\ts2abc.js',
+  '--target-api-version',
+  '12'
+]
+[2024-07-10T14:41:29.194] [DEBUG] debug-file - 12.0.2.0
+[2024-07-10T14:41:29.195] [DEBUG] debug-file - entry : default@ProcessProfile cost memory 0.26558685302734375
+[2024-07-10T14:41:29.195] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 345 ms 
+[2024-07-10T14:41:29.196] [INFO] debug-file - Finished :entry:default@ProcessProfile... after 307 ms 
+[2024-07-10T14:41:29.198] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:29.198] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:29.198] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:41:29.200] [DEBUG] debug-file - Executing task :entry:default@ProcessRouterMap
+[2024-07-10T14:41:29.206] [DEBUG] debug-file - entry:default@ProcessRouterMap is not up-to-date, since the task snapshots are different.
+[2024-07-10T14:41:29.206] [DEBUG] debug-file - Incremental task entry:default@ProcessRouterMap pre-execution cost: 5 ms .
+[2024-07-10T14:41:29.207] [DEBUG] debug-file - entry : default@ProcessRouterMap cost memory 0.30870819091796875
+[2024-07-10T14:41:29.207] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 357 ms 
+[2024-07-10T14:41:29.209] [INFO] debug-file - Finished :entry:default@ProcessRouterMap... after 8 ms 
+[2024-07-10T14:41:29.211] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:29.211] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:29.211] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:41:29.212] [DEBUG] debug-file - restool module names: entry; moduleName=entry, taskName=default@PreviewProcessResource
+[2024-07-10T14:41:29.215] [DEBUG] debug-file - Executing task :entry:default@PreviewProcessResource
+[2024-07-10T14:41:29.215] [DEBUG] debug-file - entry : default@PreviewProcessResource cost memory 0.05155181884765625
+[2024-07-10T14:41:29.216] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 366 ms 
+[2024-07-10T14:41:29.218] [INFO] debug-file - Finished :entry:default@PreviewProcessResource... after 2 ms 
+[2024-07-10T14:41:29.220] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:29.220] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:29.220] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:41:29.222] [DEBUG] debug-file - Executing task :entry:default@GenerateLoaderJson
+[2024-07-10T14:41:29.234] [DEBUG] debug-file - entry:default@GenerateLoaderJson is not up-to-date, since the input file 'C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\router_map\default\intermediates_temp_routerMap.json' has been changed.
+[2024-07-10T14:41:29.234] [DEBUG] debug-file - Incremental task entry:default@GenerateLoaderJson pre-execution cost: 7 ms .
+[2024-07-10T14:41:29.239] [DEBUG] debug-file - entry : default@GenerateLoaderJson cost memory 0.5827713012695312
+[2024-07-10T14:41:29.240] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 389 ms 
+[2024-07-10T14:41:29.244] [INFO] debug-file - Finished :entry:default@GenerateLoaderJson... after 18 ms 
+[2024-07-10T14:41:29.246] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:29.246] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:29.246] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:41:29.247] [DEBUG] debug-file - restool module names: entry; moduleName=entry, taskName=default@PreviewCompileResource
+[2024-07-10T14:41:29.248] [DEBUG] debug-file - Executing task :entry:default@PreviewCompileResource
+[2024-07-10T14:41:29.263] [DEBUG] debug-file - entry:default@PreviewCompileResource is not up-to-date, since the input file 'C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\merge_profile\default\module.json' has been changed.
+[2024-07-10T14:41:29.264] [DEBUG] debug-file - Incremental task entry:default@PreviewCompileResource pre-execution cost: 15 ms .
+[2024-07-10T14:41:29.607] [DEBUG] debug-file - Use tool [D:\Dev_eco_studio\DevEco Studio\sdk\HarmonyOS-NEXT-DB1\openharmony\toolchains\restool.exe]
+ [
+  'D:\\Dev_eco_studio\\DevEco Studio\\sdk\\HarmonyOS-NEXT-DB1\\openharmony\\toolchains\\restool.exe',
+  '-x',
+  'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\AppScope\\resources',
+  '-o',
+  'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\.preview\\default\\intermediates\\res\\default\\app_compiled'
+]
+[2024-07-10T14:41:29.608] [DEBUG] debug-file - current process  memoryUsage: {
+  rss: 668274688,
+  heapTotal: 116768768,
+  heapUsed: 88287960,
+  external: 1426729,
+  arrayBuffers: 61489
+} os memoryUsage :13.498302459716797
+[2024-07-10T14:41:29.847] [DEBUG] debug-file - Info: restool resources compile success.
+
+[2024-07-10T14:41:29.851] [DEBUG] debug-file - Use tool [D:\Dev_eco_studio\DevEco Studio\sdk\HarmonyOS-NEXT-DB1\openharmony\toolchains\restool.exe]
+ [
+  'D:\\Dev_eco_studio\\DevEco Studio\\sdk\\HarmonyOS-NEXT-DB1\\openharmony\\toolchains\\restool.exe',
+  '-x',
+  'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\src\\main\\resources',
+  '-o',
+  'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\.preview\\default\\intermediates\\res\\default\\module_compiled'
+]
+[2024-07-10T14:41:29.853] [DEBUG] debug-file - current process  memoryUsage: {
+  rss: 668286976,
+  heapTotal: 116768768,
+  heapUsed: 88604136,
+  external: 1426855,
+  arrayBuffers: 61630
+} os memoryUsage :13.503929138183594
+[2024-07-10T14:41:30.083] [DEBUG] debug-file - Info: restool resources compile success.
+
+[2024-07-10T14:41:30.089] [DEBUG] debug-file - Use tool [D:\Dev_eco_studio\DevEco Studio\sdk\HarmonyOS-NEXT-DB1\openharmony\toolchains\restool.exe]
+ [
+  'D:\\Dev_eco_studio\\DevEco Studio\\sdk\\HarmonyOS-NEXT-DB1\\openharmony\\toolchains\\restool.exe',
+  '-m',
+  'entry',
+  '-f',
+  '-j',
+  'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\.preview\\default\\intermediates\\process_profile\\default\\module.json',
+  '-p',
+  'com.example.healthy_life',
+  '-r',
+  'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\.preview\\default\\generated\\r\\default\\ResourceTable.h',
+  '-z',
+  '--ids',
+  'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\.preview\\default\\intermediates\\res\\default\\ids_map',
+  '--defined-ids',
+  'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\.preview\\default\\intermediates\\res\\default\\ids_map\\id_defined.json',
+  '-i',
+  'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\.preview\\default\\intermediates\\res\\default\\app_compiled',
+  '-i',
+  'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\.preview\\default\\intermediates\\res\\default\\module_compiled',
+  '-o',
+  'C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\.preview\\default\\intermediates\\res\\default'
+]
+[2024-07-10T14:41:30.091] [DEBUG] debug-file - current process  memoryUsage: {
+  rss: 668303360,
+  heapTotal: 116768768,
+  heapUsed: 88935344,
+  external: 1426981,
+  arrayBuffers: 62689
+} os memoryUsage :13.4993896484375
+[2024-07-10T14:41:30.351] [DEBUG] debug-file - Info: restool resources compile success.
+
+[2024-07-10T14:41:30.397] [DEBUG] debug-file - entry : default@PreviewCompileResource cost memory -12.732864379882812
+[2024-07-10T14:41:30.397] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 546 ms 
+[2024-07-10T14:41:30.398] [INFO] debug-file - Finished :entry:default@PreviewCompileResource... after 1 s 149 ms 
+[2024-07-10T14:41:30.400] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:30.400] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:30.400] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:41:30.401] [DEBUG] debug-file - Executing task :entry:default@PreviewHookCompileResource
+[2024-07-10T14:41:30.401] [DEBUG] debug-file - entry : default@PreviewHookCompileResource cost memory 0.01422882080078125
+[2024-07-10T14:41:30.401] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 550 ms 
+[2024-07-10T14:41:30.401] [INFO] debug-file - Finished :entry:default@PreviewHookCompileResource... after 1 ms 
+[2024-07-10T14:41:30.403] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:30.403] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:30.403] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:41:30.404] [DEBUG] debug-file - Executing task :entry:default@CopyPreviewProfile
+[2024-07-10T14:41:30.405] [DEBUG] debug-file - entry:default@CopyPreviewProfile is not up-to-date, since the output file 'C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\res\default\resources\base\profile' does not exist.
+[2024-07-10T14:41:30.405] [DEBUG] debug-file - Incremental task entry:default@CopyPreviewProfile pre-execution cost: 2 ms .
+[2024-07-10T14:41:30.413] [DEBUG] debug-file - entry : default@CopyPreviewProfile cost memory 0.2154998779296875
+[2024-07-10T14:41:30.414] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 563 ms 
+[2024-07-10T14:41:30.414] [INFO] debug-file - Finished :entry:default@CopyPreviewProfile... after 11 ms 
+[2024-07-10T14:41:30.416] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:30.416] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:30.416] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:41:30.417] [DEBUG] debug-file - Executing task :entry:default@ReplacePreviewerPage
+[2024-07-10T14:41:30.417] [DEBUG] debug-file - entry : default@ReplacePreviewerPage cost memory 0.01412200927734375
+[2024-07-10T14:41:30.417] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 566 ms 
+[2024-07-10T14:41:30.417] [INFO] debug-file - Finished :entry:default@ReplacePreviewerPage... after 1 ms 
+[2024-07-10T14:41:30.419] [DEBUG] debug-file - Executing task :entry:buildPreviewerResource
+[2024-07-10T14:41:30.419] [DEBUG] debug-file - entry : buildPreviewerResource cost memory 0.0114898681640625
+[2024-07-10T14:41:30.419] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 568 ms 
+[2024-07-10T14:41:30.419] [INFO] debug-file - Finished :entry:buildPreviewerResource... after 1 ms 
+[2024-07-10T14:41:30.421] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:30.421] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:30.421] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:41:30.422] [DEBUG] debug-file - Executing task :entry:default@PreviewUpdateAssets
+[2024-07-10T14:41:30.424] [DEBUG] debug-file - entry:default@PreviewUpdateAssets is not up-to-date, since the output file 'C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\res\default\module.json' has been changed.
+[2024-07-10T14:41:30.424] [DEBUG] debug-file - Incremental task entry:default@PreviewUpdateAssets pre-execution cost: 2 ms .
+[2024-07-10T14:41:30.426] [DEBUG] debug-file - entry : default@PreviewUpdateAssets cost memory 0.1070404052734375
+[2024-07-10T14:41:30.426] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 575 ms 
+[2024-07-10T14:41:30.427] [INFO] debug-file - Finished :entry:default@PreviewUpdateAssets... after 5 ms 
+[2024-07-10T14:41:30.429] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:30.429] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2024-07-10T14:41:30.429] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2024-07-10T14:41:30.434] [DEBUG] debug-file - Executing task :entry:default@PreviewArkTS
+[2024-07-10T14:41:30.447] [DEBUG] debug-file - entry:default@PreviewArkTS is not up-to-date, since the input file 'C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\loader\default' has been changed.
+[2024-07-10T14:41:30.447] [DEBUG] debug-file - Incremental task entry:default@PreviewArkTS pre-execution cost: 7 ms .
+[2024-07-10T14:41:30.458] [DEBUG] debug-file - session manager: binding session. socketId=isjgL9BeBov-aGshAAAH, threadId=1@2.
+[2024-07-10T14:41:30.458] [DEBUG] debug-file - entry : default@PreviewArkTS cost memory 0.9120941162109375
+[2024-07-10T14:41:33.325] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchStart
+[2024-07-10T14:41:37.787] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2024-07-10T14:41:39.974] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2024-07-10T14:41:39.975] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchResult
+[2024-07-10T14:41:39.985] [INFO] debug-file - Finished :entry:default@PreviewArkTS... after 9 s 545 ms 
+[2024-07-10T14:41:39.989] [DEBUG] debug-file - Executing task :entry:PreviewBuild
+[2024-07-10T14:41:39.990] [DEBUG] debug-file - entry : PreviewBuild cost memory -0.9073944091796875
+[2024-07-10T14:41:39.990] [DEBUG] debug-file - runTaskFromQueue task cost before running: 12 s 139 ms 
+[2024-07-10T14:41:39.990] [INFO] debug-file - Finished :entry:PreviewBuild... after 2 ms 
+[2024-07-10T14:41:40.003] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@PreBuild is up-to-date.
+[2024-07-10T14:41:40.003] [DEBUG] debug-file - Update task entry:default@MergeProfile input file:C:\Users\Lenovo\Desktop\OHOS-Top3\AppScope\app.json5 cache by regenerate.
+[2024-07-10T14:41:40.004] [DEBUG] debug-file - Update task entry:default@MergeProfile input file:C:\Users\Lenovo\Desktop\OHOS-Top3\build-profile.json5 cache by regenerate.
+[2024-07-10T14:41:40.004] [DEBUG] debug-file - Update task entry:default@MergeProfile input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\src\main\module.json5 cache by regenerate.
+[2024-07-10T14:41:40.005] [DEBUG] debug-file - Update task entry:default@MergeProfile output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\merge_profile\default\module.json cache.
+[2024-07-10T14:41:40.006] [DEBUG] debug-file - Incremental task entry:default@MergeProfile post-execution cost:3 ms .
+[2024-07-10T14:41:40.006] [DEBUG] debug-file - Update task entry:default@CreateBuildProfile input file:C:\Users\Lenovo\Desktop\OHOS-Top3\AppScope\app.json5 cache by regenerate.
+[2024-07-10T14:41:40.006] [DEBUG] debug-file - Update task entry:default@CreateBuildProfile input file:C:\Users\Lenovo\Desktop\OHOS-Top3\build-profile.json5 cache by regenerate.
+[2024-07-10T14:41:40.009] [DEBUG] debug-file - Update task entry:default@CreateBuildProfile output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\generated\profile\default\BuildProfile.ets cache.
+[2024-07-10T14:41:40.011] [DEBUG] debug-file - Incremental task entry:default@CreateBuildProfile post-execution cost:5 ms .
+[2024-07-10T14:41:40.011] [DEBUG] debug-file - Update task entry:default@GeneratePkgContextInfo output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\loader\default\pkgContextInfo.json cache.
+[2024-07-10T14:41:40.012] [DEBUG] debug-file - Incremental task entry:default@GeneratePkgContextInfo post-execution cost:2 ms .
+[2024-07-10T14:41:40.013] [DEBUG] debug-file - Update task entry:default@ProcessProfile input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\merge_profile\default\module.json cache from map.
+[2024-07-10T14:41:40.013] [DEBUG] debug-file - Update task entry:default@ProcessProfile output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\process_profile\default\module.json cache.
+[2024-07-10T14:41:40.013] [DEBUG] debug-file - Incremental task entry:default@ProcessProfile post-execution cost:1 ms .
+[2024-07-10T14:41:40.016] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\oh-package.json5 cache by regenerate.
+[2024-07-10T14:41:40.016] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap input file:C:\Users\Lenovo\Desktop\OHOS-Top3\oh-package.json5 cache by regenerate.
+[2024-07-10T14:41:40.017] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\src\main\module.json5 cache by regenerate.
+[2024-07-10T14:41:40.017] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\router_map\default\intermediates_temp_routerMap.json cache.
+[2024-07-10T14:41:40.018] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\router_map\default\intermediate_routerMap_for_loader.json cache.
+[2024-07-10T14:41:40.019] [DEBUG] debug-file - Incremental task entry:default@ProcessRouterMap post-execution cost:6 ms .
+[2024-07-10T14:41:40.023] [DEBUG] debug-file - Update task entry:default@GenerateLoaderJson input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\router_map\default\intermediates_temp_routerMap.json cache from map.
+[2024-07-10T14:41:40.023] [DEBUG] debug-file - Update task entry:default@GenerateLoaderJson output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\loader\default\loader.json cache.
+[2024-07-10T14:41:40.024] [DEBUG] debug-file - Incremental task entry:default@GenerateLoaderJson post-execution cost:5 ms .
+[2024-07-10T14:41:40.025] [DEBUG] debug-file - Update task entry:default@PreviewCompileResource input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\src\main\resources cache by regenerate.
+[2024-07-10T14:41:39.974] [DEBUG] debug-file - Ark compile finished.
+[2024-07-10T14:41:40.040] [DEBUG] debug-file - Update task entry:default@PreviewCompileResource input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\merge_profile\default\module.json cache from map.
+[2024-07-10T14:41:40.040] [DEBUG] debug-file - Update task entry:default@PreviewCompileResource output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\res\default cache.
+[2024-07-10T14:41:40.053] [DEBUG] debug-file - Update task entry:default@PreviewCompileResource output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\generated\r\default cache.
+[2024-07-10T14:41:40.054] [DEBUG] debug-file - Incremental task entry:default@PreviewCompileResource post-execution cost:30 ms .
+[2024-07-10T14:41:40.054] [DEBUG] debug-file - Update task entry:default@CopyPreviewProfile input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\src\main\resources\base\profile cache by regenerate.
+[2024-07-10T14:41:40.055] [DEBUG] debug-file - Update task entry:default@CopyPreviewProfile output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\res\default\resources\base\profile cache.
+[2024-07-10T14:41:40.056] [DEBUG] debug-file - Incremental task entry:default@CopyPreviewProfile post-execution cost:2 ms .
+[2024-07-10T14:41:40.056] [DEBUG] debug-file - Update task entry:default@PreviewUpdateAssets output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\res\default\module.json cache.
+[2024-07-10T14:41:40.057] [DEBUG] debug-file - Update task entry:default@PreviewUpdateAssets output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\res\default\resources\base\profile\main_pages.json cache.
+[2024-07-10T14:41:40.057] [DEBUG] debug-file - Incremental task entry:default@PreviewUpdateAssets post-execution cost:2 ms .
+[2024-07-10T14:41:40.059] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\loader\default cache from map.
+[2024-07-10T14:41:40.059] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\res\default\ResourceTable.txt cache by regenerate.
+[2024-07-10T14:41:40.060] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\res\default\module.json cache by regenerate.
+[2024-07-10T14:41:40.060] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\res\default\resources\base\profile cache by regenerate.
+[2024-07-10T14:41:40.061] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\src\main\ets cache by regenerate.
+[2024-07-10T14:41:40.078] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\src\main\resources\base\profile\form_config.json cache by regenerate.
+[2024-07-10T14:41:40.078] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\generated\profile\default\BuildProfile.ets cache by regenerate.
+[2024-07-10T14:41:40.078] [DEBUG] debug-file - Update task entry:default@PreviewArkTS output file:C:\Users\Lenovo\Desktop\OHOS-Top3\entry\.preview\default\intermediates\loader_out\default\ets cache.
+[2024-07-10T14:41:40.079] [DEBUG] debug-file - Incremental task entry:default@PreviewArkTS post-execution cost:22 ms .
