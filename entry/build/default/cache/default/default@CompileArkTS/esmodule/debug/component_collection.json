@@ -1,0 +1,257 @@
+{
+  "entry\\src\\main\\ets\\agency\\pages\\AgencyCard.ets": [
+    "Column",
+    "List",
+    "ForEach",
+    "ListItem",
+    "Image",
+    "Text",
+    "Row",
+    "If"
+  ],
+  "entry\\src\\main\\ets\\progress\\pages\\ProgressCard.ets": [
+    "Column",
+    "Stack",
+    "Progress",
+    "Row",
+    "Text"
+  ],
+  "entry\\src\\main\\ets\\entryability\\EntryAbility.ets": [
+    "If"
+  ],
+  "entry\\src\\main\\ets\\common\\database\\rdb\\RdbUtils.ets": [
+    "If"
+  ],
+  "entry\\src\\main\\ets\\common\\database\\rdb\\RdbHelperImp.ets": [
+    "If"
+  ],
+  "entry\\src\\main\\ets\\common\\utils\\FormUtils.ets": [
+    "If"
+  ],
+  "entry\\src\\main\\ets\\common\\database\\tables\\FormInfoApi.ets": [
+    "If"
+  ],
+  "entry\\src\\main\\ets\\common\\database\\tables\\DayInfoApi.ets": [
+    "If"
+  ],
+  "entry\\src\\main\\ets\\common\\database\\tables\\TaskInfoApi.ets": [
+    "If"
+  ],
+  "entry\\src\\main\\ets\\common\\utils\\Utils.ets": [
+    "If"
+  ],
+  "entry\\src\\main\\ets\\common\\utils\\GlobalContext.ets": [
+    "If"
+  ],
+  "entry\\src\\main\\ets\\entryformability\\EntryFormAbility.ets": [
+    "If"
+  ],
+  "entry\\src\\main\\ets\\pages\\SplashPage.ets": [
+    "CustomDialogController",
+    "Column",
+    "Image",
+    "Text",
+    "If"
+  ],
+  "entry\\src\\main\\ets\\view\\dialog\\UserPrivacyDialog.ets": [
+    "Text",
+    "CustomDialogController",
+    "Column",
+    "Row",
+    "Button",
+    "Divider"
+  ],
+  "entry\\src\\main\\ets\\pages\\AdvertisingPage.ets": [
+    "Column",
+    "Row",
+    "Text",
+    "Image",
+    "If"
+  ],
+  "entry\\src\\main\\ets\\pages\\MainPage.ets": [
+    "TabsController",
+    "AlertDialog",
+    "Column",
+    "Image",
+    "Text",
+    "Tabs",
+    "TabContent",
+    "If"
+  ],
+  "entry\\src\\main\\ets\\view\\HomeComponent.ets": [
+    "Text",
+    "Scroller",
+    "Stack",
+    "Scroll",
+    "Column",
+    "ForEach",
+    "Image",
+    "Row",
+    "If"
+  ],
+  "entry\\src\\main\\ets\\view\\HealthTextComponent.ets": [
+    "Text"
+  ],
+  "entry\\src\\main\\ets\\view\\home\\AddBtnComponent.ets": [
+    "Button",
+    "Circle",
+    "Image"
+  ],
+  "entry\\src\\main\\ets\\view\\home\\TaskCardComponent.ets": [
+    "Text",
+    "Row",
+    "Image",
+    "LongPressGesture",
+    "If"
+  ],
+  "entry\\src\\main\\ets\\view\\home\\HomeTopComponent.ets": [
+    "Text",
+    "Column",
+    "Row"
+  ],
+  "entry\\src\\main\\ets\\viewmodel\\HomeViewModel.ets": [
+    "If"
+  ],
+  "entry\\src\\main\\ets\\model\\AchieveModel.ets": [
+    "If"
+  ],
+  "entry\\src\\main\\ets\\common\\database\\tables\\GlobalInfoApi.ets": [
+    "If"
+  ],
+  "entry\\src\\main\\ets\\model\\WeekCalendarModel.ets": [
+    "If"
+  ],
+  "entry\\src\\main\\ets\\model\\DatabaseModel.ets": [
+    "If"
+  ],
+  "entry\\src\\main\\ets\\view\\home\\WeekCalendarComponent.ets": [
+    "Scroller",
+    "Row",
+    "Image",
+    "Column",
+    "Scroll",
+    "ForEach",
+    "Text",
+    "Divider",
+    "If"
+  ],
+  "entry\\src\\main\\ets\\viewmodel\\CalendarViewModel.ets": [
+    "Scroller",
+    "If"
+  ],
+  "entry\\src\\main\\ets\\view\\dialog\\CustomDialogView.ets": [
+    "CustomDialogController"
+  ],
+  "entry\\src\\main\\ets\\view\\dialog\\AchievementDialog.ets": [
+    "CustomDialogController",
+    "Column",
+    "Image",
+    "Text",
+    "TapGesture"
+  ],
+  "entry\\src\\main\\ets\\view\\dialog\\TaskDetailDialog.ets": [
+    "Text",
+    "CustomDialogController",
+    "Column",
+    "Button"
+  ],
+  "entry\\src\\main\\ets\\common\\utils\\BroadCast.ets": [
+    "If"
+  ],
+  "entry\\src\\main\\ets\\common\\utils\\HealthDataSrcMgr.ets": [
+    "If"
+  ],
+  "entry\\src\\main\\ets\\view\\AchievementComponent.ets": [
+    "Column"
+  ],
+  "entry\\src\\main\\ets\\view\\BadgePanelComponent.ets": [
+    "Flex",
+    "Row",
+    "ForEach"
+  ],
+  "entry\\src\\main\\ets\\view\\BadgeCardComponent.ets": [
+    "Column",
+    "Image",
+    "Text"
+  ],
+  "entry\\src\\main\\ets\\view\\TitleBarComponent.ets": [
+    "Row",
+    "Text"
+  ],
+  "entry\\src\\main\\ets\\pages\\MinePage.ets": [
+    "Column"
+  ],
+  "entry\\src\\main\\ets\\view\\ListInfo.ets": [
+    "List",
+    "ForEach",
+    "ListItem",
+    "Flex",
+    "Text",
+    "Image"
+  ],
+  "entry\\src\\main\\ets\\view\\UserBaseInfo.ets": [
+    "Column",
+    "Image",
+    "Text"
+  ],
+  "entry\\src\\main\\ets\\pages\\TaskListPage.ets": [
+    "Row",
+    "Navigation",
+    "Column"
+  ],
+  "entry\\src\\main\\ets\\view\\task\\TaskListComponent.ets": [
+    "List",
+    "ForEach",
+    "ListItem",
+    "Row",
+    "Image",
+    "Text",
+    "Blank",
+    "If"
+  ],
+  "entry\\src\\main\\ets\\viewmodel\\TaskViewModel.ets": [
+    "If"
+  ],
+  "entry\\src\\main\\ets\\service\\ReminderAgent.ets": [
+    "If"
+  ],
+  "entry\\src\\main\\ets\\pages\\TaskEditPage.ets": [
+    "Row",
+    "Navigation",
+    "Column"
+  ],
+  "entry\\src\\main\\ets\\view\\task\\TaskDetailComponent.ets": [
+    "Row",
+    "Column",
+    "List",
+    "ListItem",
+    "Button",
+    "Text",
+    "If"
+  ],
+  "entry\\src\\main\\ets\\view\\task\\TaskEditListItem.ets": [
+    "Text",
+    "Row",
+    "Toggle",
+    "Blank",
+    "Image",
+    "If"
+  ],
+  "entry\\src\\main\\ets\\view\\dialog\\TaskDialogView.ets": [
+    "CustomDialogController"
+  ],
+  "entry\\src\\main\\ets\\view\\dialog\\TaskSettingDialog.ets": [
+    "CustomDialogController",
+    "Column",
+    "Row",
+    "Text",
+    "TimePicker",
+    "TextPicker",
+    "List",
+    "ForEach",
+    "ListItem",
+    "Toggle",
+    "Checkbox",
+    "If"
+  ]
+}
