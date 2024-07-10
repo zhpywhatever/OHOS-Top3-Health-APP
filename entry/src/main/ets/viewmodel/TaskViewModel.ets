@@ -122,7 +122,7 @@ export const addTask = (params: TaskInfo, context: Context) => {
     }
     TaskInfoApi.updateDataByDate(params, (flag: number) => {
       if (!flag) {
-        Logger.error('insertTaskSetting', 'updateTaskSetting Error!');
+        Logger.error('insertTaskSetting', 'updateTaskSetting Error!1');
         reject(flag);
       }
       resolve(flag);
@@ -133,7 +133,7 @@ export const addTask = (params: TaskInfo, context: Context) => {
     taskInfo.isDone = true;
     TaskInfoApi.updateDataByDate(taskInfo, (flag: number) => {
       if (!flag) {
-        Logger.error('insertTaskSetting', 'updateTaskSetting Error!');
+        Logger.error('insertTaskSetting', 'updateTaskSetting Error!2');
         reject(flag);
       }
       resolve(flag);
