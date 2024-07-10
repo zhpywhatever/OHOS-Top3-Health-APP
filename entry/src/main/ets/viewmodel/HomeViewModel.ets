@@ -130,7 +130,16 @@ export class HomeStore {
       let endTime = editedTaskInfo.endTime;
       let isOpen = editedTaskInfo.isOpen;
       let task = new TaskInfo(0, dateToStr(new Date()), taskID, targetValue, isAlarm,
-        startTime, endTime, frequency, true, targetValue, isOpen);
+        startTime, endTime, frequency, false, "", isOpen);
+      // if(editedTaskInfo.isInit){
+      //   task = new TaskInfo(0, dateToStr(new Date()), taskID, targetValue, isAlarm,
+      //     startTime, endTime, frequency, false, "", isOpen);
+      // }
+      if(!editedTaskInfo.isInit){
+        task = new TaskInfo(0, dateToStr(new Date()), taskID, targetValue, isAlarm,
+          startTime, endTime, frequency, true, targetValue, isOpen);
+      }
+
       this.dateArr = this.dateArr.map((item: WeekDateModel) => {
         if (task.date === item.dateStr) {
           Logger.info('item', JSON.stringify(item));
