@@ -104,7 +104,15 @@ struct Index {
       Image(index === this.currentPage ? NavList[index].icon_selected : NavList[index].icon)
         .width($r('app.float.default_24'))
         .height($r('app.float.default_24'))
-        .objectFit(ImageFit.Contain);
+        .objectFit(ImageFit.Contain)
+        .offset({ y: (index === this.currentPage ? -2 : 0) })
+        .scale({x: (index === this.currentPage ? 1.1 : 1), y: (index === this.currentPage ? 1.1 : 1) })
+        .animation({
+          duration: 100,
+          curve: Curve.Linear,
+          iterations: 1,
+          playMode: PlayMode.Normal
+        });
       Text(NavList[index].text)
         .fontSize($r('app.float.default_10'))
         .fontWeight(Const.FONT_WEIGHT_500)
@@ -143,5 +151,6 @@ struct Index {
     .onChange((index) => {
       this.currentPage = index;
     })
+    // .animationDuration(100)
   }
 }
