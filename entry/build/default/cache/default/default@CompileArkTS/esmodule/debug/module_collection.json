@@ -1,6 +1,0 @@
-{
-  "entry\\src\\main\\ets\\view\\task\\TaskDetailComponent.ets": [
-    "ohos.router",
-    "ohos.promptAction"
-  ]
-}
