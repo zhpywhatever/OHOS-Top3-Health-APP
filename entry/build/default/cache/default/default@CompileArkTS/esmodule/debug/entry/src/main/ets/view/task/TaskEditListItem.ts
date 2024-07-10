@@ -226,6 +226,7 @@ export class OpenRemindItem extends ViewPU {
             Toggle.onChange((isOn) => {
                 this.settingParams.isAlarm = isOn;
             });
+            Toggle.enabled(this.settingParams.isOpen);
         }, Toggle);
         Toggle.pop();
         Row.pop();

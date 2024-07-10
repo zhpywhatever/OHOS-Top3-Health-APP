@@ -111,25 +111,31 @@ export default struct TaskDetail {
 
           ListItem() {
             TargetSetItem()
+              .enabled(
+                this.settingParams?.isOpen
+                  && this.settingParams?.taskID !== taskType.smile
+                  && this.settingParams?.taskID !== taskType.brushTeeth
+              )
+              .onClick(() => {
+                this.broadCast.emit(
+                  BroadCastType.SHOW_TARGET_SETTING_DIALOG);
+              })
           }
           .listItemStyle()
-          .enabled(
-            this.settingParams?.isOpen
-              && this.settingParams?.taskID !== taskType.smile
-              && this.settingParams?.taskID !== taskType.brushTeeth
-          )
           .onClick(() => {
-            this.broadCast.emit(
-              BroadCastType.SHOW_TARGET_SETTING_DIALOG);
+            if (!this.settingParams.isOpen)
+              promptAction.showToast({
+                message: '请先开启任务'
+              });
           })
 
           ListItem() {
             OpenRemindItem()
-            .enabled(this.settingParams?.isOpen)
+              .enabled(this.settingParams?.isOpen)
           }
           .listItemStyle()
           .onClick(() => {
-            if(!this.settingParams.isOpen)
+            if (!this.settingParams.isOpen)
               promptAction.showToast({
                 message: '请先开启任务'
               });
@@ -137,22 +143,39 @@ export default struct TaskDetail {
 
           ListItem() {
             RemindTimeItem()
+              .enabled(this.settingParams?.isOpen && this.settingParams?.isAlarm)
+              .onClick(() => {
+                this.broadCast.emit(BroadCastType.SHOW_REMIND_TIME_DIALOG);
+              })
           }
           .listItemStyle()
-          .enabled(this.settingParams?.isOpen && this.settingParams?.isAlarm)
           .onClick(() => {
-            this.broadCast.emit(BroadCastType.SHOW_REMIND_TIME_DIALOG);
+            if (!this.settingParams.isOpen)
+              promptAction.showToast({
+                message: '请先开启任务'
+              }); else if (!this.settingParams.isAlarm)
+              promptAction.showToast({
+                message: '请先开启提醒'
+              });
           })
 
           ListItem() {
             FrequencyItem()
+              .enabled(this.settingParams?.isOpen && this.settingParams?.isAlarm)
+              .onClick(() => {
+                this.broadCast.emit(BroadCastType.SHOW_FREQUENCY_DIALOG);
+              })
           }
           .listItemStyle()
-          .enabled(this.settingParams?.isOpen && this.settingParams?.isAlarm)
           .onClick(() => {
-            this.broadCast.emit(BroadCastType.SHOW_FREQUENCY_DIALOG);
+            if (!this.settingParams.isOpen)
+              promptAction.showToast({
+                message: '请先开启任务'
+              }); else if (!this.settingParams.isAlarm)
+              promptAction.showToast({
+                message: '请先开启提醒'
+              });
           })
-
         }
         .width(Const.THOUSANDTH_940)
 
@@ -163,7 +186,12 @@ export default struct TaskDetail {
         .height(Const.DEFAULT_48)
         .backgroundColor($r('app.color.borderColor'))
         .onClick(() => {
-          this.finishTaskEdit();
+          // Check if task open
+          if (!this.settingParams.isOpen)
+            promptAction.showToast({
+              message: '请先开启任务'
+            }); else
+            this.finishTaskEdit();
         })
         .position({
           x: Const.THOUSANDTH_100,

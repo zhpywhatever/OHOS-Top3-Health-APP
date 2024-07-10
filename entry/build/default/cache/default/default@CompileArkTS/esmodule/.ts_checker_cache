@@ -5049,7 +5049,8 @@
         "C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\src\\main\\ets\\view\\home\\WeekCalendarComponent.ets",
         "C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\src\\main\\ets\\view\\task\\TaskListComponent.ets",
         "C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\src\\main\\ets\\view\\task\\TaskDetailComponent.ets",
-        "C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\src\\main\\ets\\view\\dialog\\TaskSettingDialog.ets"
+        "C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\src\\main\\ets\\view\\dialog\\TaskSettingDialog.ets",
+        "C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\src\\main\\ets\\view\\task\\TaskEditListItem.ets"
       ],
       "error": false
     },
@@ -9337,7 +9338,7 @@
       "error": false
     },
     "C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\src\\main\\ets\\pages\\TaskListPage.ets": {
-      "mtimeMs": 1720593308185.2285,
+      "mtimeMs": 1720593731392.8652,
       "children": [
         "C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\src\\main\\ets\\model\\TaskInitList.ets",
         "C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\src\\main\\ets\\view\\task\\TaskListComponent.ets",
@@ -9494,7 +9495,7 @@
       "error": false
     },
     "C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\src\\main\\ets\\view\\task\\TaskDetailComponent.ets": {
-      "mtimeMs": 1720593308211.226,
+      "mtimeMs": 1720599600070.0862,
       "children": [
         "D:\\Dev_eco_studio\\DevEco Studio\\sdk\\HarmonyOS-NEXT-DB1\\openharmony\\ets\\kits\\@kit.ArkUI.d.ts",
         "D:\\Dev_eco_studio\\DevEco Studio\\sdk\\HarmonyOS-NEXT-DB1\\openharmony\\ets\\kits\\@kit.ArkUI.d.ts",
@@ -9525,11 +9526,12 @@
       "error": false
     },
     "C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\src\\main\\ets\\view\\task\\TaskEditListItem.ets": {
-      "mtimeMs": 1720593308212.2258,
+      "mtimeMs": 1720598157828.6218,
       "children": [
         "C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\src\\main\\ets\\model\\TaskInitList.ets",
         "C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\src\\main\\ets\\common\\constants\\CommonConstants.ets",
-        "C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\src\\main\\ets\\viewmodel\\TaskInfo.ets"
+        "C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\src\\main\\ets\\viewmodel\\TaskInfo.ets",
+        "D:\\Dev_eco_studio\\DevEco Studio\\sdk\\HarmonyOS-NEXT-DB1\\openharmony\\ets\\kits\\@kit.ArkUI.d.ts"
       ],
       "parent": [
         "C:\\Users\\Lenovo\\Desktop\\OHOS-Top3\\entry\\src\\main\\ets\\view\\task\\TaskDetailComponent.ets"

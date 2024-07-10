@@ -197,15 +197,24 @@ export default class TaskDetail extends ViewPU {
                 ListItem.height(Const.DEFAULT_56);
                 ListItem.borderRadius(Const.DEFAULT_10);
                 ListItem.padding({ left: Const.DEFAULT_12, right: Const.DEFAULT_12 });
-                ListItem.enabled(this.settingParams?.isOpen
-                    && this.settingParams?.taskID !== taskType.smile
-                    && this.settingParams?.taskID !== taskType.brushTeeth);
                 ListItem.onClick(() => {
-                    this.broadCast.emit(BroadCastType.SHOW_TARGET_SETTING_DIALOG);
+                    if (!this.settingParams.isOpen)
+                        promptAction.showToast({
+                            message: '请先开启任务'
+                        });
                 });
             };
             const deepRenderFunction = (elmtId, isInitialRender) => {
                 itemCreation(elmtId, isInitialRender);
+                this.observeComponentCreation2((elmtId, isInitialRender) => {
+                    __Common__.create();
+                    __Common__.enabled(this.settingParams?.isOpen
+                        && this.settingParams?.taskID !== taskType.smile
+                        && this.settingParams?.taskID !== taskType.brushTeeth);
+                    __Common__.onClick(() => {
+                        this.broadCast.emit(BroadCastType.SHOW_TARGET_SETTING_DIALOG);
+                    });
+                }, __Common__);
                 {
                     this.observeComponentCreation2((elmtId, isInitialRender) => {
                         if (isInitialRender) {
@@ -221,6 +230,7 @@ export default class TaskDetail extends ViewPU {
                         }
                     }, { name: "TargetSetItem" });
                 }
+                __Common__.pop();
                 ListItem.pop();
             };
             this.observeComponentCreation2(itemCreation2, ListItem);
@@ -241,14 +251,23 @@ export default class TaskDetail extends ViewPU {
                 ListItem.height(Const.DEFAULT_56);
                 ListItem.borderRadius(Const.DEFAULT_10);
                 ListItem.padding({ left: Const.DEFAULT_12, right: Const.DEFAULT_12 });
-                ListItem.enabled(this.settingParams?.isOpen);
+                ListItem.onClick(() => {
+                    if (!this.settingParams.isOpen)
+                        promptAction.showToast({
+                            message: '请先开启任务'
+                        });
+                });
             };
             const deepRenderFunction = (elmtId, isInitialRender) => {
                 itemCreation(elmtId, isInitialRender);
+                this.observeComponentCreation2((elmtId, isInitialRender) => {
+                    __Common__.create();
+                    __Common__.enabled(this.settingParams?.isOpen);
+                }, __Common__);
                 {
                     this.observeComponentCreation2((elmtId, isInitialRender) => {
                         if (isInitialRender) {
-                            let componentCall = new OpenRemindItem(this, {}, undefined, elmtId, () => { }, { page: "entry/src/main/ets/view/task/TaskDetailComponent.ets", line: 127 });
+                            let componentCall = new OpenRemindItem(this, {}, undefined, elmtId, () => { }, { page: "entry/src/main/ets/view/task/TaskDetailComponent.ets", line: 133 });
                             ViewPU.create(componentCall);
                             let paramsLambda = () => {
                                 return {};
@@ -260,6 +279,7 @@ export default class TaskDetail extends ViewPU {
                         }
                     }, { name: "OpenRemindItem" });
                 }
+                __Common__.pop();
                 ListItem.pop();
             };
             this.observeComponentCreation2(itemCreation2, ListItem);
@@ -280,17 +300,30 @@ export default class TaskDetail extends ViewPU {
                 ListItem.height(Const.DEFAULT_56);
                 ListItem.borderRadius(Const.DEFAULT_10);
                 ListItem.padding({ left: Const.DEFAULT_12, right: Const.DEFAULT_12 });
-                ListItem.enabled(this.settingParams?.isOpen && this.settingParams?.isAlarm);
                 ListItem.onClick(() => {
-                    this.broadCast.emit(BroadCastType.SHOW_REMIND_TIME_DIALOG);
+                    if (!this.settingParams.isOpen)
+                        promptAction.showToast({
+                            message: '请先开启任务'
+                        });
+                    else if (!this.settingParams.isAlarm)
+                        promptAction.showToast({
+                            message: '请先开启提醒'
+                        });
                 });
             };
             const deepRenderFunction = (elmtId, isInitialRender) => {
                 itemCreation(elmtId, isInitialRender);
+                this.observeComponentCreation2((elmtId, isInitialRender) => {
+                    __Common__.create();
+                    __Common__.enabled(this.settingParams?.isOpen && this.settingParams?.isAlarm);
+                    __Common__.onClick(() => {
+                        this.broadCast.emit(BroadCastType.SHOW_REMIND_TIME_DIALOG);
+                    });
+                }, __Common__);
                 {
                     this.observeComponentCreation2((elmtId, isInitialRender) => {
                         if (isInitialRender) {
-                            let componentCall = new RemindTimeItem(this, {}, undefined, elmtId, () => { }, { page: "entry/src/main/ets/view/task/TaskDetailComponent.ets", line: 133 });
+                            let componentCall = new RemindTimeItem(this, {}, undefined, elmtId, () => { }, { page: "entry/src/main/ets/view/task/TaskDetailComponent.ets", line: 145 });
                             ViewPU.create(componentCall);
                             let paramsLambda = () => {
                                 return {};
@@ -302,6 +335,7 @@ export default class TaskDetail extends ViewPU {
                         }
                     }, { name: "RemindTimeItem" });
                 }
+                __Common__.pop();
                 ListItem.pop();
             };
             this.observeComponentCreation2(itemCreation2, ListItem);
@@ -322,17 +356,30 @@ export default class TaskDetail extends ViewPU {
                 ListItem.height(Const.DEFAULT_56);
                 ListItem.borderRadius(Const.DEFAULT_10);
                 ListItem.padding({ left: Const.DEFAULT_12, right: Const.DEFAULT_12 });
-                ListItem.enabled(this.settingParams?.isOpen && this.settingParams?.isAlarm);
                 ListItem.onClick(() => {
-                    this.broadCast.emit(BroadCastType.SHOW_FREQUENCY_DIALOG);
+                    if (!this.settingParams.isOpen)
+                        promptAction.showToast({
+                            message: '请先开启任务'
+                        });
+                    else if (!this.settingParams.isAlarm)
+                        promptAction.showToast({
+                            message: '请先开启提醒'
+                        });
                 });
             };
             const deepRenderFunction = (elmtId, isInitialRender) => {
                 itemCreation(elmtId, isInitialRender);
+                this.observeComponentCreation2((elmtId, isInitialRender) => {
+                    __Common__.create();
+                    __Common__.enabled(this.settingParams?.isOpen && this.settingParams?.isAlarm);
+                    __Common__.onClick(() => {
+                        this.broadCast.emit(BroadCastType.SHOW_FREQUENCY_DIALOG);
+                    });
+                }, __Common__);
                 {
                     this.observeComponentCreation2((elmtId, isInitialRender) => {
                         if (isInitialRender) {
-                            let componentCall = new FrequencyItem(this, {}, undefined, elmtId, () => { }, { page: "entry/src/main/ets/view/task/TaskDetailComponent.ets", line: 142 });
+                            let componentCall = new FrequencyItem(this, {}, undefined, elmtId, () => { }, { page: "entry/src/main/ets/view/task/TaskDetailComponent.ets", line: 164 });
                             ViewPU.create(componentCall);
                             let paramsLambda = () => {
                                 return {};
@@ -344,6 +391,7 @@ export default class TaskDetail extends ViewPU {
                         }
                     }, { name: "FrequencyItem" });
                 }
+                __Common__.pop();
                 ListItem.pop();
             };
             this.observeComponentCreation2(itemCreation2, ListItem);
@@ -356,7 +404,13 @@ export default class TaskDetail extends ViewPU {
             Button.height(Const.DEFAULT_48);
             Button.backgroundColor({ "id": 16777269, "type": 10001, params: [], "bundleName": "com.example.healthy_life", "moduleName": "entry" });
             Button.onClick(() => {
-                this.finishTaskEdit();
+                // Check if task open
+                if (!this.settingParams.isOpen)
+                    promptAction.showToast({
+                        message: '请先开启任务'
+                    });
+                else
+                    this.finishTaskEdit();
             });
             Button.position({
                 x: Const.THOUSANDTH_100,
@@ -373,7 +427,7 @@ export default class TaskDetail extends ViewPU {
         {
             this.observeComponentCreation2((elmtId, isInitialRender) => {
                 if (isInitialRender) {
-                    let componentCall = new TaskDialogView(this, {}, undefined, elmtId, () => { }, { page: "entry/src/main/ets/view/task/TaskDetailComponent.ets", line: 167 });
+                    let componentCall = new TaskDialogView(this, {}, undefined, elmtId, () => { }, { page: "entry/src/main/ets/view/task/TaskDetailComponent.ets", line: 204 });
                     ViewPU.create(componentCall);
                     let paramsLambda = () => {
                         return {};
