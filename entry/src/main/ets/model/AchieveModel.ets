@@ -16,7 +16,7 @@
 import { ACHIEVEMENT_LEVEL_LIST } from './TaskInitList';
 import GlobalInfo from '../viewmodel/GlobalInfo';
 import GlobalInfoApi from '../common/database/tables/GlobalInfoApi';
-import { promptAction } from '@kit.ArkUI';
+// import { promptAction } from '@kit.ArkUI';
 
 export const ACHIEVEMENT_LEVEL_KEY = 'AchievementLevelKey';
 
