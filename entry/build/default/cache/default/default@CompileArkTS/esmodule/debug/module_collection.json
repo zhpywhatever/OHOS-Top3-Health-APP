@@ -1,1 +1,5 @@
-{}
+{
+  "entry\\src\\main\\ets\\view\\HomeComponent.ets": [
+    "ohos.router"
+  ]
+}

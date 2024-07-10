@@ -62,22 +62,31 @@ export class MineIndex extends ViewPU {
         {
             this.observeComponentCreation2((elmtId, isInitialRender) => {
                 if (isInitialRender) {
-                    let componentCall = new UserBaseInfo(this, {}, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/MinePage.ets", line: 27 });
+                    let componentCall = new UserBaseInfo(this, {
+                        nickname: this.nickname,
+                        signature: this.signature
+                    }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/MinePage.ets", line: 27 });
                     ViewPU.create(componentCall);
                     let paramsLambda = () => {
-                        return {};
+                        return {
+                            nickname: this.nickname,
+                            signature: this.signature
+                        };
                     };
                     componentCall.paramsGenerator_ = paramsLambda;
                 }
                 else {
-                    this.updateStateVarsOfChildByElmtId(elmtId, {});
+                    this.updateStateVarsOfChildByElmtId(elmtId, {
+                        nickname: this.nickname,
+                        signature: this.signature
+                    });
                 }
             }, { name: "UserBaseInfo" });
         }
         {
             this.observeComponentCreation2((elmtId, isInitialRender) => {
                 if (isInitialRender) {
-                    let componentCall = new ListInfo(this, {}, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/MinePage.ets", line: 30 });
+                    let componentCall = new ListInfo(this, {}, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/MinePage.ets", line: 32 });
                     ViewPU.create(componentCall);
                     let paramsLambda = () => {
                         return {};
