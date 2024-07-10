@@ -16,6 +16,7 @@
 import { ITaskItem } from '../../model/TaskInitList';
 import { CommonConstants as Const } from '../../common/constants/CommonConstants';
 import { taskType } from '../../viewmodel/TaskInfo';
+import { promptAction } from '@kit.ArkUI';
 
 @Extend(Text)
 function targetSetCommon() {
@@ -112,6 +113,7 @@ export struct OpenRemindItem {
         .onChange((isOn) => {
           this.settingParams.isAlarm = isOn;
         })
+        .enabled(this.settingParams.isOpen)
     }
     .width(Const.THOUSANDTH_1000)
     .justifyContent(FlexAlign.SpaceBetween)

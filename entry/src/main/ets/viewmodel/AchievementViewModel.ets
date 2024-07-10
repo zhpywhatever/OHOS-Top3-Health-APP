@@ -32,6 +32,12 @@ export function getBadgeCardItems(successiveDays: number): Array<CardInfo> {
 function getAchievement(key: string) {
   let result = $r('app.string.empty');
   switch (key) {
+    case 'off_1':
+      result = AchievementMap.off_1;
+      break;
+    case 'on_1':
+      result = AchievementMap.on_1;
+      break;
     case 'off_3':
       result = AchievementMap.off_3;
       break;
