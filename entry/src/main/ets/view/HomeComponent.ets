@@ -26,6 +26,7 @@ import { HealthDataSrcMgr } from '../common/utils/HealthDataSrcMgr';
 import { BroadCast, BroadCastType } from '../common/utils/BroadCast';
 import { CommonConstants as Const } from '../common/constants/CommonConstants';
 import AchievementInfo from '../viewmodel/AchievementInfo';
+import { promptAction } from '@kit.ArkUI';
 
 const WHITE_COLOR_0X = 255;
 
@@ -91,6 +92,12 @@ export default struct HomeIndex {
 
   //confirm clockL
   onConfirm(task: TaskInfo) {
+
+    promptAction.showToast({
+      message: '仅供测试用'
+    });
+    this.broadCast.emit(BroadCastType.SHOW_ACHIEVEMENT_DIALOG, 1);
+
     this.homeStore.taskClock(task).then((res: AchievementInfo) => {
       if (res.showAchievement) {
         let achievementLevel = res.achievementLevel;

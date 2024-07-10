@@ -36,6 +36,6 @@ export struct AchievementIndex {
     .padding(Const.DEFAULT_10)
     .height(Const.FULL_HEIGHT)
     .width(Const.FULL_WIDTH)
-    .backgroundColor($r('app.color.black'))
+    .backgroundColor($r('app.color.gruvboxBlack'))
   }
 }
