@@ -49,6 +49,7 @@ export default struct TaskDetail {
   @Provide frequency: string = initFrequencyString(this.settingParams?.frequency);
   private isChanged: boolean = false;
 
+
   parseRouterParams() {
     let params = router.getParams() as Record<string, Object>;
     const routerParams: ITaskItem = JSON.parse(params.params as string);
