@@ -29,6 +29,10 @@
       "value": "#000000"
     },
     {
+      "name": "gruvboxBlack",
+      "value": "#282828"
+    },
+    {
       "name": "primaryRed",
       "value": "#E92F4F"
     },

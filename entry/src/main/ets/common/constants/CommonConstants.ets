@@ -117,7 +117,7 @@ export class CommonConstants {
   static readonly SETTING_FINISH_FAILED_MESSAGE = '网络连接错误';
   static readonly CHOOSE_TIME_OUT_RANGE: string = '选择时间超出范围';
   static readonly NICK_NAME = 'Top3';
-  static readonly SIGNATURE = '遥遥领先遥遥领先遥遥领先';
+  static readonly SIGNATURE = '签名在 Constants 里 / 遥遥领先';
   static readonly HOME_BTN_Z = 2;
   // time range
   static readonly DEFAULT_TIME: string = '08:00';
