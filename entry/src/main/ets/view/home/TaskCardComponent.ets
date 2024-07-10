@@ -60,27 +60,71 @@ export struct TaskCard {
     }
   }
 
-  build() {
-    Row() {
-      Row({ space: Const.DEFAULT_6 }) {
-        Image(TaskMapById[this.taskInfo.taskID - 1].icon)
-          .width($r('app.float.default_36')).height($r('app.float.default_36'))
-          .objectFit(ImageFit.Contain)
-        HealthText({
-          title: '',
-          titleResource: TaskMapById[this.taskInfo.taskID - 1].taskName,
-          fontFamily: $r('app.string.HarmonyHeiTi')
-        })
-      }
-
-      this.targetValueBuilder();
+  @Builder
+  swipeList() {
+    Button() {
+      Text('编辑')
     }
-    .allSize()
-    .justifyContent(FlexAlign.SpaceBetween)
-    .borderRadius($r('app.float.default_24'))
-    .padding({ left: Const.THOUSANDTH_50, right: Const.THOUSANDTH_33 })
-    .backgroundColor($r('app.color.white'))
-    .onClick(() => this.clickAction(true))
-    .gesture(LongPressGesture().onAction(() => this.clickAction(false)))
+    .width(60).height(60)
+    .margin(10)
+
+    Button() {
+      Text('删除')
+    }
+    .width(60).height(60)
+    .backgroundColor(Color.Red)
+  }
+
+  private scroller= new Scroller()
+  private downX = 0
+  build() {
+  Scroll(this.scroller) {
+    Row() {
+      Row() {
+        Row({ space: Const.DEFAULT_6 }) {
+          Image(TaskMapById[this.taskInfo.taskID - 1].icon)
+            .width($r('app.float.default_36')).height($r('app.float.default_36'))
+            .objectFit(ImageFit.Contain)
+          HealthText({
+            title: '',
+            titleResource: TaskMapById[this.taskInfo.taskID - 1].taskName,
+            fontFamily: $r('app.string.HarmonyHeiTi')
+          })
+        }
+        this.targetValueBuilder();
+      }
+      .allSize()
+      .justifyContent(FlexAlign.SpaceBetween)
+      .borderRadius($r('app.float.default_24'))
+      .padding({ left: Const.THOUSANDTH_50, right: Const.THOUSANDTH_33 })
+      .backgroundColor($r('app.color.white'))
+      .onClick(() => this.clickAction(true))
+      .gesture(LongPressGesture().onAction(() => this.clickAction(false)))
+
+      this.swipeList()
+      }
+    }
+    .scrollable(ScrollDirection.Horizontal)
+    .scrollBar(BarState.Off)
+    .onTouch((event?: TouchEvent) => {
+      // If event trigger
+      if(event) {
+        switch (event.type) {
+          case TouchType.Down:
+            this.downX = event.touches[0].x
+            break
+          case TouchType.Up:
+            let xOffset = event.touches[0].x - this.downX
+            let toxOffset = 0
+            if (Math.abs(xOffset) > vp2px(15) && xOffset < 0) {
+              toxOffset = vp2px(100)
+            }
+            this.scroller.scrollTo({ xOffset: toxOffset, yOffset: 0,
+              animation: { duration: 200, curve: Curve.Linear } })
+            this.downX = 0
+            break
+        }
+      }
+    })
   }
 }
