@@ -65,7 +65,8 @@ export enum taskType {
   'eatApple',
   'smile',
   'brushTeeth',
-  'sleepEarly'
+  'sleepEarly',
+  'eatBreakfast'
 }
 
 export const oneWeek = oneWeekDictFunc();

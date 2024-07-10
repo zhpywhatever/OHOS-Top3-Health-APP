@@ -46,3 +46,7 @@
 2. HarmonyOS系统：HarmonyOS NEXT Developer Beta1及以上。
 3. DevEco Studio版本：DevEco Studio NEXT Developer Beta1及以上。
 4. HarmonyOS SDK版本：HarmonyOS NEXT Developer Beta1 SDK及以上。
+
+### 更新记录
+
+1. 杨存远: 增加新任务——吃早饭
