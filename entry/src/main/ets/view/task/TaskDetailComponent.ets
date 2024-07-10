@@ -187,12 +187,7 @@ export default struct TaskDetail {
         .height(Const.DEFAULT_48)
         .backgroundColor($r('app.color.borderColor'))
         .onClick(() => {
-          // Check if task open
-          if (!this.settingParams.isOpen)
-            promptAction.showToast({
-              message: '请先开启任务'
-            }); else
-            this.finishTaskEdit();
+          this.finishTaskEdit();
         })
         .position({
           x: Const.THOUSANDTH_100,
