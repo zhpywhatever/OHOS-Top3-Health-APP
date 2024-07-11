@@ -20,6 +20,10 @@ let agencyStorage = new LocalStorage();
 struct AgencyCard {
   @LocalStorageProp('taskList') taskList: AgencyCardInfo[] = [];
   @LocalStorageProp('showWidget') showWidget: boolean = false;
+  @LocalStorageProp('achievements') achievements: number = 0;
+
+  private swiperController: SwiperController = new SwiperController();
+
   private iconList = {
     getup: $r('app.media.ic_task_morning'),
     drink: $r('app.media.ic_task_water'),
@@ -131,26 +135,48 @@ struct AgencyCard {
   build() {
     Column() {
       if (this.showWidget) {
-        List({ space: this.LIST_SPACE }) {
-          ForEach(this.taskList, (taskItem: AgencyCardInfo) => {
-            ListItem() {
-              this.AgencyComponent(taskItem)
-            }
-            .margin({ right: $r("app.float.agency_item_margin") })
-            .borderRadius($r("app.float.agency_item_radius"))
-            .backgroundColor(Color.White)
-          }, (taskItem: AgencyCardInfo) => JSON.stringify(taskItem))
+        Swiper(this.swiperController){
+          List({ space: this.LIST_SPACE }) {
+            ForEach(this.taskList, (taskItem: AgencyCardInfo) => {
+              ListItem() {
+                this.AgencyComponent(taskItem)
+              }
+              .margin({ right: $r("app.float.agency_item_margin") })
+              .borderRadius($r("app.float.agency_item_radius"))
+              .backgroundColor(Color.White)
+            }, (taskItem: AgencyCardInfo) => JSON.stringify(taskItem))
+          }
+          .padding({
+            left: $r('app.float.agency_padding_left'),
+            top: $r('app.float.agency_padding_top'),
+            right: $r('app.float.agency_padding_right'),
+            bottom: $r('app.float.agency_padding_bottom')
+          })
+          .lanes(this.LIST_TWO_LANES)
+          .backgroundColor($r("app.color.list_background_color"))
+          .width(this.FULL_WIDTH_PERCENT)
+          .height(this.FULL_HEIGHT_PERCENT)
+
+          Row(){
+            Progress({ value: 0, total: 10, type: ProgressType.Ring })
+              .value(this.achievements)
+              .width($r('app.float.progress_component_size'))
+              .height($r('app.float.progress_component_size'))
+              .backgroundColor($r('app.color.progress_background_color'))
+              .style({ strokeWidth: $r('app.float.progress_stroke_width') })
+
+            Text("您已获得" + this.achievements.toString() + "个成就")
+            .fontSize($r('app.float.percent_text_size'))
+            .fontColor(Color.Black)
+            .fontWeight(FontWeight.Normal)
+            .textAlign(TextAlign.Center)
+          }
+          .justifyContent(FlexAlign.SpaceAround)
+          .backgroundColor(Color.White)
+          .width(this.FULL_WIDTH_PERCENT)
+          .height(this.FULL_HEIGHT_PERCENT)
+
         }
-        .padding({
-          left: $r('app.float.agency_padding_left'),
-          top: $r('app.float.agency_padding_top'),
-          right: $r('app.float.agency_padding_right'),
-          bottom: $r('app.float.agency_padding_bottom')
-        })
-        .lanes(this.LIST_TWO_LANES)
-        .backgroundColor($r("app.color.list_background_color"))
-        .width(this.FULL_WIDTH_PERCENT)
-        .height(this.FULL_HEIGHT_PERCENT)
       } else {
         this.AgencyNoData()
       }
