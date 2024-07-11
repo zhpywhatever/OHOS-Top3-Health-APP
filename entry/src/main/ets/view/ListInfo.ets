@@ -12,8 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import { router } from '@kit.ArkUI';
 import { MineInfoList, InfoItem } from '../model/Mine';
+import { BusinessError } from '@kit.BasicServicesKit';
+
 
 @Component
 export struct ListInfo {
@@ -29,6 +31,9 @@ export struct ListInfo {
               .height($r('app.float.default_12'))
               .width($r('app.float.default_7'))
           }
+          .onClick(() => {
+            router.pushUrl({ url: item.url })
+          })
         }
         .backgroundColor($r('app.color.white'))
         .margin({

@@ -17,19 +17,23 @@ export interface InfoItem {
   id: string;
   title: Resource;
   icon?: Resource;
+  url: string;
 }
 
 export const MineInfoList: InfoItem[] = [
   {
     id: '1',
-    title: $r('app.string.mine_personal_data')
+    title: $r('app.string.mine_personal_data'),
+    url: ''
   },
   {
     id: '2',
-    title: $r('app.string.mine_check_updates')
+    title: $r('app.string.mine_check_updates'),
+    url: 'pages/UpdatesPage',
   },
   {
     id: '3',
-    title: $r('app.string.mine_about')
+    title: $r('app.string.mine_about'),
+    url: 'pages/AboutPage'
   }
 ];
