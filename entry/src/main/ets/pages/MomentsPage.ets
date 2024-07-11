@@ -1,6 +1,7 @@
 import router from '@ohos.router';
 import { CommonConstants as Const } from '../common/constants/CommonConstants';
 import AddBtn from '../view/home/AddBtnComponent';
+import App from '@system.app';
 
 class MomentClass {
   public nickName: string; //昵称
@@ -28,6 +29,7 @@ export struct MomentsIndex {
   @State showC: boolean[] = [
     false, false, false
   ]
+  @StorageLink('LAST_LOGIN') LAST_LOGIN: string = "";
 
 
   //计算列数
@@ -102,7 +104,7 @@ export struct MomentsIndex {
             .height(300)
 
             Row({ space: 10 }) {
-              Text(Const.NICK_NAME)
+              Text(this.LAST_LOGIN)
                 .fontSize(20)
                 .fontColor(0xffffff)
                 .margin({ bottom: 10 })

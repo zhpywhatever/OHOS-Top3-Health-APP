@@ -44,7 +44,39 @@ export  struct AddAvatarDialog {
       }
     });
   }
-
+  private uploadImages(paths: string[]) {
+    let allFiles = Array<request.File>()
+    for (let i = 0; i <paths.length; i++) {
+      let path = paths[i]
+      console.log("path: " + path)
+      allFiles[i] = {
+        name: "image" + i + ".jpg",
+        filename: "image" + i + ".jpg",
+        uri: path,
+        type: "image"
+      }
+    }
+    // request.upload({
+    //   url: "http://192.168.1.5:8080/java_0101_fileupload_war_exploded/uploadServlet",
+    //   method: "POST",
+    //   files: allFiles,
+    //   header: {},
+    //   data: [
+    //     {
+    //       name: "test",
+    //       value: "value"
+    //     }
+    //   ]
+    // }, (error, response) => {
+    //   if(response) {
+    //     response.on('progress', (uploadedSize: number, totalSize: number) => {
+    //       console.log("progress, uploadedSize: " + uploadedSize + ", totalSize: " + totalSize)
+    //     })
+    //   } else {
+    //     console.log("upload failure: " + error)
+    //   }
+    // });
+  }
 
   controller: CustomDialogController = new CustomDialogController({ builder: '' });
 
