@@ -35,6 +35,7 @@ export default struct UserPrivacyDialog {
   confirm: Function = () => {
   };
 
+
   build() {
     Column() {
       Text($r('app.string.privacy_title'))

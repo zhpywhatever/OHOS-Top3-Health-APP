@@ -203,6 +203,14 @@
     {
       "name": "empty",
       "value": "empty"
+    },
+    {
+      "name": "select_from_album",
+      "value": "从相册选择图片"
+    },
+    {
+      "name": "view_avatar",
+      "value": "查看头像"
     }
   ]
 }

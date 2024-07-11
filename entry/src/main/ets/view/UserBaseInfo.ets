@@ -12,26 +12,62 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { router } from '@kit.ArkUI';
+import {AddAvatarDialog} from './dialog/AddAvatarDialog';
+import {ShowAvatarDialog} from './dialog/AddAvatarDialog';
 
+@Entry
 @Component
 export struct UserBaseInfo {
   @Prop nickname: string = 'Top3';
   @Prop signature: string = '遥遥领先遥遥领先';
 
+  controller: CustomDialogController = new CustomDialogController({
+    builder: AddAvatarDialog({
+      view: () => {
+          this.viewAvatar()
+      }
+    }),
+    cancel: () => {
+      console.log("cancel")
+    },
+    autoCancel: true,
+    customStyle: true
+  });
+
+  showController: CustomDialogController = new CustomDialogController({
+    builder: ShowAvatarDialog(),
+    cancel: () => {
+      console.log("cancel")
+    },
+    autoCancel: true,
+    customStyle: true
+  });
+
+  viewAvatar(){
+      this.showController.open()
+  }
   build() {
     Column() {
       // userIcon
       Stack(){
+        Image($r('app.media.user_image_frame'))
+          .height($r('app.float.default_100'))
+          .width($r('app.float.default_100'))
+          .margin({ top: $r('app.float.default_71') })
+
         Image($r('app.media.ic_user'))
           .objectFit(ImageFit.Contain)
           .height($r('app.float.default_66'))
           .width($r('app.float.default_66'))
           .margin({ top: $r('app.float.default_71') })
-        //.border({width: 3, color: Color.Blue})
-        Image($r('app.media.user_image_frame'))
-          .height($r('app.float.default_100'))
-          .width($r('app.float.default_100'))
-          .margin({ top: $r('app.float.default_71') })
+          .onClick(
+            () => {
+              this.controller.open()
+            }
+          )
+
+
       }
 
       Column() {
