@@ -18,6 +18,9 @@ import { UserBaseInfo } from '../view/UserBaseInfo';
 import { CommonConstants as Const } from '../common/constants/CommonConstants';
 import App from '@system.app';
 import { router } from '@kit.ArkUI';
+import { hashPasswordToHex, checkLogin, UserInfo, getUserInfo, writeFile } from '../model/fileProcess';
+import { promptAction } from '@kit.ArkUI';
+
 
 @Entry
 @Component
@@ -28,11 +31,35 @@ export struct MineIndex {
   @State signature: string = Const.SIGNATURE;
   // @State isLoggedIn: boolean = false;
   @StorageLink('LOGIN_FLAG') LOGIN_FLAG: Boolean = false;
+  @StorageLink('LAST_LOGIN') LAST_LOGIN: string = "";
 
   handleLogin(username: string, password: string) {
-    this.LOGIN_FLAG = true;
-    this.nickname = username;
-    this.signature = "用户签名";
+    let userInfo : UserInfo = {
+      username: username,
+      password: password,
+    };
+    checkLogin(userInfo).then((LOGIN_FLAG) => {
+      if (LOGIN_FLAG) {
+        console.log("登录成功");
+        this.nickname = username;
+        let storedInfo = getUserInfo(this.nickname);
+        if (storedInfo && storedInfo.whatcanIsay) {
+          this.signature = storedInfo.whatcanIsay;
+        }
+        this.LAST_LOGIN = this.nickname;
+        this.LOGIN_FLAG = true;
+        writeFile("LAST_LOGIN_FILE", this.LAST_LOGIN);
+
+        promptAction.showToast({
+          message: '欢迎登录!'
+        });
+      } else {
+        console.log("登录失败");
+        promptAction.showToast({
+          message: '登录失败'
+        });
+      }
+    })
   }
 
   async handleRegister() {
