@@ -6,6 +6,7 @@
     "pages/TaskListPage",
     "pages/TaskEditPage",
     "pages/AboutPage",
-    "pages/UpdatesPage"
+    "pages/UpdatesPage",
+    "pages/ImageSwiperPage"
   ]
 }
