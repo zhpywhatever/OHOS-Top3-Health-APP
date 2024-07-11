@@ -5,11 +5,13 @@ import AddBtn from '../view/home/AddBtnComponent';
 class MomentClass {
   public nickName: string; //昵称
   public content: string; //内容
+  public showC: boolean;
   public images: ResourceStr[]; //内容图片列表
 
-  constructor(nickName: string, content: string, images: ResourceStr[]) {
+  constructor(nickName: string, content: string, showC: boolean, images: ResourceStr[]) {
     this.nickName = nickName;
     this.content = content;
+    this.showC = showC;
     this.images = images;
   }
 }
@@ -19,15 +21,18 @@ class MomentClass {
 @Component
 export struct MomentsIndex {
   @State momentList: MomentClass[] = [
-    new MomentClass('Timo', 'Seeing much, suffering much, and studying much, are the three pillars of learning.', []),
-    new MomentClass('Pill', '今日打卡', [$r("app.media.1")]),
-    new MomentClass('锤子', '打卡打卡打卡打卡打卡打卡打卡打卡打卡打卡', [$r("app.media.1"), $r("app.media.2")]),
+    new MomentClass('Timo', 'Seeing much, suffering much, and studying much, are the three pillars of learning.', false,[]),
+    new MomentClass('Pill', '今日打卡', false, [$r("app.media.1")]),
+    new MomentClass('锤子', '打卡打卡打卡打卡打卡打卡打卡打卡打卡打卡', false, [$r("app.media.1"), $r("app.media.2")])
   ];
+  @State showC: boolean[] = [
+    false, false, false
+  ]
 
 
   //计算列数
   calcColumnsTemplate(index:number) {
-    console.log(`index =  ${index}`)
+    console.log(`index =  ${index}, len = ${this.momentList.length}`)
     let result: string = '1fr'
     let length: number = this.momentList[index].images.length || 0
     if (length == 1) {
@@ -125,13 +130,13 @@ export struct MomentsIndex {
                 .objectFit(ImageFit.Cover)
 
               Column({ space: 10 }) {
-                Text(`${item.nickName} - ${index}图`)
+                Text(`${item.nickName}`)
                   .fontSize(16)
                   .fontColor('#409EFF')
                 Text(item.content)
                   .fontSize(16)
                   .lineHeight(22)
-                if (item.images && item.images.length > 0) {
+                if (index<this.momentList.length && item.images && item.images.length > 0) {
                   Grid() {
                     ForEach(item.images, (img: ResourceStr, index: number) => {
                       GridItem() {
@@ -159,10 +164,57 @@ export struct MomentsIndex {
                   .width(this.calcGridWidth(index))
                   .height(this.calcGridHeight(index))
                 }
+                Stack({alignContent:Alignment.End}) {
+                  Flex({
+                    direction: FlexDirection.Row,
+                    justifyContent: FlexAlign.SpaceBetween,
+                    alignItems: ItemAlign.Center
+                  }) {
+                    Text('刚刚')
+                      .fontColor("#ffb9b9b9")
+                      .fontSize(13)
+                    Text('••')
+                      .width(35)
+                      .height(18)
+                      .borderRadius(5)
+                      .fontSize(12)
+                      .fontWeight(900)
+                      .textAlign(TextAlign.Center)
+                      .fontColor("#ff5a6d96")
+                      .backgroundColor("#fff7f7f7")
+                      .onClick(()=> {
+                        this.showC[index] = !(this.showC[index]);
+                        let i:number;
+                        for(i = 0; i<this.momentList.length;i++){
+                          console.info(`momentlist ${i}: ${this.momentList[i].showC}`)
+                        }
+
+                      })
+                  }
+                  Text('删除')
+                    .margin({right:"46vp"})
+                    .fontColor(this.showC[index]?"#ffffffff":"#00ffffff")
+                    .backgroundColor("#ffff0000")
+                    .textAlign(TextAlign.Center)
+                    .width(this.showC[index]?48:0)
+                    .height(28)
+                    .borderRadius(3)
+                    .onClick(()=>{
+                      this.momentList.splice(index, 1);
+                      this.showC.splice(index, 1);
+                    })
+                    .animation({
+                      duration: 350,
+                      curve: Curve.EaseOut,
+                      iterations: 1,
+                      playMode: PlayMode.Normal
+                    })
+                }
               }
               .layoutWeight(1)
               .alignItems(HorizontalAlign.Start)
               .justifyContent(FlexAlign.Start)
+
             }
             .width('100%')
             .alignItems(VerticalAlign.Top)
@@ -178,7 +230,9 @@ export struct MomentsIndex {
       AddBtn({
         clickAction: () => {
           console.info(`click add moments, len = ${this.momentList.length}`);
-          this.momentList.splice(0, 0, new MomentClass('Me', 'Test Add Moment', [$r("app.media.4")]));
+          // this.momentList.splice(0, 1);
+          this.momentList.splice(0, 0, new MomentClass('Me', 'Test Add Moment', false, [$r("app.media.4")]));
+          this.showC.splice(0,0,false);
           console.info(`after splice, len = ${this.momentList.length}`);
         }
       })
