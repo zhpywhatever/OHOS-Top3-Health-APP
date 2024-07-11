@@ -48,13 +48,21 @@ struct Index {
 
   aboutToAppear() {
     let tmp_my_value: number = Number(readFile("MY_VALUE_FILE"));
-    // AppStorage.setOrCreate<boolean>('LOGIN_FLAG', false);
+    let tmp_login_flag: boolean = readFile("LOGIN_FLAG_FILE").toLowerCase() === 'true';
+
     if (!tmp_my_value) {
       AppStorage.setOrCreate('MY_VALUE', 0);
-    }
-    else if (tmp_my_value != 0) {
+    } else if (tmp_my_value != 0) {
       AppStorage.SetOrCreate('MY_VALUE', tmp_my_value);
     }
+
+    if (!tmp_login_flag) {
+      AppStorage.setOrCreate('LOGIN_FLAG', false);
+    } else {
+      AppStorage.SetOrCreate('LOGIN_FLAG', tmp_login_flag);
+      AppStorage.SetOrCreate('LAST_LOGIN', readFile("LAST_LOGIN_FILE"));
+    }
+
     notificationManager.requestEnableNotification().then(() => {
       Logger.info('onPageShow', `requestEnableNotification success`);
     }).catch((err: Error) => {

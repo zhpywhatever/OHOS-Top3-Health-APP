@@ -49,6 +49,7 @@ export struct MineIndex {
         this.LAST_LOGIN = this.nickname;
         this.LOGIN_FLAG = true;
         writeFile("LAST_LOGIN_FILE", this.LAST_LOGIN);
+        writeFile("LOGIN_FLAG_FILE", this.LOGIN_FLAG.toString());
 
         promptAction.showToast({
           message: '欢迎登录!'
@@ -110,6 +111,16 @@ export struct MineIndex {
     .width('100%')
     .height('80%')
     .justifyContent(FlexAlign.Center)
+  }
+
+  aboutToAppear() {
+    if (this.LOGIN_FLAG && this.LAST_LOGIN) {
+      this.nickname = this.LAST_LOGIN;
+      let storedInfo = getUserInfo(this.nickname);
+      if (storedInfo?.whatcanIsay) {
+        this.signature = storedInfo?.whatcanIsay;
+      }
+    }
   }
 
   build() {
