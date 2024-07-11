@@ -21,6 +21,7 @@ struct AgencyCard {
   @LocalStorageProp('taskList') taskList: AgencyCardInfo[] = [];
   @LocalStorageProp('showWidget') showWidget: boolean = false;
   @LocalStorageProp('achievements') achievements: number = 0;
+  @LocalStorageProp('checkInDays') checkInDays: number = 0;
 
   private swiperController: SwiperController = new SwiperController();
 
@@ -165,11 +166,42 @@ struct AgencyCard {
               .backgroundColor($r('app.color.progress_background_color'))
               .style({ strokeWidth: $r('app.float.progress_stroke_width') })
 
-            Text("已获得" + this.achievements.toString() + "个成就")
-            .fontSize($r('app.float.percent_text_size'))
-            .fontColor(Color.Black)
-            .fontWeight(FontWeight.Normal)
-            .textAlign(TextAlign.Center)
+            Column(){
+              Row(){
+                Text("已获得")
+                  .fontSize($r('app.float.achieve_text_size'))
+                  .fontColor(Color.Black)
+                  .fontWeight(FontWeight.Normal)
+                  .textAlign(TextAlign.End)
+                Text(this.achievements.toString())
+                  .fontSize($r('app.float.achieve_num_size'))
+                  .fontColor(Color.Blue)
+                  .fontWeight(FontWeight.Normal)
+                  .textAlign(TextAlign.Center)
+                Text("个成就")
+                  .fontSize($r('app.float.achieve_text_size'))
+                  .fontColor(Color.Black)
+                  .fontWeight(FontWeight.Normal)
+                  .textAlign(TextAlign.Start)
+              }
+              Row(){
+                Text("已连续打卡")
+                  .fontSize($r('app.float.achieve_text_size'))
+                  .fontColor(Color.Black)
+                  .fontWeight(FontWeight.Normal)
+                  .textAlign(TextAlign.End)
+                Text(this.checkInDays.toString())
+                  .fontSize($r('app.float.achieve_num_size'))
+                  .fontColor(Color.Blue)
+                  .fontWeight(FontWeight.Normal)
+                  .textAlign(TextAlign.Center)
+                Text("天")
+                  .fontSize($r('app.float.achieve_text_size'))
+                  .fontColor(Color.Black)
+                  .fontWeight(FontWeight.Normal)
+                  .textAlign(TextAlign.Start)
+              }
+            }
           }
           .justifyContent(FlexAlign.SpaceAround)
           .backgroundColor(Color.White)

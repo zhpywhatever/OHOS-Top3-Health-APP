@@ -25,6 +25,7 @@ export default class ProgressCardInfo {
 
   achievements?: number;
 
+  checkInDays?: number;
   /**
    * Target completion quantity
    */
