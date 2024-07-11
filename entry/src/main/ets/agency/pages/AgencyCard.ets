@@ -159,12 +159,30 @@ struct AgencyCard {
           .height(this.FULL_HEIGHT_PERCENT)
 
           Row(){
-            Progress({ value: 0, total: 8, type: ProgressType.Ring })
-              .value(this.achievements)
-              .width($r('app.float.progress_component_size'))
-              .height($r('app.float.progress_component_size'))
-              .backgroundColor($r('app.color.progress_background_color'))
-              .style({ strokeWidth: $r('app.float.progress_stroke_width') })
+            Stack(){
+              Progress({ value: 0, total: 8, type: ProgressType.Ring })
+                .value(this.achievements)
+                .width($r('app.float.progress_component_size'))
+                .height($r('app.float.progress_component_size'))
+                .backgroundColor($r('app.color.progress_background_color'))
+                .style({ strokeWidth: $r('app.float.progress_stroke_width') })
+              Column(){
+                Row(){
+                  Text(this.achievements.toString())
+                    .fontSize($r('app.float.percent_text_size'))
+                    .fontColor(Color.Blue)
+                    .fontWeight(FontWeight.Normal)
+                  Text('/8')
+                    .fontSize($r('app.float.percent_text_size'))
+                    .fontColor(Color.Black)
+                    .fontWeight(FontWeight.Normal)
+                }
+                Text("成就数")
+                  .fontSize($r('app.float.progress_stroke_width'))
+                  .fontColor(Color.Black)
+                  .fontWeight(FontWeight.Normal)
+              }
+            }
 
             Column(){
               Row(){
