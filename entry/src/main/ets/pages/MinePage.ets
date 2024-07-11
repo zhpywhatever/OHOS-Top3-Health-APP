@@ -18,6 +18,7 @@ import { UserBaseInfo } from '../view/UserBaseInfo';
 import { CommonConstants as Const } from '../common/constants/CommonConstants';
 
 @Component
+@Preview
 export struct MineIndex {
   @State nickname: string = Const.NICK_NAME;
   @State signature: string = Const.SIGNATURE;
