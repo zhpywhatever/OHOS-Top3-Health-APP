@@ -189,6 +189,14 @@
       "value": "13vp"
     },
     {
+      "name": "achieve_text_size",
+      "value": "24fp"
+    },
+    {
+      "name": "achieve_num_size",
+      "value": "30fp"
+    },
+    {
       "name": "percent_text_size",
       "value": "27fp"
     },

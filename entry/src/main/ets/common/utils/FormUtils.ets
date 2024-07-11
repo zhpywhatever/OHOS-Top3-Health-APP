@@ -183,13 +183,13 @@ class FormUtils {
     });
   }
 
-  private countAchievements(): Promise<number> {
+  private countAchievements(): Promise<[number, number]> {
     return new Promise((resolve) => {
       GlobalInfoApi.query((res: GlobalInfo) => {
         let globalInfo: GlobalInfo = res;
         let achievementStr = globalInfo.achievements ?? '';
         let achievements = achievementStr.split(',').filter(item => item.trim() !== '' && !isNaN(Number(item)));
-        resolve(achievements.length)
+        resolve([achievements.length, globalInfo.checkInDays])
       });
     });
   }
@@ -197,12 +197,16 @@ class FormUtils {
   private async processTaskData(formInfo: FormInfo, data: TaskInfo[]): Promise<void> {
     let obj: ProgressCardInfo = {};
 
-    let achievements_num : number = await this.countAchievements();
+    let res = await this.countAchievements();
+    let achievements_num = res[0]
+    let checkInDays = res[1]
+
     let taskList: AgencyCardInfo[] = this.fetchResult(data);
 
     obj.taskList = taskList;
     obj.showWidget = taskList.length === 0 ? false : true;
     obj.achievements = achievements_num;
+    obj.checkInDays = checkInDays
 
     let formData = formBindingData.createFormBindingData(obj);
     formProvider.updateForm(formInfo.formId, formData).catch((err: Error) => {
