@@ -49,6 +49,10 @@
       "value": "成就"
     },
     {
+      "name": "tab_moments",
+      "value": "pyq"
+    },
+    {
       "name": "achievement",
       "value": "我的成就"
     },

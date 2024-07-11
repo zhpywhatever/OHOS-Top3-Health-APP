@@ -23,6 +23,7 @@ import { NavList, TabId } from '../model/NavItemModel';
 import HomeIndex from '../view/HomeComponent';
 import { AchievementIndex } from '../view/AchievementComponent';
 import { MineIndex } from './MinePage';
+import { MomentsIndex } from './MomentsPage';
 import { HomeStore } from '../viewmodel/HomeViewModel';
 import GlobalInfoApi from '../common/database/tables/GlobalInfoApi';
 import GlobalInfo from '../viewmodel/GlobalInfo';
@@ -107,7 +108,7 @@ struct Index {
         .height($r('app.float.default_24'))
         .objectFit(ImageFit.Contain)
         .offset({ y: (index === this.currentPage ? -2 : 0) })
-        .scale({x: (index === this.currentPage ? 1.1 : 1), y: (index === this.currentPage ? 1.1 : 1) })
+        .scale({x: (index === this.currentPage ? 1.2 : 1), y: (index === this.currentPage ? 1.2 : 1) })
         .animation({
           duration: 100,
           curve: Curve.Linear,
@@ -136,6 +137,11 @@ struct Index {
         AchievementIndex()
       }
       .tabBar(this.TabBuilder(TabId.ACHIEVEMENT))
+
+      TabContent() {
+        MomentsIndex();
+      }
+      .tabBar(this.TabBuilder(TabId.MOMENTS));
 
       TabContent() {
         MineIndex()
