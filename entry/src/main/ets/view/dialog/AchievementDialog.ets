@@ -22,6 +22,7 @@ const ANGLE_LARGE = 360;
 export struct AchievementDialog {
   controller: CustomDialogController = new CustomDialogController({ builder: 0 });
   @Consume achievementLevel: number;
+  @State info_data: string = "连续%d天达成";
   @State private opacityValue: number = 0;
   @State private angle: number = 0;
   @State private scaleValue: number = 0;
@@ -31,24 +32,35 @@ export struct AchievementDialog {
     switch (this.achievementLevel) {
       case 1:
         this.achievementMapValue = AchievementMap.on_1;
+        this.info_data = `初出茅庐 - 打卡第 ${this.achievementLevel} 天`;
         break;
       case 3:
         this.achievementMapValue = AchievementMap.on_3;
+        this.info_data = `连续${this.achievementLevel}天达成`;
         break;
       case 7:
         this.achievementMapValue = AchievementMap.on_7;
+        this.info_data = `连续${this.achievementLevel}天达成`;
         break;
       case 30:
         this.achievementMapValue = AchievementMap.on_30;
+        this.info_data = `连续${this.achievementLevel}天达成`;
         break;
       case 50:
         this.achievementMapValue = AchievementMap.on_50;
+        this.info_data = `连续${this.achievementLevel}天达成`;
         break;
       case 73:
         this.achievementMapValue = AchievementMap.on_73;
+        this.info_data = `连续${this.achievementLevel}天达成`;
         break;
       case 99:
         this.achievementMapValue = AchievementMap.on_99;
+        this.info_data = `连续${this.achievementLevel}天达成`;
+        break;
+      case 259:
+        this.achievementMapValue = AchievementMap.on_259;
+        this.info_data = `任务达人 - 累计完成 ${this.achievementLevel} 项任务`;
         break;
       default:
         break;
@@ -63,7 +75,8 @@ export struct AchievementDialog {
         .height(Const.THOUSANDTH_400)
         .objectFit(ImageFit.Contain)
 
-      Text($r('app.string.task_achievement_level', this.achievementLevel))
+
+      Text(this.info_data)
         .fontSize($r('app.float.default_24'))
         .fontWeight(Const.FONT_WEIGHT_500)
         .fontColor($r('app.color.white'))
