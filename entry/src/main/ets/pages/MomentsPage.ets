@@ -89,6 +89,24 @@ export struct MomentsIndex {
     return result
   }
 
+  onPageShow() {
+    this.checkLoginStatus();
+  }
+
+  async checkLoginStatus() {
+    try {
+      if (!this.LAST_LOGIN) {
+        await router.pushUrl({ url: 'pages/MinePage' });
+      }
+    } catch (error) {
+      console.error('检查登录状态时出错:', error);
+    }
+  }
+
+  getLoginStatus() : boolean {
+    return AppStorage.get('LOGIN_FLAG') ?? false;
+  }
+
   build() {
     Stack() {
       List({ space: 20 }) {

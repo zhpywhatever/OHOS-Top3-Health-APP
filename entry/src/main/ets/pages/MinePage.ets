@@ -61,6 +61,10 @@ export struct MineIndex {
         });
       }
     })
+    let test = router.getState();
+    if (!(test.name === "MainPage")) {
+      router.back();
+    }
   }
 
   async handleRegister() {
@@ -109,7 +113,7 @@ export struct MineIndex {
         .onClick(() => this.handleRegister())
     }
     .width('100%')
-    .height('80%')
+    .height('100%')
     .justifyContent(FlexAlign.Center)
   }
 

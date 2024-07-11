@@ -28,6 +28,7 @@ import { HomeStore } from '../viewmodel/HomeViewModel';
 import GlobalInfoApi from '../common/database/tables/GlobalInfoApi';
 import GlobalInfo from '../viewmodel/GlobalInfo';
 import { GlobalContext } from '../common/utils/GlobalContext';
+import { promptAction } from '@kit.ArkUI';
 import { writeFile, readFile } from '../model/fileProcess';
 
 @Styles
@@ -83,6 +84,14 @@ struct Index {
         this.homeStore = new HomeStore(new Date());
       }
       this.checkCurrentTime();
+
+      let tmp_login_flag : boolean= AppStorage.get('LOGIN_FLAG') ?? false;
+      if (!tmp_login_flag) {
+        promptAction.showToast({
+          message: '请先登录！'
+        });
+        router.pushUrl( {url: 'pages/MinePage' });
+      }
     }
   }
 
