@@ -143,11 +143,15 @@ export default struct HomeIndex {
                     // Execute deletion
                     item.isOpen = false;
                     item.isDone = false;
-                    // this.editedTaskInfo.taskID = item.taskID;
-                    // this.editedTaskInfo.isOpen = false;
-                    // this.editedTaskInfo.isDone = false;
-                    // this.taskChange();
+                    // Remove daily task
                     this.homeStore.updateTask(item);
+                    // Remove global task list
+                    item.date = 'global'
+                    this.homeStore.updateTask(item);
+                    // Update daily goal and task number
+                    this.editedTaskInfo.taskID = item.taskID;
+                    this.editedTaskInfo.isOpen = false;
+                    this.taskChange();
                   }
                 })
                   .margin({ bottom: Const.DEFAULT_12})
