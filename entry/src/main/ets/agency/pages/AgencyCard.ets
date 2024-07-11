@@ -20,6 +20,11 @@ let agencyStorage = new LocalStorage();
 struct AgencyCard {
   @LocalStorageProp('taskList') taskList: AgencyCardInfo[] = [];
   @LocalStorageProp('showWidget') showWidget: boolean = false;
+  @LocalStorageProp('achievements') achievements: number = 0;
+  @LocalStorageProp('checkInDays') checkInDays: number = 0;
+
+  private swiperController: SwiperController = new SwiperController();
+
   private iconList = {
     getup: $r('app.media.ic_task_morning'),
     drink: $r('app.media.ic_task_water'),
@@ -131,26 +136,99 @@ struct AgencyCard {
   build() {
     Column() {
       if (this.showWidget) {
-        List({ space: this.LIST_SPACE }) {
-          ForEach(this.taskList, (taskItem: AgencyCardInfo) => {
-            ListItem() {
-              this.AgencyComponent(taskItem)
+        Swiper(this.swiperController){
+          List({ space: this.LIST_SPACE }) {
+            ForEach(this.taskList, (taskItem: AgencyCardInfo) => {
+              ListItem() {
+                this.AgencyComponent(taskItem)
+              }
+              .margin({ right: $r("app.float.agency_item_margin") })
+              .borderRadius($r("app.float.agency_item_radius"))
+              .backgroundColor(Color.White)
+            }, (taskItem: AgencyCardInfo) => JSON.stringify(taskItem))
+          }
+          .padding({
+            left: $r('app.float.agency_padding_left'),
+            top: $r('app.float.agency_padding_top'),
+            right: $r('app.float.agency_padding_right'),
+            bottom: $r('app.float.agency_padding_bottom')
+          })
+          .lanes(this.LIST_TWO_LANES)
+          .backgroundColor($r("app.color.list_background_color"))
+          .width(this.FULL_WIDTH_PERCENT)
+          .height(this.FULL_HEIGHT_PERCENT)
+
+          Row(){
+            Stack(){
+              Progress({ value: 0, total: 8, type: ProgressType.Ring })
+                .value(this.achievements)
+                .width($r('app.float.progress_component_size'))
+                .height($r('app.float.progress_component_size'))
+                .backgroundColor($r('app.color.progress_background_color'))
+                .style({ strokeWidth: $r('app.float.progress_stroke_width') })
+              Column(){
+                Row(){
+                  Text(this.achievements.toString())
+                    .fontSize($r('app.float.percent_text_size'))
+                    .fontColor(Color.Blue)
+                    .fontWeight(FontWeight.Normal)
+                  Text('/8')
+                    .fontSize($r('app.float.percent_text_size'))
+                    .fontColor(Color.Black)
+                    .fontWeight(FontWeight.Normal)
+                }
+                Text("成就数")
+                  .fontSize($r('app.float.progress_stroke_width'))
+                  .fontColor(Color.Black)
+                  .fontWeight(FontWeight.Normal)
+              }
             }
-            .margin({ right: $r("app.float.agency_item_margin") })
-            .borderRadius($r("app.float.agency_item_radius"))
-            .backgroundColor(Color.White)
-          }, (taskItem: AgencyCardInfo) => JSON.stringify(taskItem))
+
+            Column(){
+              Row(){
+                Text("已获得")
+                  .fontSize($r('app.float.achieve_text_size'))
+                  .fontColor(Color.Black)
+                  .fontWeight(FontWeight.Normal)
+                  .textAlign(TextAlign.End)
+                Text(this.achievements.toString())
+                  .fontSize($r('app.float.achieve_num_size'))
+                  .fontColor(Color.Blue)
+                  .fontWeight(FontWeight.Normal)
+                  .textAlign(TextAlign.Center)
+                Text("个成就")
+                  .fontSize($r('app.float.achieve_text_size'))
+                  .fontColor(Color.Black)
+                  .fontWeight(FontWeight.Normal)
+                  .textAlign(TextAlign.Start)
+              }
+              Row(){
+                Text("已连续打卡")
+                  .fontSize($r('app.float.achieve_text_size'))
+                  .fontColor(Color.Black)
+                  .fontWeight(FontWeight.Normal)
+                  .textAlign(TextAlign.End)
+                Text(this.checkInDays.toString())
+                  .fontSize($r('app.float.achieve_num_size'))
+                  .fontColor(Color.Blue)
+                  .fontWeight(FontWeight.Normal)
+                  .textAlign(TextAlign.Center)
+                Text("天")
+                  .fontSize($r('app.float.achieve_text_size'))
+                  .fontColor(Color.Black)
+                  .fontWeight(FontWeight.Normal)
+                  .textAlign(TextAlign.Start)
+              }
+            }
+          }
+          .justifyContent(FlexAlign.SpaceAround)
+          .backgroundColor(Color.White)
+          .width(this.FULL_WIDTH_PERCENT)
+          .height(this.FULL_HEIGHT_PERCENT)
+          .onClick(() => {
+            this.jumpToAbility();
+          })
         }
-        .padding({
-          left: $r('app.float.agency_padding_left'),
-          top: $r('app.float.agency_padding_top'),
-          right: $r('app.float.agency_padding_right'),
-          bottom: $r('app.float.agency_padding_bottom')
-        })
-        .lanes(this.LIST_TWO_LANES)
-        .backgroundColor($r("app.color.list_background_color"))
-        .width(this.FULL_WIDTH_PERCENT)
-        .height(this.FULL_HEIGHT_PERCENT)
       } else {
         this.AgencyNoData()
       }

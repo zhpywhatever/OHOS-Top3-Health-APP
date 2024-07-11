@@ -30,6 +30,7 @@ const DEFAULT_SCROLL_PERCENT = 0.934; // default calendar width percent
 @Component
 export struct WeekCalendar {
   @Link homeStore: HomeStore;
+  @State dateNow:string = this.homeStore.dateTitle;
   currentPage: number = 1;
   private scroller: Scroller = new Scroller();
   scrollWidth: number = DEFAULT_SCROLL_WIDTH;
@@ -79,7 +80,7 @@ export struct WeekCalendar {
       Column() {
         Row() {
           this.ArrowIcon(false)
-          HealthText({ title: this.homeStore.dateTitle, fontSize: $r('app.float.default_14') })
+          HealthText({ title: this.dateNow, fontSize: $r('app.float.default_14') })
             .margin($r('app.float.default_12'))
           this.ArrowIcon(true)
         }
@@ -107,7 +108,10 @@ export struct WeekCalendar {
               }
               .width(`${WEEK_DAY_WIDTH}%`)
               .justifyContent(FlexAlign.SpaceBetween)
-              .onClick(() => WeekCalendarMethods.calenderItemClickAction(item, index, this.homeStore))
+              .onClick(() => {
+                WeekCalendarMethods.calenderItemClickAction(item, index, this.homeStore);
+                this.dateNow = this.homeStore.dateTitle;
+              })
             })
           }
         }
