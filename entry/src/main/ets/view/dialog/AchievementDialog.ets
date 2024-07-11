@@ -60,7 +60,7 @@ export struct AchievementDialog {
         break;
       case 259:
         this.achievementMapValue = AchievementMap.on_259;
-        this.info_data = `任务达人 - 累计完成 ${this.achievementLevel} 项任务`;
+        this.info_data = `任务达人 - 累计完成 ${0xff & this.achievementLevel} 项任务`;
         break;
       default:
         break;
