@@ -17,6 +17,48 @@ class MomentClass {
   }
 }
 
+const subjects = ['小明', '小红', '小刚', '张三', '李四'];
+const verbs = ['喜欢', '讨厌', '正在做', '完成了', '开始了'];
+const objects = ['作业', '游戏', '跑步', '阅读', '烹饪'];
+const adverbs = ['快速地', '慢慢地', '开心地', '伤心地', '认真地'];
+
+const images = [$r("app.media.1"), $r("app.media.2"), $r("app.media.3"), $r("app.media.4")];
+
+// 随机选择一个数组中的元素
+function getRandomElement(arr: string[]): string {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function getRandomElement2(arr: Resource[]): Resource {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+// 生成随机文案的函数
+function generateRandomText(): string {
+  const subject = getRandomElement(subjects);
+  const verb = getRandomElement(verbs);
+  const object = getRandomElement(objects);
+  const adverb = getRandomElement(adverbs);
+
+  // 生成随机文案
+  const sentence = `${subject}${adverb}${verb}${object}。`;
+  return sentence;
+}
+
+// 生成随机数组b的函数
+function generateRandomImages(): ResourceStr[] {
+  // 生成0到9的随机长度
+  const length = Math.floor(Math.random() * 10);
+
+  // 生成随机数组b
+  const randomArray: Resource[] = [];
+  for (let i = 0; i < length; i++) {
+    randomArray.push(getRandomElement2(images));
+  }
+
+  return randomArray;
+}
+
 
 @Entry
 @Component
@@ -251,7 +293,7 @@ export struct MomentsIndex {
         clickAction: () => {
           console.info(`click add moments, len = ${this.momentList.length}`);
           // this.momentList.splice(0, 1);
-          this.momentList.splice(0, 0, new MomentClass('Me', 'Test Add Moment', false, [$r("app.media.4")]));
+          this.momentList.splice(0, 0, new MomentClass('Me', generateRandomText(), false, generateRandomImages()));
           this.showC.splice(0,0,false);
           console.info(`after splice, len = ${this.momentList.length}`);
         }
