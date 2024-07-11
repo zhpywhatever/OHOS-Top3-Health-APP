@@ -17,16 +17,19 @@ struct Index {
           middle: { anchor: '__container__', align: HorizontalAlign.Center }
         })
       Button() {
-        Text('返回')
-          .fontSize(30)
+        SymbolGlyph($r('sys.symbol.arrow_left'))
           .fontWeight(FontWeight.Bold)
+          .fontSize(30)
+        // Text('返回')
+        //   .fontSize(30)
+        //   .fontWeight(FontWeight.Bold)
       }
       .type(ButtonType.Capsule)
       .margin({
         top: 20
       })
-      .backgroundColor('#0D9FFB')
-      .width('40%')
+      .backgroundColor(Color.Transparent)
+      .width('20%')
       .height('5%')
       .onClick(() => {
         router.back()
