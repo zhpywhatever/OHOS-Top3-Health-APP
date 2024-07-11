@@ -142,7 +142,6 @@ export default struct HomeIndex {
                   deleteTask: () => {
                     // Execute deletion
                     item.isOpen = false;
-                    item.isDone = false;
                     // Remove daily task
                     this.homeStore.updateTask(item);
                     // Remove global task list
