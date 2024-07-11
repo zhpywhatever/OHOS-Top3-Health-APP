@@ -32,7 +32,11 @@ export struct ListInfo {
               .width($r('app.float.default_7'))
           }
           .onClick(() => {
-            router.pushUrl({ url: item.url })
+            if (item.id === '4') {
+              AppStorage.set<Boolean>('LOGIN_FLAG', false)
+            } else {
+              router.pushUrl({ url: item.url })
+            }
           })
         }
         .backgroundColor($r('app.color.white'))

@@ -37,6 +37,10 @@
       "value": "关于"
     },
     {
+      "name": "mine_logout",
+      "value": "退出登录"
+    },
+    {
       "name": "clock_in",
       "value": "打卡"
     },

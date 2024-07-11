@@ -48,6 +48,7 @@ struct Index {
 
   aboutToAppear() {
     let tmp_my_value: number = Number(readFile("MY_VALUE_FILE"));
+    // AppStorage.setOrCreate<boolean>('LOGIN_FLAG', false);
     if (!tmp_my_value) {
       AppStorage.setOrCreate('MY_VALUE', 0);
     }

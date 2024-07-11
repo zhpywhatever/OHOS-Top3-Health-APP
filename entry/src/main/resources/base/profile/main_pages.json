@@ -6,6 +6,8 @@
     "pages/TaskListPage",
     "pages/TaskEditPage",
     "pages/AboutPage",
-    "pages/UpdatesPage"
+    "pages/UpdatesPage",
+    "pages/MinePage",
+    "pages/RegisterPage"
   ]
 }

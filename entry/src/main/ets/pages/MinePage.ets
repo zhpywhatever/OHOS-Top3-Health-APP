@@ -16,20 +16,86 @@
 import { ListInfo } from '../view/ListInfo';
 import { UserBaseInfo } from '../view/UserBaseInfo';
 import { CommonConstants as Const } from '../common/constants/CommonConstants';
+import App from '@system.app';
+import { router } from '@kit.ArkUI';
 
+@Entry
 @Component
 export struct MineIndex {
   @State nickname: string = Const.NICK_NAME;
+  @State password: string = "";
   @State signature: string = Const.SIGNATURE;
+  // @State isLoggedIn: boolean = false;
+  @StorageLink('LOGIN_FLAG') LOGIN_FLAG: Boolean = false;
+
+  handleLogin(username: string, password: string) {
+    this.LOGIN_FLAG = true;
+    this.nickname = username;
+    this.signature = "用户签名";
+  }
+
+  async handleRegister() {
+    try {
+      await router.pushUrl({ url: 'pages/RegisterPage' });
+      console.log('Navigate to register page');
+    } catch (err) {
+      console.error(`Failed to navigate: ${err.message}`);
+    }
+  }
+
+  @Builder LoginView() {
+    Column() {
+      Image($r('app.media.logo'))
+        .width(100)
+        .height(100)
+        .margin({ top: 50, bottom: 20 })
+
+      TextInput({ placeholder: '用户名' })
+        .width('80%')
+        .height(40)
+        .margin({ bottom: 20 })
+        .onChange((value: string) => {
+          this.nickname = value;
+        })
+
+      TextInput({ placeholder: '密码' })
+        .width('80%')
+        .height(40)
+        .type(InputType.Password)
+        .margin({ bottom: 30 })
+        .onChange((value: string) => {
+          this.password = value;
+        })
+
+      Button('登录')
+        .width('80%')
+        .height(40)
+        .onClick(() => {
+          this.handleLogin(this.nickname, this.password);
+        })
+
+      Text('注册新账号')
+        .fontColor(Color.Blue)
+        .margin({ top: 20 })
+        .onClick(() => this.handleRegister())
+    }
+    .width('100%')
+    .height('80%')
+    .justifyContent(FlexAlign.Center)
+  }
 
   build() {
     Column() {
-      UserBaseInfo({
-        nickname: this.nickname,
-        signature: this.signature
-      });
-
-      ListInfo();
+      if (this.LOGIN_FLAG) {
+        // 登录视图
+        UserBaseInfo({
+          nickname: this.nickname,
+          signature: this.signature
+        });
+        ListInfo();
+      } else {
+        this.LoginView();
+      }
     }
     .height(Const.FULL_HEIGHT)
     .backgroundColor($r('app.color.mineBgColor'))

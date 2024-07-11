@@ -22,6 +22,14 @@ export function writeFile(filename: string, content: string): void {
   fileStream.close();
 }
 
+export function writeFilePlus(filename: string, content: string): void {
+  let filePath = filesDir + filename;
+  ensureFileExists(filePath);
+  let fileStream = fileIo.createStreamSync(filePath, "a+");
+  fileStream.writeSync(content);
+  fileStream.close();
+}
+
 let res: string = '';
 export function readFile(filename: string): string {
   let filePath = filesDir + filename;

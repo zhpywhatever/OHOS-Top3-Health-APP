@@ -35,5 +35,10 @@ export const MineInfoList: InfoItem[] = [
     id: '3',
     title: $r('app.string.mine_about'),
     url: 'pages/AboutPage'
+  },
+  {
+    id: '4',
+    title: $r('app.string.mine_logout'),
+    url: ''
   }
 ];
