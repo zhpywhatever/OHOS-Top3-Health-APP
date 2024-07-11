@@ -1,5 +1,6 @@
 import router from '@ohos.router';
 import { CommonConstants as Const } from '../common/constants/CommonConstants';
+import AddBtn from '../view/home/AddBtnComponent';
 
 class MomentClass {
   public nickName: string; //昵称
@@ -26,6 +27,7 @@ export struct MomentsIndex {
 
   //计算列数
   calcColumnsTemplate(index:number) {
+    console.log(`index =  ${index}`)
     let result: string = '1fr'
     let length: number = this.momentList[index].images.length || 0
     if (length == 1) {
@@ -81,7 +83,7 @@ export struct MomentsIndex {
   }
 
   build() {
-    Column() {
+    Stack() {
       List({ space: 20 }) {
         ListItem() {
           Stack({ alignContent: Alignment.BottomEnd }) {
@@ -140,7 +142,7 @@ export struct MomentsIndex {
                           .borderRadius(2)
                           .onClick(() => {
                             router.pushUrl({
-                              url: "pages/SwiperPage",
+                              url: "pages/ImageSwiperPage",
                               params: {
                                 images: item.images,
                                 index: index
@@ -172,6 +174,14 @@ export struct MomentsIndex {
       }
       .divider({ strokeWidth: 1 })
       .width('100%')
+
+      AddBtn({
+        clickAction: () => {
+          console.info(`click add moments, len = ${this.momentList.length}`);
+          this.momentList.splice(0, 0, new MomentClass('Me', 'Test Add Moment', [$r("app.media.4")]));
+          console.info(`after splice, len = ${this.momentList.length}`);
+        }
+      })
     }
     .width('100%')
     .height(('100%'))

@@ -8,6 +8,7 @@
     "pages/AboutPage",
     "pages/UpdatesPage",
     "pages/MinePage",
-    "pages/RegisterPage"
+    "pages/RegisterPage",
+    "pages/ImageSwiperPage"
   ]
 }
