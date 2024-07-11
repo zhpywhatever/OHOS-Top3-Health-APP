@@ -10,7 +10,7 @@ function descStyle() {
   .fontSize($r('app.float.default_28'))
   .fontWeight(Const.FONT_WEIGHT_400)
   .fontFamily($r('app.string.HarmonyHeiTi'))
-  .fontColor(Color.Blue)
+  .fontColor("#FF4955AC")
   .width(Const.FULL_WIDTH)
   .lineHeight($r('app.float.default_20'))
   .textAlign(TextAlign.Center)

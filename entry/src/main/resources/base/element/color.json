@@ -99,6 +99,10 @@
     {
       "name": "progress_column_color",
       "value": "#0d000000"
+    },
+    {
+      "name": "light_blue",
+      "value": "#FF4955AC"
     }
   ]
 }
