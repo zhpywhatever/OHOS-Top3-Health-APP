@@ -30,6 +30,8 @@ import GlobalInfo from './GlobalInfo';
 import WeekCalendarInfo from './WeekCalendarInfo';
 import AchievementInfo from './AchievementInfo';
 import { promptAction } from '@kit.ArkUI';
+import { writeFile, readFile } from '../model/fileProcess';
+
 
 @Observed
 export class HomeStore {
@@ -245,6 +247,7 @@ export class HomeStore {
       let flag = AppStorage.get<number>('MY_VALUE');
       if (taskCount == 3 && (!flag || (flag && flag < 3)) ) {
         AppStorage.set('MY_VALUE', 3);
+        writeFile("MY_VALUE_FILE", String(AppStorage.get('MY_VALUE')));
         achievementLevel = await this.updateAchievement(this.selectedDayInfo.dayInfo);
         this.dateArr = this.dateArr.map((item: WeekDateModel) => dateStr === item.dateStr ? this.selectedDayInfo : item);
         return {

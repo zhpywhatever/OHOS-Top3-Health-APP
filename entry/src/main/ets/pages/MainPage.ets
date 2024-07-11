@@ -28,6 +28,7 @@ import { HomeStore } from '../viewmodel/HomeViewModel';
 import GlobalInfoApi from '../common/database/tables/GlobalInfoApi';
 import GlobalInfo from '../viewmodel/GlobalInfo';
 import { GlobalContext } from '../common/utils/GlobalContext';
+import { writeFile, readFile } from '../model/fileProcess';
 
 @Styles
 function allSize() {
@@ -46,7 +47,13 @@ struct Index {
   private tabController: TabsController = new TabsController();
 
   aboutToAppear() {
-    AppStorage.setOrCreate('MY_VALUE', 0);
+    let tmp_my_value: number = Number(readFile("MY_VALUE_FILE"));
+    if (!tmp_my_value) {
+      AppStorage.setOrCreate('MY_VALUE', 0);
+    }
+    else if (tmp_my_value != 0) {
+      AppStorage.SetOrCreate('MY_VALUE', tmp_my_value);
+    }
     notificationManager.requestEnableNotification().then(() => {
       Logger.info('onPageShow', `requestEnableNotification success`);
     }).catch((err: Error) => {
