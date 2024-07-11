@@ -21,6 +21,7 @@ import { router } from '@kit.ArkUI';
 
 @Entry
 @Component
+@Preview
 export struct MineIndex {
   @State nickname: string = Const.NICK_NAME;
   @State password: string = "";

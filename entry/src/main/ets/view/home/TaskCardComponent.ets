@@ -37,6 +37,9 @@ export struct TaskCard {
   @Prop taskInfoStr: string = '';
   clickAction: Function = (isClick: boolean) => {
   };
+  deleteTask: Function = () => {}
+  scroller= new Scroller()
+  downX = 0
   @State taskInfo: TaskInfo = new TaskInfo(-1, '', -1, '', false, '', '', '', false, '', false);
 
   aboutToAppear() {
@@ -62,21 +65,34 @@ export struct TaskCard {
 
   @Builder
   swipeList() {
+    // Modify
     Button() {
-      Text('编辑')
+      Image($r('app.media.modify'))
+        .height($r('app.float.default_28'))
     }
-    .width(60).height(60)
-    .margin(10)
+    .width($r('app.float.default_56')).height($r('app.float.default_56'))
+    .margin($r('app.float.default_10'))
+    .onClick(() => {
+      // The same action of long click
+      this.clickAction(false);
+      setTimeout(() => {
+        this.scroller.scrollTo({ xOffset: 0, yOffset: 0,
+          animation: { duration: 200, curve: Curve.Linear } })
+      }, 1000);
+    })
 
+    // Delete
     Button() {
-      Text('删除')
+      Image($r('app.media.delete'))
+        .height($r('app.float.default_28'))
     }
-    .width(60).height(60)
+    .width($r('app.float.default_56')).height($r('app.float.default_56'))
     .backgroundColor(Color.Red)
+    .onClick(() => {
+      this.deleteTask();
+    })
   }
 
-  private scroller= new Scroller()
-  private downX = 0
   build() {
   Scroll(this.scroller) {
     Row() {
@@ -106,6 +122,7 @@ export struct TaskCard {
     }
     .scrollable(ScrollDirection.Horizontal)
     .scrollBar(BarState.Off)
+    .flingSpeedLimit(-1)  // Disable fling
     .onTouch((event?: TouchEvent) => {
       // If event trigger
       if(event) {
@@ -115,13 +132,13 @@ export struct TaskCard {
             break
           case TouchType.Up:
             let xOffset = event.touches[0].x - this.downX
-            let toxOffset = 0
             if (Math.abs(xOffset) > vp2px(15) && xOffset < 0) {
-              toxOffset = vp2px(100)
+              this.scroller.scrollTo({ xOffset: vp2px(50), yOffset: 0,
+                animation: { duration: 200, curve: Curve.Linear } })
             }
-            this.scroller.scrollTo({ xOffset: toxOffset, yOffset: 0,
-              animation: { duration: 200, curve: Curve.Linear } })
-            this.downX = 0
+            else if(xOffset != 0)
+              this.scroller.scrollTo({ xOffset: 0, yOffset: 0,
+                animation: { duration: 200, curve: Curve.Linear } })
             break
         }
       }
