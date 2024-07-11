@@ -20,6 +20,7 @@ import { TaskCard } from '../view/home//TaskCardComponent';
 import HomeTopView from '../view/home/HomeTopComponent';
 import { CustomDialogView, CustomDialogCallback } from '../view/dialog/CustomDialogView';
 import TaskInfo from '../viewmodel/TaskInfo';
+import TaskInfoApi from '../common/database/tables/TaskInfoApi'
 import { HomeStore } from '../viewmodel/HomeViewModel';
 import { ITaskItem, TaskMapById } from '../model/TaskInitList';
 import { HealthDataSrcMgr } from '../common/utils/HealthDataSrcMgr';
@@ -137,11 +138,20 @@ export default struct HomeIndex {
               ForEach(this.homeStore.getTaskListOfDay(), (item: TaskInfo) => {
                 TaskCard({
                   taskInfoStr: JSON.stringify(item),
-                  clickAction: (isClick: boolean) => this.taskItemAction(item, isClick)
+                  clickAction: (isClick: boolean) => this.taskItemAction(item, isClick),
+                  deleteTask: () => {
+                    // Execute deletion
+                    item.isOpen = false;
+                    item.isDone = false;
+                    // this.editedTaskInfo.taskID = item.taskID;
+                    // this.editedTaskInfo.isOpen = false;
+                    // this.editedTaskInfo.isDone = false;
+                    // this.taskChange();
+                    this.homeStore.updateTask(item);
+                  }
                 })
                   .margin({ bottom: Const.DEFAULT_12})
                   .height($r('app.float.default_64'))
-
               }, (item: TaskInfo) => JSON.stringify(item))
             }
             .onAppear(() => {
