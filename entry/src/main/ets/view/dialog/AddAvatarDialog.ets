@@ -1,4 +1,9 @@
 import { CommonConstants as Const } from '../../common/constants/CommonConstants';
+import common from '@ohos.app.ability.common';
+import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
+import picker from '@ohos.file.picker';
+import { request } from '@kit.BasicServicesKit';
+
 
 @Extend(Text)
 function descStyle() {
@@ -14,6 +19,65 @@ function descStyle() {
 
 @CustomDialog
 export  struct AddAvatarDialog {
+
+  private requestMediaPermission() {
+    let context = getContext(this) as common.UIAbilityContext;
+    let atManager = abilityAccessCtrl.createAtManager();
+    atManager.requestPermissionsFromUser(context, ["ohos.permission.READ_MEDIA"], (error, result) => {
+      if (result) {
+        console.log("result: " + JSON.stringify(result));
+      } else {
+        console.log("error: " + JSON.stringify(error));
+      }
+    });
+  }
+  private openGallery() {
+    let photoPicker = new picker.PhotoViewPicker();
+    photoPicker.select({
+      MIMEType: picker.PhotoViewMIMETypes.IMAGE_TYPE,
+      maxSelectNumber: 1
+    }, (error, result) => {
+      if (result) {
+        result.photoUris.forEach((url) => {
+          console.log("url: " + url);
+        })
+      }
+    });
+  }
+  private uploadImages(paths: string[]) {
+    let allFiles = Array<request.File>()
+    for (let i = 0; i <paths.length; i++) {
+      let path = paths[i]
+      console.log("path: " + path)
+      allFiles[i] = {
+        name: "image" + i + ".jpg",
+        filename: "image" + i + ".jpg",
+        uri: path,
+        type: "image"
+      }
+    }
+    request.upload({
+      url: "http://192.168.1.5:8080/java_0101_fileupload_war_exploded/uploadServlet",
+      method: "POST",
+      files: allFiles,
+      header: {},
+      data: [
+        {
+          name: "test",
+          value: "value"
+        }
+      ]
+    }, (error, response) => {
+      if(response) {
+        response.on('progress', (uploadedSize: number, totalSize: number) => {
+          console.log("progress, uploadedSize: " + uploadedSize + ", totalSize: " + totalSize)
+        })
+      } else {
+        console.log("upload failure: " + error)
+      }
+    });
+  }
+
   controller: CustomDialogController = new CustomDialogController({ builder: '' });
 
   view: Function = () => {
@@ -24,6 +88,10 @@ export  struct AddAvatarDialog {
         Text($r('app.string.select_from_album'))
           .descStyle()
           .margin({ top: $r('app.float.default_16') })
+          .onClick(() =>{
+            this.requestMediaPermission()
+            this.openGallery()
+          })
 
       Text()
         .size({width: "2px", height: "3%"})
@@ -43,6 +111,7 @@ export  struct AddAvatarDialog {
 
 @CustomDialog
 export  struct ShowAvatarDialog {
+
   controller: CustomDialogController = new CustomDialogController({ builder: '' });
 
   build() {
@@ -55,4 +124,12 @@ export  struct ShowAvatarDialog {
     }
 
   }
+}
+
+function requestMediaPermission() {
+  throw new Error('Function not implemented.');
+}
+
+function openGallery() {
+  throw new Error('Function not implemented.');
 }
