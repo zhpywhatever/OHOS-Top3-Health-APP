@@ -18,7 +18,7 @@ import { ACHIEVEMENT_LEVEL_LIST, AchievementMap } from '../model/TaskInitList';
 export function getBadgeCardItems(successiveDays: number): Array<CardInfo> {
   let badgeMileStones = ACHIEVEMENT_LEVEL_LIST;
   let cardItems: Array<CardInfo> = [];
-  for (let i = 0; i < badgeMileStones.length; i++) {
+  for (let i = 0; i < badgeMileStones.length - 1; i++) {
     let onOrOff = successiveDays >= badgeMileStones[i] ? 'on' : 'off';
     let titleContent = String(badgeMileStones[i]);
     let cardInfo: CardInfo = new CardInfo();
@@ -26,6 +26,16 @@ export function getBadgeCardItems(successiveDays: number): Array<CardInfo> {
     cardInfo.achievement = getAchievement(`${onOrOff}_${badgeMileStones[i]}`);
     cardItems.push(cardInfo);
   }
+
+  let i = badgeMileStones.length - 1;
+  let flag = AppStorage.get<number>('MY_VALUE');
+  let onOrOff = flag == (badgeMileStones[i] & 0xff) ? 'on' : 'off';
+  let titleContent = String(badgeMileStones[i]);
+  let cardInfo: CardInfo = new CardInfo();
+  cardInfo.titleContent = titleContent;
+  cardInfo.achievement = getAchievement(`${onOrOff}_${badgeMileStones[i]}`);
+  cardItems.push(cardInfo);
+
   return cardItems;
 }
 
@@ -73,6 +83,12 @@ function getAchievement(key: string) {
       break;
     case 'on_99':
       result = AchievementMap.on_99;
+      break;
+    case 'off_259':
+      result = AchievementMap.off_259;
+      break;
+    case 'on_259':
+      result = AchievementMap.on_259;
       break;
     default:
       break;

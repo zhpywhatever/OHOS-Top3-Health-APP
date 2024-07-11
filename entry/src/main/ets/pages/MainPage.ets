@@ -45,6 +45,7 @@ struct Index {
   private tabController: TabsController = new TabsController();
 
   aboutToAppear() {
+    AppStorage.setOrCreate('MY_VALUE', 0);
     notificationManager.requestEnableNotification().then(() => {
       Logger.info('onPageShow', `requestEnableNotification success`);
     }).catch((err: Error) => {

@@ -1,9 +1,18 @@
 # 健康生活应用
 
+## Notes
+
+- 系统时间可以进入设置 - 系统 - 日期与时间，关闭自动设置选项后修改
+
+<!-- - [initFrequencyString](viewmodel/TaskVireModel.ets) - 初始化 -->
+
+- EntryAbility.ets - onCreate 创建数据库 taskinfo.db
+- HomeComponents.ets - BroadCast 例子
+- HomeViewModel.ets - updateTask 函数为打卡更新 Task 的详细实现，可拓展功能
+
 ### 简介
 
 利用ArkTS声明式开发范式和HarmonyOS的关系型数据库等能力，实现了一个健康生活应用。
-
 ![](screenshots/health_life.gif)
 
 ### 相关概念

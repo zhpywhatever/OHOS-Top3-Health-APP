@@ -198,4 +198,4 @@ export const RemindContentMap: Array<RemindContentItem> = [
   }
 ];
 
-export const ACHIEVEMENT_LEVEL_LIST = [1, 3, 7, 30, 50, 73, 99];
+export const ACHIEVEMENT_LEVEL_LIST = [1, 3, 7, 30, 50, 73, 99, 0x103];

@@ -16,6 +16,7 @@
 import { CommonConstants as Const } from '../common/constants/CommonConstants';
 import { isReachNewAchievement, ACHIEVEMENT_LEVEL_KEY } from '../model/AchieveModel';
 import { TaskMapById, ITaskItem, ACHIEVEMENT_LEVEL_LIST } from '../model/TaskInitList';
+import TaskInfoApi from '../common/database/tables/TaskInfoApi';
 import TaskInfo from './TaskInfo';
 import DayInfo from './DayInfo';
 import { dateToStr, weekDateFormat } from '../common/utils/Utils';
@@ -28,6 +29,7 @@ import Logger from '../common/utils/Logger';
 import GlobalInfo from './GlobalInfo';
 import WeekCalendarInfo from './WeekCalendarInfo';
 import AchievementInfo from './AchievementInfo';
+import { promptAction } from '@kit.ArkUI';
 
 @Observed
 export class HomeStore {
@@ -239,6 +241,18 @@ export class HomeStore {
     let achievementLevel: number = 0;
     if (taskItem.isDone) {
       let dayInfo = await this.updateDayInfo();
+      let taskCount = await this.countCompletedTasks("Fri Jul 14 2023", dayInfo.date);
+      let flag = AppStorage.get<number>('MY_VALUE');
+      if (taskCount == 3 && (!flag || (flag && flag < 3)) ) {
+        AppStorage.set('MY_VALUE', 3);
+        achievementLevel = await this.updateAchievement(this.selectedDayInfo.dayInfo);
+        this.dateArr = this.dateArr.map((item: WeekDateModel) => dateStr === item.dateStr ? this.selectedDayInfo : item);
+        return {
+          achievementLevel: 0x103,
+          showAchievement: true
+        } as AchievementInfo;
+      }
+
       if (dayInfo && dayInfo?.finTaskNum === dayInfo?.targetTaskNum) {
         achievementLevel = await this.updateAchievement(this.selectedDayInfo.dayInfo);
       }
@@ -294,6 +308,37 @@ export class HomeStore {
         resolve(dayInfo);
       });
     });
+  }
+
+  countCompletedTasksToday(date: string): Promise<number> {
+    return new Promise((resolve) => {
+      TaskInfoApi.query(date, true, (result: TaskInfo[]) => {
+        if (result.length === 0) {
+          Logger.info('countCompletedTasks', `No tasks found for date: ${date}`);
+          resolve(0);
+        } else {
+          const completedTasks = result.filter(task => task.isDone);
+          Logger.info('countCompletedTasks', `Completed tasks count for date ${date}: ${completedTasks.length}`);
+          resolve(completedTasks.length);
+        }
+      });
+    });
+  }
+
+  async countCompletedTasks(startDate: string, endDate: string): Promise<number> {
+    let totalCompletedTasks = 0;
+    let currentDate = new Date(startDate);
+    const lastDate = new Date(endDate);
+
+    while (currentDate <= lastDate) {
+      const dateString = currentDate.toDateString();
+      const completedTasksForDate : number = await this.countCompletedTasksToday(dateString);
+      totalCompletedTasks += completedTasksForDate;
+
+      currentDate.setDate(currentDate.getDate() + 1);
+    }
+    Logger.info('countCompletedTasksCumulative', `Total completed tasks from ${startDate} to ${endDate}: ${totalCompletedTasks}`);
+    return totalCompletedTasks;
   }
 
   updateAchievement(dayInfo: DayInfo): Promise<number> {

@@ -31,4 +31,6 @@ export default class AchievementMapInfo {
   on_73: Resource = $r('app.media.ic_badge_73_on');
   off_99: Resource = $r('app.media.ic_badge_99_off');
   on_99: Resource = $r('app.media.ic_badge_99_on');
+  off_259: Resource = $r('app.media.ic_badge_259_off');
+  on_259: Resource = $r('app.media.ic_badge_259_on');
 }
