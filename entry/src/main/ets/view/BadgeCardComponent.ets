@@ -21,13 +21,37 @@ export struct BadgeCard {
   @Prop content: string = '';
   imgSrc: Resource = $r('app.string.empty');
 
+  private getAchievementText(content: string): string {
+    const achievementLevel = Number(content);
+    switch (achievementLevel) {
+      case 1:
+        return '初出茅庐 - 打卡第 1 天';
+      case 3:
+        return '连续 3 天达成';
+      case 7:
+        return '连续 7 天达成';
+      case 30:
+        return '连续 30 天达成';
+      case 50:
+        return '连续 50 天达成';
+      case 73:
+        return '连续 73 天达成';
+      case 99:
+        return '连续 99 天达成';
+      case 259:
+        return '任务达人 - 累计完成 3 项任务';
+      default:
+        return `连续 ${achievementLevel} 天达成`;
+    }
+  }
+
   build() {
     Column({ space: Const.DEFAULT_18 }) {
       Image(this.imgSrc)
         .width(Const.FULL_WIDTH)
         .height(Const.ACHIEVE_CARD_IMG_HEIGHT)
         .objectFit(ImageFit.Contain)
-      Text($r('app.string.task_achievement_level', Number(this.content)))
+      Text(this.getAchievementText(this.content))
         .lineHeight($r('app.float.default_16'))
         .fontSize($r('app.float.default_12'))
         .fontColor($r('app.color.white'))
