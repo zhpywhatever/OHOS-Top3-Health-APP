@@ -16,9 +16,9 @@
 import { ListInfo } from '../view/ListInfo';
 import { UserBaseInfo } from '../view/UserBaseInfo';
 import { CommonConstants as Const } from '../common/constants/CommonConstants';
-import App from '@system.app';
+// import App from '@system.app';
 import { router } from '@kit.ArkUI';
-import { hashPasswordToHex, checkLogin, UserInfo, getUserInfo, writeFile } from '../model/fileProcess';
+import { checkLogin, UserInfo, getUserInfo, writeFile } from '../model/fileProcess';
 import { promptAction } from '@kit.ArkUI';
 
 
