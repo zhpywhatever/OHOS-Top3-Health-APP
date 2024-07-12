@@ -135,6 +135,10 @@
     {
       "name": "highlightguide_toast_success_back_ground",
       "value": "#000000"
+    },
+    {
+      "name": "light_blue",
+      "value": "#FF4955AC"
     }
   ]
 }

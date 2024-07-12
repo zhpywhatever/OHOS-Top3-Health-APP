@@ -28,6 +28,7 @@ import { HomeStore } from '../viewmodel/HomeViewModel';
 import GlobalInfoApi from '../common/database/tables/GlobalInfoApi';
 import GlobalInfo from '../viewmodel/GlobalInfo';
 import { GlobalContext } from '../common/utils/GlobalContext';
+import { promptAction } from '@kit.ArkUI';
 import { writeFile, readFile } from '../model/fileProcess';
 import { HighLightGuideBuilder, HighLightGuideComponent, Controller, GuidePage, HighLightShape, RectF } from '@ohos/high_light_guide';
 
@@ -49,12 +50,21 @@ struct Index {
 
   aboutToAppear() {
     let tmp_my_value: number = Number(readFile("MY_VALUE_FILE"));
+    let tmp_login_flag: boolean = readFile("LOGIN_FLAG_FILE").toLowerCase() === 'true';
+
     if (!tmp_my_value) {
       AppStorage.setOrCreate('MY_VALUE', 0);
-    }
-    else if (tmp_my_value != 0) {
+    } else if (tmp_my_value != 0) {
       AppStorage.SetOrCreate('MY_VALUE', tmp_my_value);
     }
+
+    if (!tmp_login_flag) {
+      AppStorage.setOrCreate('LOGIN_FLAG', false);
+    } else {
+      AppStorage.SetOrCreate('LOGIN_FLAG', tmp_login_flag);
+      AppStorage.SetOrCreate('LAST_LOGIN', readFile("LAST_LOGIN_FILE"));
+    }
+
     notificationManager.requestEnableNotification().then(() => {
       Logger.info('onPageShow', `requestEnableNotification success`);
     }).catch((err: Error) => {
@@ -75,6 +85,14 @@ struct Index {
         this.homeStore = new HomeStore(new Date());
       }
       this.checkCurrentTime();
+
+      let tmp_login_flag : boolean= AppStorage.get('LOGIN_FLAG') ?? false;
+      if (!tmp_login_flag) {
+        promptAction.showToast({
+          message: '请先登录！'
+        });
+        router.pushUrl( {url: 'pages/MinePage' });
+      }
     }
   }
 

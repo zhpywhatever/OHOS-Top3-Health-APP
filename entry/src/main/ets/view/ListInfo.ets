@@ -15,6 +15,7 @@
 import { router } from '@kit.ArkUI';
 import { MineInfoList, InfoItem } from '../model/Mine';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { writeFile } from '../model/fileProcess';
 
 
 @Component
@@ -32,7 +33,14 @@ export struct ListInfo {
               .width($r('app.float.default_7'))
           }
           .onClick(() => {
-            router.pushUrl({ url: item.url })
+            if (item.id === '4') {
+              AppStorage.set<Boolean>('LOGIN_FLAG', false)
+              AppStorage.set<String>('LAST_LOGIN', "")
+              writeFile('LOGIN_FLAG_FILE', false.toString())
+              writeFile('LAST_LOGIN_FILE', "")
+            } else {
+              router.pushUrl({ url: item.url })
+            }
           })
         }
         .backgroundColor($r('app.color.white'))

@@ -58,6 +58,7 @@ export default struct HomeIndex {
   @Link homeStore: HomeStore;
   @Link editedTaskInfo: ITaskItem;
   @Link @Watch('taskChange') editedTaskID: string;
+  @StorageLink('LAST_LOGIN') LAST_LOGIN: string = "";
   private scroller: Scroller = new Scroller();
   private yOffset: number = 0;
 
@@ -142,8 +143,12 @@ export default struct HomeIndex {
                   deleteTask: () => {
                     // Execute deletion
                     item.isOpen = false;
+// <<<<<<< HEAD
+//
+// =======
+// >>>>>>> 70dab8b598e74d14cdfcb0e2072174ab167c5fd8
                     // Remove daily task
-                    this.homeStore.updateTask(item);
+                    // this.homeStore.updateTask(item);
                     // Remove global task list
                     item.date = 'global'
                     this.homeStore.updateTask(item);
@@ -193,7 +198,7 @@ export default struct HomeIndex {
       // .id('test')
 
       Row() {
-        Text($r('app.string.EntryAbility_label'))
+        Text(`你好, ${this.LAST_LOGIN}`)
           .titleTextStyle()
           .fontSize($r('app.float.default_24'))
           .padding({ left: Const.THOUSANDTH_66 })

@@ -37,6 +37,10 @@
       "value": "关于"
     },
     {
+      "name": "mine_logout",
+      "value": "退出登录"
+    },
+    {
       "name": "clock_in",
       "value": "打卡"
     },
@@ -50,7 +54,7 @@
     },
     {
       "name": "tab_moments",
-      "value": "pyq"
+      "value": "圈子"
     },
     {
       "name": "achievement",
@@ -267,6 +271,14 @@
     {
       "name": "highlightguide_grid_module",
       "value": "模块"
+    },
+    {
+      "name": "select_from_album",
+      "value": "从相册选择图片"
+    },
+    {
+      "name": "view_avatar",
+      "value": "查看头像"
     }
   ]
 }
