@@ -31,6 +31,8 @@ import { GlobalContext } from '../common/utils/GlobalContext';
 import { promptAction } from '@kit.ArkUI';
 import { writeFile, readFile, UserInfo } from '../model/fileProcess';
 import { HighLightGuideBuilder, HighLightGuideComponent, Controller, GuidePage, HighLightShape, RectF } from '@ohos/high_light_guide';
+import { sensor } from '@kit.SensorServiceKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 @Styles
 function allSize() {
@@ -74,8 +76,49 @@ struct Index {
   @State offsetY: number = -this.floorHeight;
   @State miniAppScale: Scale = { x: 0, y: 0 };
   @State checkInDates: number = 0;
+  @State footsteps: number = 0;
+
+  private LastX: number = 0;
+  private LastY: number = 0;
+  private LastZ: number = 0;
+  private LastTime: number = 0;
+
+  private Shake() {
+    try {
+      sensor.on(sensor.SensorId.ACCELEROMETER, (data: sensor.AccelerometerResponse) => {
+        this.handleShake(data);
+      }, { interval: 100000000 });
+    } catch (error) {
+      let e: BusinessError = error as BusinessError;
+      console.error(`Failed to invoke on. Code: ${e.code}, message: ${e.message}`);
+    }
+  }
+  private handleShake(data: sensor.AccelerometerResponse) {
+
+    const currentTime = new Date().getTime();
+    const timeDifference = currentTime - this.LastTime;
+
+    if (timeDifference > 100) {
+      const deltaX = data.x - this.LastX;
+      const deltaY = data.y - this.LastY;
+      const deltaZ = data.z - this.LastZ;
+
+      this.LastX = data.x;
+      this.LastY = data.y;
+      this.LastZ = data.z;
+      this.LastTime = currentTime;
+
+      const shakeThreshold = 3; // 摇动阈值，根据需要调整
+
+      if (deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ > shakeThreshold * shakeThreshold) {
+        this.footsteps += 1;
+      }
+    }
+  }
 
   aboutToAppear() {
+    this.Shake();
+
     let tmp_my_value: number = Number(readFile("MY_VALUE_FILE"));
     let tmp_login_flag: boolean = readFile("LOGIN_FLAG_FILE").toLowerCase() === 'true';
     let tmp_pass_tutor: string = readFile("PASS_TUTOR_FILE");
@@ -340,6 +383,20 @@ struct Index {
         }
         .width('100%')
         .alignItems(HorizontalAlign.Center)
+        Row(){
+          Text('今日步数：' + this.footsteps)
+            .font({
+              size: 25,
+              weight: FontWeight.Medium
+            })
+            .opacity(1)
+        }
+        .height('70')
+        .width('100%')
+        .position({y: '29%'})
+        .backgroundColor(Color.White)
+        .opacity(0.85)
+        .justifyContent(FlexAlign.Center)
         Row(){
           Text('我已经保持健康生活 ' + this.checkInDates + ' 天啦')
             .font({

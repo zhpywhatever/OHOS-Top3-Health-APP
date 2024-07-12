@@ -80,6 +80,9 @@
         "usedScene": {
           "when": "always"
         }
+      },
+      {
+        "name": "ohos.permission.ACCELEROMETER"
       }
     ]
   },

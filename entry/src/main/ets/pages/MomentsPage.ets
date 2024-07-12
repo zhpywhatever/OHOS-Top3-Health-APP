@@ -292,6 +292,7 @@ export struct MomentsIndex {
       .divider({ strokeWidth: 1 })
       .width('100%')
       .backgroundColor("#ffffffff")
+      .scrollBar(BarState.Off)
 
       AddBtn({
         clickAction: () => {
