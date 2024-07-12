@@ -121,7 +121,8 @@ export struct UserBaseInfo {
       change:() => {
 
           this.openGallery()
-          this.changeAvatar()
+          this.IsLocalFlag = false
+
       }
     }),
     cancel: () => {
@@ -132,7 +133,10 @@ export struct UserBaseInfo {
   });
 
   showController: CustomDialogController = new CustomDialogController({
-    builder: ShowAvatarDialog(),
+    builder: ShowAvatarDialog({
+    passVarBool : this.IsLocalFlag,
+    picPath : this.pic
+    }),
     cancel: () => {
       console.log("cancel")
     },
@@ -142,9 +146,6 @@ export struct UserBaseInfo {
 
   viewAvatar(){
       this.showController.open()
-  }
-  changeAvatar(){
-      this.IsLocalFlag = false
   }
 
 
