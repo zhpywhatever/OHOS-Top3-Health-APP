@@ -35,7 +35,7 @@ export default class HighLightOptionsBuilder {
 
   /**
    * 为高亮区域添加重绘监听
-   * @param listener 重绘高亮区域图形的firstIndicator监听
+   * @param listener 重绘高亮区域图形的监听
    * @returns 额外配置构建类
    */
   public setOnHighLightDrewListener(listener: OnHighLightDrewListener | null): HighLightOptionsBuilder {
