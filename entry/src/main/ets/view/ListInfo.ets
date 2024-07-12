@@ -15,7 +15,7 @@
 import { router } from '@kit.ArkUI';
 import { MineInfoList, InfoItem } from '../model/Mine';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { writeFile } from '../model/fileProcess';
+import { UserInfo, writeFile } from '../model/fileProcess';
 
 
 @Component
@@ -36,6 +36,7 @@ export struct ListInfo {
             if (item.id === '4') {
               AppStorage.set<Boolean>('LOGIN_FLAG', false)
               AppStorage.set<String>('LAST_LOGIN', "")
+              AppStorage.set<UserInfo>('CUR_USER_INFO', {username: "", password: "", whatcanIsay: ""})
               writeFile('LOGIN_FLAG_FILE', false.toString())
               writeFile('LAST_LOGIN_FILE', "")
             } else {

@@ -19,7 +19,7 @@ import App from '@system.app';
 import { CommonConstants as Const } from '../common/constants/CommonConstants';
 import { router } from '@kit.ArkUI';
 import { promptAction } from '@kit.ArkUI';
-import { UserInfo, registerUser, userExists, hashPasswordToHex } from '../model/fileProcess';
+import { UserInfo, registerUser, userExists, hashPasswordToHex, updateUserInfo } from '../model/fileProcess';
 
 @Entry
 @Component
@@ -30,116 +30,67 @@ export struct UserinfoIndex {
   @State password_again: string = "";
   @State signature: string = "";
   // @State isLoggedIn: boolean = false;
-  // @StorageLink('LOGIN_FLAG') LOGIN_FLAG: Boolean = false;
+  @StorageLink('LAST_LOGIN') LAST_LOGIN : string = "";
+  @StorageLink('CUR_USER_INFO') CUR_USER_INFO: UserInfo = {username: "", password: "", whatcanIsay: ""};
 
-  handleRegister(username : string, password :string, passwd_again: string, signiture: string){
-    if (userExists(username)) {
-      promptAction.showToast({
-        message: '用户名已注册！'
-      });
-      router.back();
-      return;
-    }
-
-    if (!(password === passwd_again)) {
-      promptAction.showToast({
-        message: '两次输入密码不一致，请重新注册！'
-      });
-      router.back();
-      return;
-    }
-
-    hashPasswordToHex(password, (error, hashedPassword) => {
-      if (error) {
-        promptAction.showToast({
-          message: '哈希也能出错 ? 写的什么破代码'
-        });
-        router.back();
-        return;
-      }
-
-      if (hashedPassword) {
-        let new_user: UserInfo = {
-          password: hashedPassword,
-          username: username,
-          whatcanIsay: signiture
-        };
-        registerUser(new_user);
-        promptAction.showToast({
-          message: '注册成功,请登录'
-        });
-      } else {
-        promptAction.showToast({
-          message: '哈希也能出错 ? 写的什么破代码'
-        });
-        router.back();
-        return;
-      }
-    });
-
+  handleSaveSignature(sig: string) {
+    updateUserInfo(this.LAST_LOGIN, {whatcanIsay : sig});
+    this.CUR_USER_INFO.whatcanIsay = sig;
     router.back();
   }
 
   @Builder UserinfoView() {
     Column() {
       UserBaseInfo({
-        nickname: this.nickname,
-        signature: this.signature
-      });
+        nickname: "",
+        signature: ""
+      })
+        .width(100)
+        .height(100)
+        .margin({ top: 20, bottom: 40 })
+
       // Image($r('app.media.logo'))
       //   .width(100)
       //   .height(100)
-      //   .margin({ top: 50, bottom: 20 })
+      //   .margin({ top: 20, bottom: 20 })
+      //   .borderRadius(50)
 
-      TextInput({ placeholder: '请输入用户名' })
-        .width('80%')
-        .height(40)
-        .maxLength(20)
+      // 用户昵称显示
+      Text(this.LAST_LOGIN)
+        .fontSize(24)
+        .fontWeight(FontWeight.Bold)
         .margin({ bottom: 20 })
-        .onChange((value: string) => {
-          this.nickname = value;
-        })
 
-      TextInput({ placeholder: '请输入密码' })
+      TextInput({
+        placeholder: '简单介绍一下自己吧，What can you say, man ?',
+        text: this.signature
+      })
         .width('80%')
-        .height(40)
-        .maxLength(20)
-        .type(InputType.Password)
+        .height(80)
+        .maxLength(100)
         .margin({ bottom: 30 })
-        .onChange((value: string) => {
-          this.password = value;
-        })
-
-      TextInput({ placeholder: '请确认密码' })
-        .width('80%')
-        .height(40)
-        .maxLength(20)
-        .type(InputType.Password)
-        .margin({ bottom: 30 })
-        .onChange((value: string) => {
-          this.password_again = value;
-        })
-
-      TextInput({ placeholder: '简单介绍一下自己吧，What can you say, man ?' })
-        .width('80%')
-        .height(40)
-        .maxLength(20)
-        .margin({ bottom: 30 })
+        .borderColor("#689d6a")
+        .borderWidth(1)
+        .borderRadius(8)
+        .padding(10)
         .onChange((value: string) => {
           this.signature = value;
         })
 
-      Button('注册')
+      Button('保存')
         .width('80%')
         .height(40)
+        .backgroundColor("#ff8798")
+        .fontColor($r('app.color.white'))
+        .borderRadius(20)
         .onClick(() => {
-          this.handleRegister(this.nickname, this.password, this.password_again, this.signature);
+          this.handleSaveSignature(this.signature);
         })
-
     }
     .width('100%')
-    .height('80%')
+    .height('100%')
     .justifyContent(FlexAlign.Center)
+    .backgroundColor("0000ff")
   }
 
   build() {

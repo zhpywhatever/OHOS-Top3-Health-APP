@@ -29,7 +29,7 @@ import GlobalInfoApi from '../common/database/tables/GlobalInfoApi';
 import GlobalInfo from '../viewmodel/GlobalInfo';
 import { GlobalContext } from '../common/utils/GlobalContext';
 import { promptAction } from '@kit.ArkUI';
-import { writeFile, readFile } from '../model/fileProcess';
+import { writeFile, readFile, UserInfo } from '../model/fileProcess';
 import { HighLightGuideBuilder, HighLightGuideComponent, Controller, GuidePage, HighLightShape, RectF } from '@ohos/high_light_guide';
 
 @Styles
@@ -49,7 +49,8 @@ struct Index {
   private tabController: TabsController = new TabsController();
   // @StorageProp('boolean') login_flag : boolean = AppStorage.get<boolean>('LOGIN_FLAG') ?? false;
   @StorageLink('LOGIN_FLAG') LOGIN_FLAG: boolean = false;
-
+  @StorageLink('CUR_USER_INFO') CUR_USER_INFO: UserInfo = {username: "", password: "", whatcanIsay: ""};
+  @StorageLink('LAST_LOGIN') LAST_LOGIN: string = "";
 
   aboutToAppear() {
     let tmp_my_value: number = Number(readFile("MY_VALUE_FILE"));
@@ -67,6 +68,7 @@ struct Index {
     } else {
       AppStorage.SetOrCreate('LOGIN_FLAG', tmp_login_flag);
       AppStorage.SetOrCreate('LAST_LOGIN', readFile("LAST_LOGIN_FILE"));
+      this.CUR_USER_INFO.username = this.LAST_LOGIN;
 
       if (tmp_pass_tutor) {
         AppStorage.SetOrCreate('PASS_TUTOR', tmp_pass_tutor);
