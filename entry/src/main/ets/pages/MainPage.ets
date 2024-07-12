@@ -46,6 +46,8 @@ struct Index {
   @State editedTaskID: string = '0';
   @State homeStore: HomeStore = new HomeStore(new Date());
   private tabController: TabsController = new TabsController();
+  // @StorageProp('boolean') login_flag : boolean = AppStorage.get<boolean>('LOGIN_FLAG') ?? false;
+  @StorageLink('LOGIN_FLAG') LOGIN_FLAG: boolean = false;
 
   aboutToAppear() {
     let tmp_my_value: number = Number(readFile("MY_VALUE_FILE"));
@@ -151,20 +153,41 @@ struct Index {
   build() {
     Tabs({ barPosition: BarPosition.End, controller: this.tabController }) {
       TabContent() {
-        HomeIndex({ homeStore: $homeStore, editedTaskInfo: $editedTaskInfo, editedTaskID: $editedTaskID })
-          .borderWidth({ bottom: 1 })
-          .borderColor($r('app.color.primaryBgColor'))
+        if(this.LOGIN_FLAG){
+          HomeIndex({ homeStore: $homeStore, editedTaskInfo: $editedTaskInfo, editedTaskID: $editedTaskID })
+            .borderWidth({ bottom: 1 })
+            .borderColor($r('app.color.primaryBgColor'))
+        }
+        else{
+          MineIndex()
+            .borderWidth({ bottom: 1 })
+            .borderColor($r('app.color.primaryBgColor'))
+        }
       }
       .tabBar(this.TabBuilder(TabId.HOME))
       .align(Alignment.Start)
 
       TabContent() {
-        AchievementIndex()
+        if(this.LOGIN_FLAG){
+          AchievementIndex()
+        }
+        else{
+          MineIndex()
+            .borderWidth({ bottom: 1 })
+            .borderColor($r('app.color.primaryBgColor'))
+        }
       }
       .tabBar(this.TabBuilder(TabId.ACHIEVEMENT))
 
       TabContent() {
-        MomentsIndex();
+        if(this.LOGIN_FLAG) {
+          MomentsIndex();
+        }
+        else{
+          MineIndex()
+            .borderWidth({ bottom: 1 })
+            .borderColor($r('app.color.primaryBgColor'))
+        }
       }
       .tabBar(this.TabBuilder(TabId.MOMENTS));
 
