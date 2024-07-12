@@ -60,6 +60,7 @@ export default struct HomeIndex {
   @Link @Watch('taskChange') editedTaskID: string;
   private scroller: Scroller = new Scroller();
   private yOffset: number = 0;
+  ClickTitle: Function = () => {}
 
   taskChange() {
     this.homeStore.updateTaskInfoList(this.editedTaskInfo);
@@ -200,6 +201,7 @@ export default struct HomeIndex {
       .height(Const.DEFAULT_56)
       .position({ x: 0, y: 0 })
       .backgroundColor(`rgba(${WHITE_COLOR_0X},${WHITE_COLOR_0X},${WHITE_COLOR_0X},${this.naviAlpha})`)
+      .onClick(() => this.ClickTitle())
 
       CustomDialogView()
     }
