@@ -22,6 +22,10 @@ export default class ProgressCardInfo {
    * Task list
    */
   taskList?: AgencyCardInfo[];
+
+  achievements?: number;
+
+  checkInDays?: number;
   /**
    * Target completion quantity
    */

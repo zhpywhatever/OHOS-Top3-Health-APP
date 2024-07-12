@@ -28,7 +28,9 @@ import { HomeStore } from '../viewmodel/HomeViewModel';
 import GlobalInfoApi from '../common/database/tables/GlobalInfoApi';
 import GlobalInfo from '../viewmodel/GlobalInfo';
 import { GlobalContext } from '../common/utils/GlobalContext';
-import { writeFile, readFile } from '../model/fileProcess';
+import { promptAction } from '@kit.ArkUI';
+import { writeFile, readFile, UserInfo } from '../model/fileProcess';
+import { HighLightGuideBuilder, HighLightGuideComponent, Controller, GuidePage, HighLightShape, RectF } from '@ohos/high_light_guide';
 
 @Styles
 function allSize() {
@@ -52,6 +54,11 @@ struct Index {
   @State editedTaskID: string = '0';
   @State homeStore: HomeStore = new HomeStore(new Date());
   private tabController: TabsController = new TabsController();
+  // @StorageProp('boolean') login_flag : boolean = AppStorage.get<boolean>('LOGIN_FLAG') ?? false;
+  @StorageLink('LOGIN_FLAG') LOGIN_FLAG: boolean = false;
+  @StorageLink('CUR_USER_INFO') CUR_USER_INFO: UserInfo = {username: "", password: "", whatcanIsay: ""};
+  @StorageLink('LAST_LOGIN') LAST_LOGIN: string = "";
+  @StorageLink('CUR_USER_AVATAR') CUR_USER_AVATAR: string = "";
 
   @State displaySecondFloor: boolean = false;
   private expandFloorTriggerDistance: number = 180;
@@ -70,12 +77,29 @@ struct Index {
 
   aboutToAppear() {
     let tmp_my_value: number = Number(readFile("MY_VALUE_FILE"));
+    let tmp_login_flag: boolean = readFile("LOGIN_FLAG_FILE").toLowerCase() === 'true';
+    let tmp_pass_tutor: string = readFile("PASS_TUTOR_FILE");
+
     if (!tmp_my_value) {
       AppStorage.setOrCreate('MY_VALUE', 0);
-    }
-    else if (tmp_my_value != 0) {
+    } else if (tmp_my_value != 0) {
       AppStorage.SetOrCreate('MY_VALUE', tmp_my_value);
     }
+
+    if (!tmp_login_flag) {
+      AppStorage.setOrCreate('LOGIN_FLAG', false);
+    } else {
+      AppStorage.SetOrCreate('LOGIN_FLAG', tmp_login_flag);
+      AppStorage.SetOrCreate('LAST_LOGIN', readFile("LAST_LOGIN_FILE"));
+      this.CUR_USER_INFO.username = this.LAST_LOGIN;
+      this.CUR_USER_AVATAR = readFile("CUR_USER_AVATAR_FILE");
+
+      if (tmp_pass_tutor) {
+        AppStorage.SetOrCreate('PASS_TUTOR', tmp_pass_tutor);
+      }
+
+    }
+
     notificationManager.requestEnableNotification().then(() => {
       Logger.info('onPageShow', `requestEnableNotification success`);
     }).catch((err: Error) => {
@@ -96,6 +120,14 @@ struct Index {
         this.homeStore = new HomeStore(new Date());
       }
       this.checkCurrentTime();
+
+      // let tmp_login_flag : boolean= AppStorage.get('LOGIN_FLAG') ?? false;
+      // if (!tmp_login_flag) {
+      //   promptAction.showToast({
+      //     message: '请先登录！'
+      //   });
+      //   router.pushUrl( {url: 'pages/MinePage' });
+      // }
     }
   }
 
@@ -233,27 +265,41 @@ struct Index {
   FloorBuilder() {
     Tabs({ barPosition: BarPosition.End, controller: this.tabController }) {
       TabContent() {
-        HomeIndex({ homeStore: $homeStore,
-          editedTaskInfo: $editedTaskInfo,
-          editedTaskID: $editedTaskID,
-          ClickTitle: () => {
-            if(this.displaySecondFloor)
-              this.packUpSecondFloor();
-          }
-        })
-        .borderWidth({ bottom: 1 })
-        .borderColor($r('app.color.primaryBgColor'))
+        if(this.LOGIN_FLAG){
+          HomeIndex({ homeStore: $homeStore, editedTaskInfo: $editedTaskInfo, editedTaskID: $editedTaskID })
+            .borderWidth({ bottom: 1 })
+            .borderColor($r('app.color.primaryBgColor'))
+        }
+        else{
+          MineIndex()
+            .borderWidth({ bottom: 1 })
+            .borderColor($r('app.color.primaryBgColor'))
+        }
       }
       .tabBar(this.TabBuilder(TabId.HOME))
       .align(Alignment.Start)
 
       TabContent() {
-        AchievementIndex()
+        if(this.LOGIN_FLAG){
+          AchievementIndex()
+        }
+        else{
+          MineIndex()
+            .borderWidth({ bottom: 1 })
+            .borderColor($r('app.color.primaryBgColor'))
+        }
       }
       .tabBar(this.TabBuilder(TabId.ACHIEVEMENT))
 
       TabContent() {
-        MomentsIndex();
+        if(this.LOGIN_FLAG) {
+          MomentsIndex();
+        }
+        else{
+          MineIndex()
+            .borderWidth({ bottom: 1 })
+            .borderColor($r('app.color.primaryBgColor'))
+        }
       }
       .tabBar(this.TabBuilder(TabId.MOMENTS));
 
@@ -476,3 +522,5 @@ struct Index {
     }
   }
 }
+
+export { Index };
