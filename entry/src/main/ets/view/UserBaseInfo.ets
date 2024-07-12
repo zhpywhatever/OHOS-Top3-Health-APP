@@ -17,18 +17,145 @@ import {AddAvatarDialog} from './dialog/AddAvatarDialog';
 import {ShowAvatarDialog} from './dialog/AddAvatarDialog';
 import {getAvatarPath} from '../model/fileProcess';
 
+import common from '@ohos.app.ability.common';
+import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
+import picker from '@ohos.file.picker';
+import { request } from '@kit.BasicServicesKit';
+import { bundleManager } from '@kit.AbilityKit';
+
 @Entry
 @Component
 export struct UserBaseInfo {
   @Prop nickname: string = 'Top3';
   @Prop signature: string = '遥遥领先遥遥领先';
-  @StorageLink('LAST_LOGIN') LAST_LOGIN: string = "";
-  @State CUR_USER_AVATAR: string = getAvatarPath(this.LAST_LOGIN);
+// <<<<<<< HEAD
+//   @StorageLink('LAST_LOGIN') LAST_LOGIN: string = "";
+//   @State CUR_USER_AVATAR: string = getAvatarPath(this.LAST_LOGIN);
+// =======
+  @State IsLocalFlag:boolean=true;
+  @State html: string = "权限状态未知";
+  @State  pic :string ="";
+
+ // private  async  openGallery_1() {
+ //   let context = getContext(this) as common.UIAbilityContext;
+ //   let atManager = abilityAccessCtrl.createAtManager();
+ //   let info = await bundleManager.getBundleInfoForSelf(0);
+ //   let result = atManager.verifyAccessTokenSync(info.appInfo.accessTokenId, "ohos.permission.READ_MEDIA");
+ //   if (abilityAccessCtrl.GrantStatus.PERMISSION_GRANTED == result) {
+ //     console.log("has permission")
+ //     this.openGalleryInternal()
+ //   } else {
+ //     atManager.requestPermissionsFromUser(context, ["ohos.permission.READ_MEDIA"], (error, result) => {
+ //       if (result) {
+ //         console.log("result: " + JSON.stringify(result));
+ //         if (result.authResults[0] == abilityAccessCtrl.GrantStatus.PERMISSION_GRANTED) {
+ //           // 用户授予权限
+ //           this.html = "用户已经授权";
+ //           this.openGalleryInternal();
+ //         } else {
+ //           // 用户拒绝权限
+ //           this.html = "用户拒绝授权";
+ //           console.log("permission denied")
+ //         }
+ //       } else {
+ //         this.html = "请求授权异常：" + JSON.stringify(error);
+ //         console.log("error: " + JSON.stringify(error));
+ //       }
+ //     });
+ //   }
+ // }
+  private async openGallery() {
+    let context = getContext(this) as common.UIAbilityContext;
+    let atManager = abilityAccessCtrl.createAtManager();
+    let info = await bundleManager.getBundleInfoForSelf(0);
+
+    if (info && info.appInfo) {
+      let result = atManager.verifyAccessTokenSync(info.appInfo.accessTokenId, "ohos.permission.READ_MEDIA");
+      if (abilityAccessCtrl.GrantStatus.PERMISSION_GRANTED == result) {
+        console.log("has permission")
+      }
+    } else {
+      atManager.requestPermissionsFromUser(context, ["ohos.permission.READ_MEDIA"], (error, result) => {
+        if (result) {
+          console.log("result: " + JSON.stringify(result));
+          if (result.authResults[0] == abilityAccessCtrl.GrantStatus.PERMISSION_GRANTED) {
+            // 用户授予权限
+            this.html = "用户已经授权";
+            this.openGalleryInternal();
+          } else {
+            // 用户拒绝权限
+            this.html = "用户拒绝授权";
+            // console.log("permission denied")
+          }
+        } else {
+          this.html = "请求授权异常：" + JSON.stringify(error);
+          console.log("error: " + JSON.stringify(error));
+        }
+      });
+    }
+  }
+
+  private openGalleryInternal() {
+    let photoPicker = new picker.PhotoViewPicker();
+    photoPicker.select({
+      MIMEType: picker.PhotoViewMIMETypes.IMAGE_TYPE,
+      maxSelectNumber: 1
+    }, (error, result) => {
+      if (result) {
+        this.uploadImages(result.photoUris);
+        this.pic = result.photoUris[0];
+        result.photoUris.forEach((url) => {
+          console.log("url: " + url);
+        })
+      }
+    });
+  }
+
+
+  private uploadImages(paths: string[]) {
+    let allFiles = Array<request.File>()
+    for (let i = 0; i <paths.length; i++) {
+      let path = paths[i]
+      console.log("path: " + path)
+      allFiles[i] = {
+        name: "image" + i + ".jpg",
+        filename: "image" + i + ".jpg",
+        uri: path,
+        type: "image"
+      }
+    }
+    request.uploadFile(getContext(),{
+      url: "http://127.0.0.1:8080/C:/pic",
+      method: "POST",
+      files: allFiles,
+      header: {},
+      data: [
+        {
+          name: "test",
+          value: "value"
+        }
+      ]
+    }, (error, response) => {
+      if(response) {
+        response.on('progress', (uploadedSize: number, totalSize: number) => {
+          console.log("progress, uploadedSize: " + uploadedSize + ", totalSize: " + totalSize)
+        })
+      } else {
+        console.log("upload failure: " + error)
+      }
+    });
+  }
+// >>>>>>> c1ac16dd01f58dd65f58f39b64bc42bdc4aa9f04
 
   controller: CustomDialogController = new CustomDialogController({
     builder: AddAvatarDialog({
       view: () => {
           this.viewAvatar()
+      },
+      change:() => {
+
+          this.openGallery()
+          this.changeAvatar()
       }
     }),
     cancel: () => {
@@ -50,6 +177,12 @@ export struct UserBaseInfo {
   viewAvatar(){
       this.showController.open()
   }
+  changeAvatar(){
+      this.IsLocalFlag = false
+  }
+
+
+
   build() {
     Column() {
       // userIcon
@@ -59,7 +192,11 @@ export struct UserBaseInfo {
           .width($r('app.float.default_100'))
           .margin({ top: $r('app.float.default_71') })
 
-        Image(this.CUR_USER_AVATAR)
+// <<<<<<< HEAD
+//         Image(this.CUR_USER_AVATAR)
+// =======
+        Image(this.IsLocalFlag ? $r('app.media.ic_user'):this.pic)
+// >>>>>>> c1ac16dd01f58dd65f58f39b64bc42bdc4aa9f04
           .objectFit(ImageFit.Contain)
           .height($r('app.float.default_66'))
           .width($r('app.float.default_66'))
