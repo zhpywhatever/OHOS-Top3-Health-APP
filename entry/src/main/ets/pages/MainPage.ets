@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { router } from '@kit.ArkUI';
+import { router, Scale } from '@kit.ArkUI';
 import { common } from '@kit.AbilityKit';
 import { notificationManager } from '@kit.NotificationKit';
 import Logger from '../common/utils/Logger';
@@ -38,6 +38,13 @@ function allSize() {
   .height(Const.THOUSANDTH_1000)
 }
 
+const EXPAND_FLOOR_INTERVAL_TIME: number = 50;
+const PACK_FLOOR_INTERVAL_TIME: number = 10;
+const FLING_FACTOR: number = 1.0;
+const OFFSET_STEP: number = 30;
+const TRIGGER_HEIGHT: number = 200;
+const MINI_SHOW_DISTANCE: number = 3;
+
 @Entry
 @Component
 struct Index {
@@ -52,6 +59,21 @@ struct Index {
   @StorageLink('CUR_USER_INFO') CUR_USER_INFO: UserInfo = {username: "", password: "", whatcanIsay: ""};
   @StorageLink('LAST_LOGIN') LAST_LOGIN: string = "";
   @StorageLink('CUR_USER_AVATAR') CUR_USER_AVATAR: string = "";
+
+  @State displaySecondFloor: boolean = false;
+  private expandFloorTriggerDistance: number = 180;
+  private packUpFloorTriggerDistance: number = 100;
+  @State dragging: boolean = false;
+  private lastY: number = 0;
+  @State immediatelyScale: Scale = { x: 0, y: 0 };
+  @State roundSize: number = 0;
+  @State onShow: boolean = false;
+  @State animationXLeft: number = 60;
+  @State animationXRight: number = -60;
+  private floorHeight: number = 715;
+  @State offsetY: number = -this.floorHeight;
+  @State miniAppScale: Scale = { x: 0, y: 0 };
+  @State checkInDates: number = 0;
 
   aboutToAppear() {
     let tmp_my_value: number = Number(readFile("MY_VALUE_FILE"));
@@ -109,6 +131,82 @@ struct Index {
     }
   }
 
+  private expandSecondFloor(): void {
+    this.checkCurrentTime();
+    if (this.offsetY < 0) {
+      animateTo({
+        duration: 500,
+        curve: Curve.EaseOut,
+        iterations: 1,
+        playMode: PlayMode.Normal,
+        finishCallbackType: FinishCallbackType.REMOVED,
+        onFinish: () => {
+          this.onShow = false;
+        }
+      }, () => {
+        this.offsetY = 0;
+        // 在Y轴为达到0的时候缩放比例为正常显示
+        this.miniAppScale = { x: 1, y: 1 };
+        this.displaySecondFloor = true;
+      });
+    }
+  }
+
+  private packUpSecondFloor(): void {
+    if(this.offsetY !== -this.floorHeight) {
+      let intervalId = setInterval(() => {
+        if (this.offsetY <= -this.floorHeight) {
+          this.offsetY = -this.floorHeight;
+          clearInterval(intervalId);
+        } else {
+          // 相当于回弹的速度
+          this.offsetY = (this.offsetY - OFFSET_STEP >= -this.floorHeight)? this.offsetY - OFFSET_STEP : -this.floorHeight;
+        }
+      }, PACK_FLOOR_INTERVAL_TIME)
+      this.displaySecondFloor = false;
+    }
+  }
+
+  private scrollByTop(): void {
+    // 坐标位置不等于二楼高度进入判断
+    if (this.offsetY !== -this.floorHeight) {
+      let intervalId = setInterval(() => {
+        if (this.offsetY <= -this.floorHeight) {
+          this.offsetY = -this.floorHeight;
+          clearInterval(intervalId);
+        } else {
+          // 相当于回弹的速度
+          this.offsetY = ((this.offsetY - OFFSET_STEP) < -this.floorHeight) ? (-this.floorHeight) : (this.offsetY - OFFSET_STEP);
+        }
+        if (((this.floorHeight - Math.abs(this.offsetY)) <= TRIGGER_HEIGHT) && (this.floorHeight - Math.abs(this.offsetY)) >= 60) {
+          this.animationXLeft = 60;
+          this.animationXRight = -60;
+          // this.totalY / TRIGGER_HEIGHT
+          this.animationXLeft = this.animationXLeft - ((this.floorHeight - Math.abs(this.offsetY)) / TRIGGER_HEIGHT) * 60;
+          this.animationXRight = this.animationXRight + ((this.floorHeight - Math.abs(this.offsetY)) / TRIGGER_HEIGHT) * 60;
+          this.immediatelyScale = {
+            x: ((this.floorHeight - Math.abs(this.offsetY)) / TRIGGER_HEIGHT),
+            y: ((this.floorHeight - Math.abs(this.offsetY)) / TRIGGER_HEIGHT)
+          };
+        } else if (((this.floorHeight - Math.abs(this.offsetY)) < 60)) {
+          this.roundSize = 0;
+          this.roundSize = 20 * ((this.floorHeight - Math.abs(this.offsetY)) / 60);
+          this.immediatelyScale = {
+            x: 0,
+            y: 0
+          };
+        } else {
+          this.roundSize = 20;
+          this.immediatelyScale = { x: 1, y: 1 };
+          this.animationXLeft = 0;
+          this.animationXRight = 0;
+        }
+      }, EXPAND_FLOOR_INTERVAL_TIME);
+    } else {
+      Logger.debug("scrollByTop(): already scrolled to top edge")
+    }
+  }
+
   checkCurrentTime() {
     GlobalInfoApi.query((result: GlobalInfo) => {
       let predate = new Date(result.lastDate);
@@ -136,6 +234,7 @@ struct Index {
       } else {
         this.homeStore.initData();
       }
+      this.checkInDates = result?.checkInDays;
     });
   }
 
@@ -162,7 +261,8 @@ struct Index {
     }.justifyContent(FlexAlign.Center).allSize()
   }
 
-  build() {
+  @Builder
+  FloorBuilder() {
     Tabs({ barPosition: BarPosition.End, controller: this.tabController }) {
       TabContent() {
         if(this.LOGIN_FLAG){
@@ -219,6 +319,207 @@ struct Index {
       this.currentPage = index;
     })
     // .animationDuration(100)
+  }
+
+  @Builder
+  SecondFloorBuilder() {
+    Column(){
+      Stack() {
+        Image($r('app.media.tree_background'))
+          .height('100%')
+        Column(){
+          Image($r('app.media.tree'))
+            .height('45%')
+            .margin({top: '37%', left: '-3%'})
+        }
+        .width('100%')
+        .alignItems(HorizontalAlign.Center)
+        Row(){
+          Text('我已经保持健康生活 ' + this.checkInDates + ' 天啦')
+            .font({
+              size: 25,
+              weight: FontWeight.Medium
+            })
+            .opacity(1)
+        }
+        .height('70')
+        .width('100%')
+        .position({y: '20%'})
+        .backgroundColor(Color.White)
+        .opacity(0.85)
+        .justifyContent(FlexAlign.Center)
+      }
+    }
+    .height('100%')
+    .width('100%')
+    .position({y: -56})
+    .border({
+      width: {bottom: 1},
+      color: Color.Green,
+      style: BorderStyle.Dashed
+    })
+  }
+
+  build() {
+    Column() {
+      Column() {
+        Column() {
+          // 二楼页面
+          this.SecondFloorBuilder();
+          // 三点动效布局
+          if (this.onShow) {
+            Row() {
+              // this.floorHeight - Math.abs(this.offsetY)为下拉距离，下拉距离超过MINI_SHOW_DISTANCE（动效最小展示距离）且小于TRIGGER_HEIGHT（触发动画高度或者动效消失高度）展示动画
+              if ((this.floorHeight - Math.abs(this.offsetY)) > MINI_SHOW_DISTANCE &&
+                (this.floorHeight - Math.abs(this.offsetY)) <= TRIGGER_HEIGHT) {
+                Row() {
+                  // 向左偏移圆
+                  Blank()
+                    .width(this.roundSize)
+                    .height(this.roundSize)
+                    .borderRadius($r('app.float.default_5'))
+                    .scale(this.immediatelyScale)
+                    .backgroundColor(Color.Black)
+                    .translate({ x: this.animationXLeft })
+                    .opacity(((this.floorHeight - Math.abs(this.offsetY)) / this.floorHeight)) // 使用下拉距离除以二楼高度获得圆的透明度
+                  // 中心加载点
+                  Blank()
+                    .width(this.roundSize)
+                    .height(this.roundSize)
+                    .borderRadius($r('app.float.default_5'))
+                    .margin({
+                      left: $r('app.float.default_20'),
+                      right: $r('app.float.default_20')
+                    })
+                    .backgroundColor(Color.Black)
+                    .opacity(((this.floorHeight - Math.abs(this.offsetY)) / this.floorHeight))
+                  // 向右偏移圆
+                  Blank()
+                    .width(this.roundSize)
+                    .height(this.roundSize)
+                    .borderRadius($r('app.float.default_5'))
+                    .scale(this.immediatelyScale)
+                    .backgroundColor(Color.Black)
+                    .translate({ x: this.animationXRight })
+                    .opacity(((this.floorHeight - Math.abs(this.offsetY)) / this.floorHeight))
+                }
+              }
+            }
+            .justifyContent(FlexAlign.Center)
+            .alignItems(VerticalAlign.Center)
+            .width('100%')
+            .height(this.floorHeight - Math.abs(this.offsetY))
+            .backgroundColor(Color.Gray)
+            // 当动效高度超过200的时候，背景色透明度开始改变，Math.abs(this.offsetY)除以(this.floorHeight - TRIGGER_HEIGHT)获取到的是超过动效高度的百分比可以来显示透明度，由于透明度小于0.6后蒙层效果不明显，所以当值小于0.6时固定为0.6
+            .opacity(Math.abs(this.offsetY) / (this.floorHeight - TRIGGER_HEIGHT) >= 0.6 ||
+              Math.abs(this.offsetY) / (this.floorHeight - TRIGGER_HEIGHT) === 0 ?
+              Math.abs(this.offsetY) / (this.floorHeight - TRIGGER_HEIGHT) : 0.6)
+          }
+        }
+
+        // 一楼页面
+        Column() {
+          this.FloorBuilder();
+        }
+        .width('100%')
+        .layoutWeight(1)
+        .position({
+          x: 0,
+          y: this.offsetY + this.floorHeight
+        })
+      }
+      .clip(true)
+      .width('100%')
+      .height('100%')
+      .onTouch((event) => {
+        switch (event.type) {
+          case TouchType.Down:
+          // onTouchDown
+            this.lastY = event.touches[0].windowY;
+            this.onShow = true;
+            this.dragging = false;
+            break;
+          case TouchType.Up:
+          case TouchType.Cancel:
+            if (this.dragging && !this.displaySecondFloor) {
+              // 二楼自身的高度减去向下Y轴的位移的绝对值大于触发值进入二楼，否则回弹
+              if ((this.floorHeight - Math.abs(this.offsetY)) > this.expandFloorTriggerDistance) {
+                // 进入二楼
+                this.expandSecondFloor();
+              } else {
+                // 未达到触发距离回弹
+                this.scrollByTop();
+              }
+            }
+            else if(this.dragging && this.displaySecondFloor) {
+              if(Math.abs(this.offsetY) >= this.packUpFloorTriggerDistance) {
+                // 收回二楼
+                this.packUpSecondFloor();
+              } else {
+                // 回弹
+                this.expandSecondFloor();
+              }
+            }
+            break;
+          case TouchType.Move:
+            // onTouchMove
+            this.onShow = true;
+            let currentY = event.touches[0].windowY;
+            let deltaY = currentY - this.lastY;
+            if (this.dragging) {
+              if (((this.floorHeight - Math.abs(this.offsetY)) <= TRIGGER_HEIGHT) && (this.floorHeight - Math.abs(this.offsetY)) >= 60) {
+                this.roundSize = 20;
+                this.animationXLeft = 60;
+                this.animationXRight = -60;
+                this.animationXLeft = this.animationXLeft - ((this.floorHeight - Math.abs(this.offsetY)) / TRIGGER_HEIGHT) * 60;
+                this.animationXRight = this.animationXRight + ((this.floorHeight - Math.abs(this.offsetY)) / TRIGGER_HEIGHT) * 60;
+                this.immediatelyScale = {
+                  x: ((this.floorHeight - Math.abs(this.offsetY)) / TRIGGER_HEIGHT),
+                  y: ((this.floorHeight - Math.abs(this.offsetY)) / TRIGGER_HEIGHT)
+                };
+              } else if ((this.floorHeight - Math.abs(this.offsetY)) < 40) {
+                this.roundSize = 0;
+                this.roundSize = 20 * ((this.floorHeight - Math.abs(this.offsetY)) / 60);
+                this.immediatelyScale = {
+                  x: 0,
+                  y: 0
+                };
+              } else {
+                // 设置当二楼回收显示一楼时，三个圆属于加载成功状态
+                this.roundSize = 0;
+                this.immediatelyScale = { x: 1, y: 1 };
+                this.animationXLeft = 0;
+                this.animationXRight = 0;
+              }
+
+              // 在Y轴为达到0的之前使用1 - (Math.abs(this.offsetY) / this.floorHeight)来控制二楼页面缩放
+              this.miniAppScale = {
+                x: 1 - (Math.abs(this.offsetY) / this.floorHeight),
+                y: 1 - (Math.abs(this.offsetY) / this.floorHeight)
+              };
+
+              // 拖动过程中向上拖动
+              if (deltaY < 0) {
+                if (this.offsetY > -this.floorHeight) {
+                  // 往回拖动一楼漏出高度
+                  this.offsetY = this.offsetY + px2vp(deltaY) * FLING_FACTOR;
+                } else {
+                  this.offsetY = -this.floorHeight;
+                }
+              } else if (this.offsetY < 0){
+                // 向下拖动二楼漏出高度
+                this.offsetY = this.offsetY + px2vp(deltaY) * FLING_FACTOR;
+              }
+              this.lastY = currentY;
+            } else {
+                this.dragging = true;
+                this.lastY = currentY;
+            }
+            break;
+        }
+        event.stopPropagation(); // 阻止冒泡
+      })
+    }
   }
 }
 
