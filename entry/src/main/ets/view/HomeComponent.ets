@@ -27,6 +27,8 @@ import { HealthDataSrcMgr } from '../common/utils/HealthDataSrcMgr';
 import { BroadCast, BroadCastType } from '../common/utils/BroadCast';
 import { CommonConstants as Const } from '../common/constants/CommonConstants';
 import AchievementInfo from '../viewmodel/AchievementInfo';
+import { writeFile } from '../model/fileProcess';
+
 // import { promptAction } from '@kit.ArkUI';
 
 const WHITE_COLOR_0X = 255;
@@ -58,6 +60,8 @@ export default struct HomeIndex {
   @Link homeStore: HomeStore;
   @Link editedTaskInfo: ITaskItem;
   @Link @Watch('taskChange') editedTaskID: string;
+  @StorageLink('LAST_LOGIN') LAST_LOGIN: string = "";
+  // @StorageLink('PASS_TUTOR') PASS_TUTOR: boolean = false;
   private scroller: Scroller = new Scroller();
   private yOffset: number = 0;
 
@@ -124,6 +128,13 @@ export default struct HomeIndex {
   editTaskAction() {
     if (this.homeStore.checkCurrentDay()) {
       router.pushUrl({ url: 'pages/TaskListPage' });
+      // if (!this.PASS_TUTOR) {
+      //   router.pushUrl({ url: 'pages/highlight' });
+      //   this.PASS_TUTOR = true;
+      //   writeFile("PASS_TUTOR_FILE", this.PASS_TUTOR.toString());
+      // } else {
+      //   router.pushUrl({ url: 'pages/TaskListPage' });
+      // }
     }
   }
 
@@ -194,8 +205,10 @@ export default struct HomeIndex {
           this.editTaskAction();
         }
       })
+      // .id('test')
+
       Row() {
-        Text($r('app.string.EntryAbility_label'))
+        Text(`你好, ${this.LAST_LOGIN}`)
           .titleTextStyle()
           .fontSize($r('app.float.default_24'))
           .padding({ left: Const.THOUSANDTH_66 })

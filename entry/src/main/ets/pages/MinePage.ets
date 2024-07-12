@@ -32,6 +32,8 @@ export struct MineIndex {
   // @State isLoggedIn: boolean = false;
   @StorageLink('LOGIN_FLAG') LOGIN_FLAG: Boolean = false;
   @StorageLink('LAST_LOGIN') LAST_LOGIN: string = "";
+  @StorageLink('PASS_TUTOR') PASS_TUTOR: string = "";
+  @StorageLink('CUR_USER_INFO') CUR_USER_INFO: UserInfo = {username: "", password: "", whatcanIsay: ""};
 
   handleLogin(username: string, password: string) {
     let userInfo : UserInfo = {
@@ -48,12 +50,21 @@ export struct MineIndex {
         }
         this.LAST_LOGIN = this.nickname;
         this.LOGIN_FLAG = true;
+        this.CUR_USER_INFO.username = this.LAST_LOGIN;
+        this.CUR_USER_INFO.password = this.password;
+        this.CUR_USER_INFO.whatcanIsay = this.signature;
         writeFile("LAST_LOGIN_FILE", this.LAST_LOGIN);
         writeFile("LOGIN_FLAG_FILE", this.LOGIN_FLAG.toString());
 
         promptAction.showToast({
           message: '欢迎登录!'
         });
+
+        if (this.LOGIN_FLAG && !(this.PASS_TUTOR === this.LAST_LOGIN)) {
+          router.pushUrl({ url: 'pages/highlight' });
+          this.PASS_TUTOR = this.LAST_LOGIN;
+          writeFile("PASS_TUTOR_FILE", this.PASS_TUTOR);
+        }
       } else {
         console.log("登录失败");
         promptAction.showToast({
@@ -61,6 +72,10 @@ export struct MineIndex {
         });
       }
     })
+    let test = router.getState();
+    if (!(test.name === "MainPage")) {
+      router.back();
+    }
   }
 
   async handleRegister() {
@@ -109,7 +124,7 @@ export struct MineIndex {
         .onClick(() => this.handleRegister())
     }
     .width('100%')
-    .height('80%')
+    .height('100%')
     .justifyContent(FlexAlign.Center)
   }
 
@@ -128,8 +143,8 @@ export struct MineIndex {
       if (this.LOGIN_FLAG) {
         // 登录视图
         UserBaseInfo({
-          nickname: this.nickname,
-          signature: this.signature
+          nickname: this.CUR_USER_INFO.username,
+          signature: this.CUR_USER_INFO.whatcanIsay
         });
         ListInfo();
       } else {
