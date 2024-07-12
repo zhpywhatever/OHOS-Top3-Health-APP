@@ -20,7 +20,7 @@ import { CommonConstants as Const } from '../common/constants/CommonConstants';
 import { router } from '@kit.ArkUI';
 import { checkLogin, UserInfo, getUserInfo, writeFile } from '../model/fileProcess';
 import { promptAction } from '@kit.ArkUI';
-
+import {getAvatarPath} from '../model/fileProcess';
 
 @Entry
 @Component
@@ -29,9 +29,10 @@ export struct MineIndex {
   @State nickname: string = Const.NICK_NAME;
   @State password: string = "";
   @State signature: string = Const.SIGNATURE;
+  @StorageLink('LAST_LOGIN') LAST_LOGIN: string = "";
+  @State CUR_USER_AVATAR: string = getAvatarPath(this.LAST_LOGIN);
   // @State isLoggedIn: boolean = false;
   @StorageLink('LOGIN_FLAG') LOGIN_FLAG: Boolean = false;
-  @StorageLink('LAST_LOGIN') LAST_LOGIN: string = "";
   @StorageLink('PASS_TUTOR') PASS_TUTOR: string = "";
   @StorageLink('CUR_USER_INFO') CUR_USER_INFO: UserInfo = {username: "", password: "", whatcanIsay: ""};
 

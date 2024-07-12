@@ -51,6 +51,7 @@ struct Index {
   @StorageLink('LOGIN_FLAG') LOGIN_FLAG: boolean = false;
   @StorageLink('CUR_USER_INFO') CUR_USER_INFO: UserInfo = {username: "", password: "", whatcanIsay: ""};
   @StorageLink('LAST_LOGIN') LAST_LOGIN: string = "";
+  @StorageLink('CUR_USER_AVATAR') CUR_USER_AVATAR: string = "";
 
   aboutToAppear() {
     let tmp_my_value: number = Number(readFile("MY_VALUE_FILE"));
@@ -69,6 +70,7 @@ struct Index {
       AppStorage.SetOrCreate('LOGIN_FLAG', tmp_login_flag);
       AppStorage.SetOrCreate('LAST_LOGIN', readFile("LAST_LOGIN_FILE"));
       this.CUR_USER_INFO.username = this.LAST_LOGIN;
+      this.CUR_USER_AVATAR = readFile("CUR_USER_AVATAR_FILE");
 
       if (tmp_pass_tutor) {
         AppStorage.SetOrCreate('PASS_TUTOR', tmp_pass_tutor);

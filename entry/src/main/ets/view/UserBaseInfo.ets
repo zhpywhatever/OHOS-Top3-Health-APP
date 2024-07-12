@@ -15,12 +15,15 @@
 import { router } from '@kit.ArkUI';
 import {AddAvatarDialog} from './dialog/AddAvatarDialog';
 import {ShowAvatarDialog} from './dialog/AddAvatarDialog';
+import {getAvatarPath} from '../model/fileProcess';
 
 @Entry
 @Component
 export struct UserBaseInfo {
   @Prop nickname: string = 'Top3';
   @Prop signature: string = '遥遥领先遥遥领先';
+  @StorageLink('LAST_LOGIN') LAST_LOGIN: string = "";
+  @State CUR_USER_AVATAR: string = getAvatarPath(this.LAST_LOGIN);
 
   controller: CustomDialogController = new CustomDialogController({
     builder: AddAvatarDialog({
@@ -56,7 +59,7 @@ export struct UserBaseInfo {
           .width($r('app.float.default_100'))
           .margin({ top: $r('app.float.default_71') })
 
-        Image($r('app.media.ic_user'))
+        Image(this.CUR_USER_AVATAR)
           .objectFit(ImageFit.Contain)
           .height($r('app.float.default_66'))
           .width($r('app.float.default_66'))
