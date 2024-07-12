@@ -102,7 +102,7 @@ export struct UserBaseInfo {
       maxSelectNumber: 1
     }, (error, result) => {
       if (result) {
-        this.uploadImages(result.photoUris);
+        // this.uploadImages(result.photoUris);
         this.pic = result.photoUris[0];
         result.photoUris.forEach((url) => {
           console.log("url: " + url);
@@ -192,15 +192,12 @@ export struct UserBaseInfo {
           .width($r('app.float.default_100'))
           .margin({ top: $r('app.float.default_71') })
 
-// <<<<<<< HEAD
-//         Image(this.CUR_USER_AVATAR)
-// =======
         Image(this.IsLocalFlag ? $r('app.media.ic_user'):this.pic)
-// >>>>>>> c1ac16dd01f58dd65f58f39b64bc42bdc4aa9f04
           .objectFit(ImageFit.Contain)
           .height($r('app.float.default_66'))
           .width($r('app.float.default_66'))
           .margin({ top: $r('app.float.default_71') })
+          .borderRadius(100)
           .onClick(
             () => {
               this.controller.open()
