@@ -76,6 +76,10 @@ export struct UserBaseInfo {
       if (result) {
         // this.uploadImages(result.photoUris);
         this.pic = result.photoUris[0];
+        if (this.pic) {
+          this.IsLocalFlag = false;
+        }
+
         result.photoUris.forEach((url) => {
           console.log("url: " + url);
         })
@@ -125,10 +129,7 @@ export struct UserBaseInfo {
           this.viewAvatar()
       },
       change:() => {
-
           this.openGallery()
-          this.IsLocalFlag = false
-
       }
     }),
     cancel: () => {
