@@ -505,12 +505,9 @@ struct Index {
           case TouchType.Up:
           case TouchType.Cancel:
             if (this.dragging && !this.displaySecondFloor) {
-              // 二楼自身的高度减去向下Y轴的位移的绝对值大于触发值进入二楼，否则回弹
               if ((this.floorHeight - Math.abs(this.offsetY)) > this.expandFloorTriggerDistance) {
-                // 进入二楼
                 this.expandSecondFloor();
               } else {
-                // 未达到触发距离回弹
                 this.scrollByTop();
               }
             }
@@ -525,6 +522,9 @@ struct Index {
             }
             break;
           case TouchType.Move:
+            // Only main page has second floor
+            if(this.currentPage != 0 || !this.LOGIN_FLAG)
+              break;
             // onTouchMove
             this.onShow = true;
             let currentY = event.touches[0].windowY;
