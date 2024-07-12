@@ -1,0 +1,11 @@
+[
+    {
+        "Name": "NewbieGuide",
+        "License": "Apache-2.0",
+        "License File": "LICENSE",
+        "Version Number": "2.4.4",
+        "Owner" : "xiafeng@huawei.com"
+        "Upstream URL": "https://github.com/huburt-Hu/NewbieGuide",
+        "Description": "Android 快速实现新手引导的库，通过简洁链式调用，一行代码实现引导页的显示。"
+    }
+]

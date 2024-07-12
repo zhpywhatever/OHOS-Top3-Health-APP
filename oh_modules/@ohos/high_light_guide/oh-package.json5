@@ -1,0 +1,25 @@
+{
+  "name": "@ohos/high_light_guide",
+  "version": "1.0.1",
+  "description": "基于OpenHarmony的高亮型新手引导组件，通过高亮区域与蒙版背景的明暗度对比，使用户快速锁定重点功能，快速掌握应用基本使用方法.",
+  "main": "index.ets",
+  "author": "ohos_tpc",
+  "license": "Apache License 2.0",
+  "dependencies": {},
+  "devDependencies": {},
+  "types": "",
+  "keywords": [
+    "OpenHarmony",
+    "HarmonyOS",
+    "NewbieGuide",
+    "HighLight"
+  ],
+  "ohos": {
+    "org": "opensource"
+  },
+  "repository": "https://gitee.com/openharmony-sig/ohos_highlightguide",
+  "type": "module",
+  "tags": [
+    "UI"
+  ]
+}

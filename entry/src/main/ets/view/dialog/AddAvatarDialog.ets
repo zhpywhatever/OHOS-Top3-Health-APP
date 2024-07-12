@@ -57,10 +57,12 @@ export  struct AddAvatarDialog {
 export  struct ShowAvatarDialog {
 
   controller: CustomDialogController = new CustomDialogController({ builder: '' });
+  @State passVarBool : boolean = true;
+  @State picPath : string = "";
 
   build() {
     Column(){
-      Image($r('app.media.ic_user'))
+      Image(this.passVarBool ? $r('app.media.ic_user'):this.picPath)
         .objectFit(ImageFit.Fill)
         .height($r('app.float.default_316'))
         .width($r('app.float.default_316'))
