@@ -9,6 +9,7 @@
     "pages/UpdatesPage",
     "pages/MinePage",
     "pages/RegisterPage",
+    "pages/UserinfoPage",
     "pages/ImageSwiperPage"
   ]
 }
