@@ -5,12 +5,14 @@ import App from '@system.app';
 
 class MomentClass {
   public nickName: string; //昵称
+  public head : ResourceStr;
   public content: string; //内容
   public showC: boolean;
   public images: ResourceStr[]; //内容图片列表
 
-  constructor(nickName: string, content: string, showC: boolean, images: ResourceStr[]) {
+  constructor(nickName: string, head:ResourceStr, content: string, showC: boolean, images: ResourceStr[]) {
     this.nickName = nickName;
+    this.head = head;
     this.content = content;
     this.showC = showC;
     this.images = images;
@@ -60,9 +62,9 @@ function generateRandomImages(): ResourceStr[] {
 @Component
 export struct MomentsIndex {
   @State momentList: MomentClass[] = [
-    new MomentClass('Timo', 'Seeing much, suffering much, and studying much, are the three pillars of learning.', false,[]),
-    new MomentClass('Pill', '今日打卡', false, [$r("app.media.1")]),
-    new MomentClass('锤子', '打卡打卡打卡打卡打卡打卡打卡打卡打卡打卡', false, [$r("app.media.1"), $r("app.media.2")])
+    new MomentClass('Timo', $r("app.media.ic_head_3"),'Seeing much, suffering much, and studying much, are the three pillars of learning.', false,[]),
+    new MomentClass('Pill', $r("app.media.ic_head_2"),'今日打卡', false, [$r("app.media.1")]),
+    new MomentClass('锤子', $r("app.media.ic_head_1"), '打卡打卡打卡打卡打卡打卡打卡打卡打卡打卡', false, [$r("app.media.1"), $r("app.media.2")])
   ];
   @State showC: boolean[] = [
     false, false, false
@@ -181,7 +183,7 @@ export struct MomentsIndex {
         ForEach(this.momentList, (item: MomentClass, index: number) => {
           ListItem() {
             Row({ space: 10 }) {
-              Image($r("app.media.ic_user"))
+              Image(item.head)
                 .width(50)
                 .height(50)
                 .borderRadius(6)
@@ -294,7 +296,7 @@ export struct MomentsIndex {
         clickAction: () => {
           console.info(`click add moments, len = ${this.momentList.length}`);
           // this.momentList.splice(0, 1);
-          this.momentList.splice(0, 0, new MomentClass('Me', generateRandomText(), false, generateRandomImages()));
+          this.momentList.splice(0, 0, new MomentClass('Me', $r("app.media.ic_head_1"), generateRandomText(), false, generateRandomImages()));
           this.showC.splice(0,0,false);
           console.info(`after splice, len = ${this.momentList.length}`);
         }

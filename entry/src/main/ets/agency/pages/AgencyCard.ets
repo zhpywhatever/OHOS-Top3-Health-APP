@@ -183,6 +183,10 @@ struct AgencyCard {
                   .fontWeight(FontWeight.Normal)
               }
             }
+            .width(128)
+            .height(128)
+            .backgroundColor(Color.White)
+            .borderRadius(15)
 
             Column(){
               Row(){
@@ -222,7 +226,7 @@ struct AgencyCard {
             }
           }
           .justifyContent(FlexAlign.SpaceAround)
-          .backgroundColor(Color.White)
+          .backgroundColor($r("app.color.list_background_color"))
           .width(this.FULL_WIDTH_PERCENT)
           .height(this.FULL_HEIGHT_PERCENT)
           .onClick(() => {
