@@ -17,10 +17,8 @@ class MomentClass {
   }
 }
 
-const subjects = ['小明', '小红', '小刚', '张三', '李四'];
-const verbs = ['喜欢', '讨厌', '正在做', '完成了', '开始了'];
-const objects = ['作业', '游戏', '跑步', '阅读', '烹饪'];
-const adverbs = ['快速地', '慢慢地', '开心地', '伤心地', '认真地'];
+const verbs = ['喜欢', '我正在', '今天完成了', '开始了', '准备'];
+const objects = ['早起', '喝水', '吃苹果', '微笑', '刷牙', '早睡', '吃早饭'];
 
 const images = [$r("app.media.1"), $r("app.media.2"), $r("app.media.3"), $r("app.media.4")];
 
@@ -35,13 +33,11 @@ function getRandomElement2(arr: Resource[]): Resource {
 
 // 生成随机文案的函数
 function generateRandomText(): string {
-  const subject = getRandomElement(subjects);
   const verb = getRandomElement(verbs);
   const object = getRandomElement(objects);
-  const adverb = getRandomElement(adverbs);
 
   // 生成随机文案
-  const sentence = `${subject}${adverb}${verb}${object}。`;
+  const sentence = `${verb}${object}。`;
   return sentence;
 }
 
