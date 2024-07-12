@@ -24,7 +24,6 @@ import TaskInfoApi from '../common/database/tables/TaskInfoApi'
 import { HomeStore } from '../viewmodel/HomeViewModel';
 import { ITaskItem, TaskMapById } from '../model/TaskInitList';
 import { HealthDataSrcMgr } from '../common/utils/HealthDataSrcMgr';
-import { BroadCast, BroadCastType } from '../common/utils/BroadCast';
 import { CommonConstants as Const } from '../common/constants/CommonConstants';
 import AchievementInfo from '../viewmodel/AchievementInfo';
 import { writeFile } from '../model/fileProcess';
@@ -55,90 +54,14 @@ function titleTextStyle() {
 
 @Component
 export default struct HomeIndex {
-  @Provide broadCast: BroadCast = HealthDataSrcMgr.getInstance().getBroadCast();
   @State naviAlpha: number = 0;
   @Link homeStore: HomeStore;
   @Link editedTaskInfo: ITaskItem;
-  @Link @Watch('taskChange') editedTaskID: string;
   @StorageLink('LAST_LOGIN') LAST_LOGIN: string = "";
   // @StorageLink('PASS_TUTOR') PASS_TUTOR: boolean = false;
   private scroller: Scroller = new Scroller();
   private yOffset: number = 0;
 
-  taskChange() {
-    this.homeStore.updateTaskInfoList(this.editedTaskInfo);
-  }
-
-  taskItemAction(item: TaskInfo, isClick: boolean): void {
-    if (!this.homeStore.checkCurrentDay()) {
-      return;
-    }
-    if (isClick) {
-      // click to clock
-      let callback: CustomDialogCallback = {
-        confirmCallback: (taskTemp: TaskInfo) => {
-          this.onConfirm(taskTemp)
-        }, cancelCallback: () => {
-        }
-      };
-      this.broadCast.emit(BroadCastType.SHOW_TASK_DETAIL_DIALOG, [item, callback]);
-    } else {
-      // edit task
-      let editTaskStr: string = JSON.stringify(TaskMapById[item.taskID - 1]);
-      let editTask: ITaskItem = JSON.parse(editTaskStr);
-      editTask.targetValue = item?.targetValue;
-      editTask.isAlarm = item.isAlarm;
-      editTask.startTime = item.startTime;
-      editTask.frequency = item.frequency;
-      editTask.isOpen = item.isOpen;
-      router.pushUrl({ url: 'pages/TaskEditPage', params: { params: JSON.stringify(editTask) } });
-    }
-  }
-
-  //confirm clockL
-  onConfirm(task: TaskInfo) {
-
-    // promptAction.showToast({
-    //   message: '仅供测试用'
-    // });
-    // this.broadCast.emit(BroadCastType.SHOW_ACHIEVEMENT_DIALOG, 1);
-
-    this.homeStore.taskClock(task).then((res: AchievementInfo) => {
-      if (res.showAchievement) {
-        let achievementLevel = res.achievementLevel;
-        if (achievementLevel) {
-          this.broadCast.emit(BroadCastType.SHOW_ACHIEVEMENT_DIALOG, achievementLevel);
-        } else {
-          this.broadCast.emit(BroadCastType.SHOW_ACHIEVEMENT_DIALOG);
-        }
-      }
-    })
-  }
-
-  // change navigator alpha when scrolling the Scroll component
-  onScrollAction() {
-    this.yOffset = this.scroller.currentOffset().yOffset;
-    if (this.yOffset > Const.DEFAULT_56) {
-      this.naviAlpha = 1;
-    } else {
-      this.naviAlpha = this.yOffset / Const.DEFAULT_56;
-    }
-  }
-
-  editTaskAction() {
-    if (this.homeStore.checkCurrentDay()) {
-      router.pushUrl({ url: 'pages/TaskListPage' });
-      //router.pushUrl({ url: 'pages/highlight' });
-
-      // if (!this.PASS_TUTOR) {
-      //   router.pushUrl({ url: 'pages/highlight' });
-      //   this.PASS_TUTOR = true;
-      //   writeFile("PASS_TUTOR_FILE", this.PASS_TUTOR.toString());
-      // } else {
-      //   router.pushUrl({ url: 'pages/TaskListPage' });
-      // }
-    }
-  }
 
   build() {
     Stack() {
@@ -151,7 +74,6 @@ export default struct HomeIndex {
               ForEach(this.homeStore.getTaskListOfDay(), (item: TaskInfo) => {
                 TaskCard({
                   taskInfoStr: JSON.stringify(item),
-                  clickAction: (isClick: boolean) => this.taskItemAction(item, isClick),
                   deleteTask: () => {
                     // Execute deletion
                     item.isOpen = false;
@@ -167,7 +89,7 @@ export default struct HomeIndex {
                     // Update daily goal and task number
                     this.editedTaskInfo.taskID = item.taskID;
                     this.editedTaskInfo.isOpen = false;
-                    this.taskChange();
+
                   }
                 })
                   .margin({ bottom: Const.DEFAULT_12})
@@ -197,20 +119,17 @@ export default struct HomeIndex {
       }
       .scrollBar(BarState.Off)
       .allSize()
-      .onScroll(() => {
-        this.onScrollAction();
-      })
       .align(Alignment.TopStart)
 
       AddBtn({
         clickAction: () => {
-          this.editTaskAction();
+
         }
       })
-      // .id('test')
+      //.id('test')
 
       Row() {
-        Text(`你好, ${this.LAST_LOGIN}`)
+        Text(`你好, 欢迎登陆`)
           .titleTextStyle()
           .fontSize($r('app.float.default_24'))
           .padding({ left: Const.THOUSANDTH_66 })
@@ -220,7 +139,7 @@ export default struct HomeIndex {
       .position({ x: 0, y: 0 })
       .backgroundColor(`rgba(${WHITE_COLOR_0X},${WHITE_COLOR_0X},${WHITE_COLOR_0X},${this.naviAlpha})`)
 
-      CustomDialogView()
+
     }
     .allSize()
     .backgroundColor($r('app.color.primaryBgColor'))

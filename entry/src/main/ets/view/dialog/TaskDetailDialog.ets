@@ -34,6 +34,7 @@ function taskTextStyle() {
 @CustomDialog
 export struct TaskDetailDialog {
   controller: CustomDialogController = new CustomDialogController({ builder: '' });
+
   @Consume currentTask: TaskInfo;
   @State showButton: boolean = true;
   @Consume dialogCallBack: CustomDialogCallback;

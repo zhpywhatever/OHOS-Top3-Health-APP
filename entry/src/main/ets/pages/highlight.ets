@@ -25,9 +25,10 @@ import {
   RectF
 } from '@ohos/high_light_guide';
 import { AnimatorOptions } from '@ohos.animator';
-import { Index } from '../pages/MainPage';
+import { Index } from '../pages/MainPage2';
 import promptAction from '@ohos.promptAction';
 import { router } from '@kit.ArkUI';
+import TaskInfo from '../viewmodel/TaskInfo';
 
 /**
  * 1.在需要使用的页面引入high_light_guide库中的引导页组件。
@@ -45,6 +46,8 @@ const RADIUS = 2;
 const DIFF = 10;
 const START_ANGLE = 0;
 const END_ANGLE = 360;
+export const TaskItem = new TaskInfo(1, '', 0, '7:00', true, 'string', 'string;', '', true, '6:58', false);
+
 
 @Entry
 @Component
@@ -86,6 +89,9 @@ export struct HighLightGuide {
       // 此处可添加监听逻辑;
     }
   };
+
+  //@Consume currentTask: TaskInfo;
+  // @Provide broadCast: BroadCast = HealthDataSrcMgr.getInstance().getBroadCast();
   @Provide PosX: number = 0;
   @Provide PosY: number = 0;
   @State firstIndicatorHeight: number = 0;
@@ -142,21 +148,28 @@ export struct HighLightGuide {
   }
 
   build() {
-    Stack() {
+    Row(){
+      //CustomDialogView()
+      Stack() {
 
-      // 添加引导页布局
-      HighLightGuideComponent({
-        highLightContainer: this.highLightComponent,
-        currentHLIndicator: null,
-        builder: this.builder,
-        onReady: (controllerParam: Controller) => {
-          this.controller = controllerParam;
-          this.controller.show();
-        }
-      })
+
+        // 添加引导页布局
+        HighLightGuideComponent({
+          highLightContainer: this.highLightComponent,
+          currentHLIndicator: null,
+          builder: this.builder,
+          onReady: (controllerParam: Controller) => {
+            this.controller = controllerParam;
+            this.controller.show();
+          }
+        })
+      }
+      .height('100%')
+      .width('100%')
     }
-    .height('100%')
-    .width('100%')
+
+
+
   }
 
   @Builder
@@ -237,7 +250,7 @@ export struct HighLightGuide {
   @Builder
   secondIndicator() {
     Column() {
-      Text("你说的对，但是《健康生活》是……")
+      Text("欢迎来到健康生活·")
         .fontColor(Color.Black)
         .backgroundColor($r('app.color.highlightguide_module_back_ground'))
         .textAlign(TextAlign.Center)
@@ -245,7 +258,7 @@ export struct HighLightGuide {
         .height($r('app.integer.highlightguide_first_indicator_height'))
         .borderRadius($r('app.integer.highlightguide_border_radius'))
 
-      Text("欢迎来到健康生活")
+      Text("你说的对，但是《健康生活》是……")
         .fontColor(Color.White)
         .margin($r('app.integer.highlightguide_common_margin'))
       Button($r('app.string.highlightguide_access'))
@@ -268,6 +281,7 @@ export struct HighLightGuide {
 
   @Builder
   thirdIndicator() {
+
     Column()
       .onAppear(() => {
         promptAction.showDialog({
@@ -283,24 +297,26 @@ export struct HighLightGuide {
           ],
           isModal: false
         }).then(() => {
-          if (this.controller) {
-            this.controller.remove();
-            router.replaceUrl({ url: 'pages/MainPage' });
-          }
+          // if (this.controller) {
+          //   this.controller.remove();
+          //   //router.replaceUrl({ url: 'pages/MainPage' });
+          //   //clearInterval(this.intervalId);
+          //   // router.replaceUrl({ url: 'pages/MainPage' });
+          // }
           router.back({
             url: 'pages/MainPage',
 
           })
         })
       })
-      .onClick(() => {
+      // .onClick(() => {
+      //
+      //   router.back({
+      //     url: 'pages/MainPage',
+      //
+      //   })
 
-        router.back({
-          url: 'pages/MainPage',
-
-        })
-
-      })
+      // })
 
   }
 }
