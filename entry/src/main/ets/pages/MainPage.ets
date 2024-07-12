@@ -306,18 +306,16 @@ struct Index {
 
   @Builder
   FloorBuilder() {
+  if(!this.LOGIN_FLAG)
+    MineIndex()
+      .borderWidth({ bottom: 1 })
+      .borderColor($r('app.color.primaryBgColor'))
+  else{
     Tabs({ barPosition: BarPosition.End, controller: this.tabController }) {
       TabContent() {
-        if(this.LOGIN_FLAG){
-          HomeIndex({ homeStore: $homeStore, editedTaskInfo: $editedTaskInfo, editedTaskID: $editedTaskID })
-            .borderWidth({ bottom: 1 })
-            .borderColor($r('app.color.primaryBgColor'))
-        }
-        else{
-          MineIndex()
-            .borderWidth({ bottom: 1 })
-            .borderColor($r('app.color.primaryBgColor'))
-        }
+        HomeIndex({ homeStore: $homeStore, editedTaskInfo: $editedTaskInfo, editedTaskID: $editedTaskID })
+          .borderWidth({ bottom: 1 })
+          .borderColor($r('app.color.primaryBgColor'))
       }
       .tabBar(this.TabBuilder(TabId.HOME))
       .align(Alignment.Start)
@@ -362,6 +360,7 @@ struct Index {
       this.currentPage = index;
     })
     // .animationDuration(100)
+  }
   }
 
   @Builder
