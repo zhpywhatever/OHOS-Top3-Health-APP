@@ -242,11 +242,16 @@ export struct MomentsIndex {
                       .backgroundColor("#fff7f7f7")
                       .onClick(()=> {
                         this.showC[index] = !(this.showC[index]);
-                        let i:number;
-                        for(i = 0; i<this.momentList.length;i++){
-                          console.info(`momentlist ${i}: ${this.momentList[i].showC}`)
+                        if(!this.showC[index]){
+                          return;
                         }
-
+                        let i:number;
+                        for(i = 0; i<this.showC.length;i++){
+                          console.info(`momentlist ${i}: ${this.momentList[i].showC}`);
+                          if(i!=index){
+                            this.showC[i] = false;
+                          }
+                        }
                       })
                   }
                   Text('删除')
