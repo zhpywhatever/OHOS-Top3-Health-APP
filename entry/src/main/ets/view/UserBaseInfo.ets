@@ -31,34 +31,6 @@ export struct UserBaseInfo {
   @State html: string = "权限状态未知";
   @State  pic :string ="";
 
- // private  async  openGallery_1() {
- //   let context = getContext(this) as common.UIAbilityContext;
- //   let atManager = abilityAccessCtrl.createAtManager();
- //   let info = await bundleManager.getBundleInfoForSelf(0);
- //   let result = atManager.verifyAccessTokenSync(info.appInfo.accessTokenId, "ohos.permission.READ_MEDIA");
- //   if (abilityAccessCtrl.GrantStatus.PERMISSION_GRANTED == result) {
- //     console.log("has permission")
- //     this.openGalleryInternal()
- //   } else {
- //     atManager.requestPermissionsFromUser(context, ["ohos.permission.READ_MEDIA"], (error, result) => {
- //       if (result) {
- //         console.log("result: " + JSON.stringify(result));
- //         if (result.authResults[0] == abilityAccessCtrl.GrantStatus.PERMISSION_GRANTED) {
- //           // 用户授予权限
- //           this.html = "用户已经授权";
- //           this.openGalleryInternal();
- //         } else {
- //           // 用户拒绝权限
- //           this.html = "用户拒绝授权";
- //           console.log("permission denied")
- //         }
- //       } else {
- //         this.html = "请求授权异常：" + JSON.stringify(error);
- //         console.log("error: " + JSON.stringify(error));
- //       }
- //     });
- //   }
- // }
   private async openGallery() {
     let context = getContext(this) as common.UIAbilityContext;
     let atManager = abilityAccessCtrl.createAtManager();
@@ -80,7 +52,7 @@ export struct UserBaseInfo {
           } else {
             // 用户拒绝权限
             this.html = "用户拒绝授权";
-            // console.log("permission denied")
+            console.log("permission denied")
           }
         } else {
           this.html = "请求授权异常：" + JSON.stringify(error);
@@ -97,7 +69,7 @@ export struct UserBaseInfo {
       maxSelectNumber: 1
     }, (error, result) => {
       if (result) {
-        this.uploadImages(result.photoUris);
+        // this.uploadImages(result.photoUris);
         this.pic = result.photoUris[0];
         result.photoUris.forEach((url) => {
           console.log("url: " + url);
