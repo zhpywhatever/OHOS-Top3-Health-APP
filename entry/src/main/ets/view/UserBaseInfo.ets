@@ -92,7 +92,7 @@ export struct UserBaseInfo {
       }
     }
     request.uploadFile(getContext(),{
-      url: "http://127.0.0.1:8080/C:/pic",
+      url: "http://127.0.0.1:8080/c/pic",
       method: "POST",
       files: allFiles,
       header: {},
