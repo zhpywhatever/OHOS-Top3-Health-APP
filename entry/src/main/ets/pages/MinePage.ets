@@ -32,6 +32,7 @@ export struct MineIndex {
   // @State isLoggedIn: boolean = false;
   @StorageLink('LOGIN_FLAG') LOGIN_FLAG: Boolean = false;
   @StorageLink('LAST_LOGIN') LAST_LOGIN: string = "";
+  @StorageLink('PASS_TUTOR') PASS_TUTOR: string = "";
 
   handleLogin(username: string, password: string) {
     let userInfo : UserInfo = {
@@ -54,6 +55,12 @@ export struct MineIndex {
         promptAction.showToast({
           message: '欢迎登录!'
         });
+
+        if (this.LOGIN_FLAG && !(this.PASS_TUTOR === this.LAST_LOGIN)) {
+          router.pushUrl({ url: 'pages/highlight' });
+          this.PASS_TUTOR = this.LAST_LOGIN;
+          writeFile("PASS_TUTOR_FILE", this.PASS_TUTOR);
+        }
       } else {
         console.log("登录失败");
         promptAction.showToast({

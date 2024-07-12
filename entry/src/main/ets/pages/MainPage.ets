@@ -50,9 +50,11 @@ struct Index {
   // @StorageProp('boolean') login_flag : boolean = AppStorage.get<boolean>('LOGIN_FLAG') ?? false;
   @StorageLink('LOGIN_FLAG') LOGIN_FLAG: boolean = false;
 
+
   aboutToAppear() {
     let tmp_my_value: number = Number(readFile("MY_VALUE_FILE"));
     let tmp_login_flag: boolean = readFile("LOGIN_FLAG_FILE").toLowerCase() === 'true';
+    let tmp_pass_tutor: string = readFile("PASS_TUTOR_FILE");
 
     if (!tmp_my_value) {
       AppStorage.setOrCreate('MY_VALUE', 0);
@@ -65,6 +67,11 @@ struct Index {
     } else {
       AppStorage.SetOrCreate('LOGIN_FLAG', tmp_login_flag);
       AppStorage.SetOrCreate('LAST_LOGIN', readFile("LAST_LOGIN_FILE"));
+
+      if (tmp_pass_tutor) {
+        AppStorage.SetOrCreate('PASS_TUTOR', tmp_pass_tutor);
+      }
+
     }
 
     notificationManager.requestEnableNotification().then(() => {
@@ -88,13 +95,13 @@ struct Index {
       }
       this.checkCurrentTime();
 
-      let tmp_login_flag : boolean= AppStorage.get('LOGIN_FLAG') ?? false;
-      if (!tmp_login_flag) {
-        promptAction.showToast({
-          message: '请先登录！'
-        });
-        router.pushUrl( {url: 'pages/MinePage' });
-      }
+      // let tmp_login_flag : boolean= AppStorage.get('LOGIN_FLAG') ?? false;
+      // if (!tmp_login_flag) {
+      //   promptAction.showToast({
+      //     message: '请先登录！'
+      //   });
+      //   router.pushUrl( {url: 'pages/MinePage' });
+      // }
     }
   }
 
