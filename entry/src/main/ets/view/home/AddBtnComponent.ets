@@ -37,5 +37,6 @@ export default struct AddBtn {
     .position({ x: Const.THOUSANDTH_830, y: Const.THOUSANDTH_880 })
     .width($r('app.float.default_48'))
     .height($r('app.float.default_48'))
+    .id('test')
   }
 }

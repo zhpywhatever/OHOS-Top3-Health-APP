@@ -24,7 +24,7 @@ export const MineInfoList: InfoItem[] = [
   {
     id: '1',
     title: $r('app.string.mine_personal_data'),
-    url: ''
+    url: 'pages/UserinfoPage'
   },
   {
     id: '2',
