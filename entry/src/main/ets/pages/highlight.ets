@@ -114,8 +114,8 @@ export struct HighLightGuide {
         context2d.strokeStyle = '#ffffff';
         //const radius = Math.max(rectF.getWidth(), rectF.getHeight()) / RADIUS - DIFF;
         const radius = 50;
-        context2d.arc(rectF.getCenterX(), rectF.getCenterY(), radius, START_ANGLE, END_ANGLE, false);
-        context2d.fill();
+        //context2d.arc(rectF.getCenterX(), rectF.getCenterY(), radius, START_ANGLE, END_ANGLE, false);
+        //context2d.fill();
         context2d.lineWidth = RADIUS;
       }
     }
@@ -137,11 +137,11 @@ export struct HighLightGuide {
         .addHighLightWithOptions('test', HighLightShape.CIRCLE, options)
         .setHighLightIndicator(this.firstIndicator.bind(this))
         .setExitAnimation(this.exitAnimatorParam))
-      // .addGuidePage(GuidePage.newInstance()// 设定第一处提示
-      //   .setEverywhereCancelable(true)// 允许点击任意处关闭
-      //   .addHighLightWithOptions('progress', HighLightShape.CIRCLE, options2)
-      //   .setHighLightIndicator(this.firstIndicator2.bind(this))
-      //   .setExitAnimation(this.exitAnimatorParam))
+      .addGuidePage(GuidePage.newInstance()// 设定第一处提示
+        .setEverywhereCancelable(true)// 允许点击任意处关闭
+        // .addHighLightWithOptions('progress', HighLightShape.CIRCLE, options2)
+        .setHighLightIndicator(this.firstIndicator2.bind(this))
+        .setExitAnimation(this.exitAnimatorParam))
       .addGuidePage(GuidePage.newInstance()// 设定第三处提示
         .setEverywhereCancelable(false)
         .setHighLightIndicator(this.thirdIndicator));
@@ -217,7 +217,22 @@ export struct HighLightGuide {
   @Builder
   firstIndicator2() {
     Column() {
-      Text("点击此处添加任务")
+      Image($r('app.media.ic_gallery_sort_order_up'))
+        .width('10%')
+        .height('10%')
+        .margin({ top:'5%',left: '0%' })
+        .onClick(() => {
+          if (this.controller) {
+            this.controller.showPage(3);
+          }
+        })
+        // .animation({
+        //   duration: 1000,
+        //   curve: Curve.Linear,
+        //   playMode: PlayMode.Normal,
+        //   iterations: -1
+        // })
+      Text("上方的区域现在就能探索啦")
         .textAlign(TextAlign.Center)
         .fontColor(Color.White)
 
@@ -227,20 +242,12 @@ export struct HighLightGuide {
             this.controller.showPage(1);
           }
         })
-        .margin({ left: '10%',top: '125%' })
-      Image($r('app.media.ic_gallery_sort_order_up'))
-        .width('10%')
-        .height('10%')
-        .margin({ top:'5%',left: '10%' })
-        .onClick(() => {
-          if (this.controller) {
-            this.controller.showPage(3);
-          }
-        })
+        .margin({ left: '0%',top: '5%' })
+
     }
-    .onAreaChange((oldValue: Area, newValue: Area) => {
-      this.firstIndicatorHeight = Number(newValue.height);
-    })
+    // .onAreaChange((oldValue: Area, newValue: Area) => {
+    //   this.firstIndicatorHeight = Number(newValue.height);
+    // })
     .width('100%')
     // position坐标是以页面顶部中心为原点，不包括系统状态栏
     .position({ x: this.PosX, y: this.PosY - this.firstIndicatorHeight })
