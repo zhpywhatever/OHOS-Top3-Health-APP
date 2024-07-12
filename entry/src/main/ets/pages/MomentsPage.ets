@@ -292,13 +292,19 @@ export struct MomentsIndex {
       .divider({ strokeWidth: 1 })
       .width('100%')
       .backgroundColor("#ffffffff")
+      .scrollBar(BarState.Off)
 
       AddBtn({
         clickAction: () => {
           console.info(`click add moments, len = ${this.momentList.length}`);
           // this.momentList.splice(0, 1);
-          this.momentList.splice(0, 0, new MomentClass('Me', $r("app.media.ic_head_1"), generateRandomText(), false, generateRandomImages()));
-          this.showC.splice(0,0,false);
+          if(Math.random()<0.2){
+            this.momentList.splice(0, 0, new MomentClass('Me', $r("app.media.ic_user"), "今天参加了HarmonyOS菁英班", false, [$r("app.media.team_members_1"), $r("app.media.team_members_2")]));
+          }
+          else{
+            this.momentList.splice(0, 0, new MomentClass('Me', $r("app.media.ic_user"), generateRandomText(), false, generateRandomImages()));
+          }
+
           console.info(`after splice, len = ${this.momentList.length}`);
         }
       })
