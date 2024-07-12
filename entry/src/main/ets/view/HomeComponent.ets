@@ -59,6 +59,7 @@ export default struct HomeIndex {
   @Link editedTaskInfo: ITaskItem;
   @Link @Watch('taskChange') editedTaskID: string;
   @StorageLink('LAST_LOGIN') LAST_LOGIN: string = "";
+  @StorageLink('PASS_TUTOR') PASS_TUTOR: string = "";
   private scroller: Scroller = new Scroller();
   private yOffset: number = 0;
 
@@ -125,6 +126,7 @@ export default struct HomeIndex {
   editTaskAction() {
     if (this.homeStore.checkCurrentDay()) {
       router.pushUrl({ url: 'pages/highlight' });
+      // router.pushUrl({ url: 'pages/TaskListPage' });
     }
   }
 
