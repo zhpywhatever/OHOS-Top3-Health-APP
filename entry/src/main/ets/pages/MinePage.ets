@@ -61,7 +61,7 @@ export struct MineIndex {
           message: '欢迎登录!'
         });
 
-        if (this.LOGIN_FLAG && !(this.PASS_TUTOR === this.LAST_LOGIN)) {
+        if (this.LOGIN_FLAG && !(this.PASS_TUTOR)) {
           router.pushUrl({ url: 'pages/highlight' });
           this.PASS_TUTOR = this.LAST_LOGIN;
           writeFile("PASS_TUTOR_FILE", this.PASS_TUTOR);
