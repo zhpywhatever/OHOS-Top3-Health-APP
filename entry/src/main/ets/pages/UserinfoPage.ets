@@ -80,7 +80,7 @@ export struct UserinfoIndex {
       Button('保存')
         .width('80%')
         .height(40)
-        .backgroundColor("#ff8798")
+        .backgroundColor("#689d6a")
         .fontColor($r('app.color.white'))
         .borderRadius(20)
         .onClick(() => {

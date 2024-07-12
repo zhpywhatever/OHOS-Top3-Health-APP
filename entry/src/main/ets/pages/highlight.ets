@@ -25,9 +25,10 @@ import {
   RectF
 } from '@ohos/high_light_guide';
 import { AnimatorOptions } from '@ohos.animator';
-import { Index } from '../pages/MainPage';
+import { Index } from '../pages/MainPage2';
 import promptAction from '@ohos.promptAction';
 import { router } from '@kit.ArkUI';
+import TaskInfo from '../viewmodel/TaskInfo';
 
 /**
  * 1.在需要使用的页面引入high_light_guide库中的引导页组件。
@@ -45,6 +46,8 @@ const RADIUS = 2;
 const DIFF = 10;
 const START_ANGLE = 0;
 const END_ANGLE = 360;
+export const TaskItem = new TaskInfo(1, '', 0, '7:00', true, 'string', 'string;', '', true, '6:58', false);
+
 
 @Entry
 @Component
@@ -86,6 +89,9 @@ export struct HighLightGuide {
       // 此处可添加监听逻辑;
     }
   };
+
+  //@Consume currentTask: TaskInfo;
+  // @Provide broadCast: BroadCast = HealthDataSrcMgr.getInstance().getBroadCast();
   @Provide PosX: number = 0;
   @Provide PosY: number = 0;
   @State firstIndicatorHeight: number = 0;
@@ -108,8 +114,8 @@ export struct HighLightGuide {
         context2d.strokeStyle = '#ffffff';
         //const radius = Math.max(rectF.getWidth(), rectF.getHeight()) / RADIUS - DIFF;
         const radius = 50;
-        context2d.arc(rectF.getCenterX(), rectF.getCenterY(), radius, START_ANGLE, END_ANGLE, false);
-        context2d.fill();
+        //context2d.arc(rectF.getCenterX(), rectF.getCenterY(), radius, START_ANGLE, END_ANGLE, false);
+        //context2d.fill();
         context2d.lineWidth = RADIUS;
       }
     }
@@ -131,32 +137,39 @@ export struct HighLightGuide {
         .addHighLightWithOptions('test', HighLightShape.CIRCLE, options)
         .setHighLightIndicator(this.firstIndicator.bind(this))
         .setExitAnimation(this.exitAnimatorParam))
-      // .addGuidePage(GuidePage.newInstance()// 设定第一处提示
-      //   .setEverywhereCancelable(true)// 允许点击任意处关闭
-      //   .addHighLightWithOptions('progress', HighLightShape.CIRCLE, options2)
-      //   .setHighLightIndicator(this.firstIndicator2.bind(this))
-      //   .setExitAnimation(this.exitAnimatorParam))
+      .addGuidePage(GuidePage.newInstance()// 设定第一处提示
+        .setEverywhereCancelable(true)// 允许点击任意处关闭
+        // .addHighLightWithOptions('progress', HighLightShape.CIRCLE, options2)
+        .setHighLightIndicator(this.firstIndicator2.bind(this))
+        .setExitAnimation(this.exitAnimatorParam))
       .addGuidePage(GuidePage.newInstance()// 设定第三处提示
         .setEverywhereCancelable(false)
         .setHighLightIndicator(this.thirdIndicator));
   }
 
   build() {
-    Stack() {
+    Row(){
+      //CustomDialogView()
+      Stack() {
 
-      // 添加引导页布局
-      HighLightGuideComponent({
-        highLightContainer: this.highLightComponent,
-        currentHLIndicator: null,
-        builder: this.builder,
-        onReady: (controllerParam: Controller) => {
-          this.controller = controllerParam;
-          this.controller.show();
-        }
-      })
+
+        // 添加引导页布局
+        HighLightGuideComponent({
+          highLightContainer: this.highLightComponent,
+          currentHLIndicator: null,
+          builder: this.builder,
+          onReady: (controllerParam: Controller) => {
+            this.controller = controllerParam;
+            this.controller.show();
+          }
+        })
+      }
+      .height('100%')
+      .width('100%')
     }
-    .height('100%')
-    .width('100%')
+
+
+
   }
 
   @Builder
@@ -204,7 +217,22 @@ export struct HighLightGuide {
   @Builder
   firstIndicator2() {
     Column() {
-      Text("点击此处添加任务")
+      Image($r('app.media.ic_gallery_sort_order_up'))
+        .width('10%')
+        .height('10%')
+        .margin({ top:'5%',left: '0%' })
+        .onClick(() => {
+          if (this.controller) {
+            this.controller.showPage(3);
+          }
+        })
+        // .animation({
+        //   duration: 1000,
+        //   curve: Curve.Linear,
+        //   playMode: PlayMode.Normal,
+        //   iterations: -1
+        // })
+      Text("上方的区域现在就能探索啦")
         .textAlign(TextAlign.Center)
         .fontColor(Color.White)
 
@@ -214,20 +242,12 @@ export struct HighLightGuide {
             this.controller.showPage(1);
           }
         })
-        .margin({ left: '10%',top: '125%' })
-      Image($r('app.media.ic_gallery_sort_order_up'))
-        .width('10%')
-        .height('10%')
-        .margin({ top:'5%',left: '10%' })
-        .onClick(() => {
-          if (this.controller) {
-            this.controller.showPage(3);
-          }
-        })
+        .margin({ left: '0%',top: '5%' })
+
     }
-    .onAreaChange((oldValue: Area, newValue: Area) => {
-      this.firstIndicatorHeight = Number(newValue.height);
-    })
+    // .onAreaChange((oldValue: Area, newValue: Area) => {
+    //   this.firstIndicatorHeight = Number(newValue.height);
+    // })
     .width('100%')
     // position坐标是以页面顶部中心为原点，不包括系统状态栏
     .position({ x: this.PosX, y: this.PosY - this.firstIndicatorHeight })
@@ -237,7 +257,7 @@ export struct HighLightGuide {
   @Builder
   secondIndicator() {
     Column() {
-      Text("你说的对，但是《健康生活》是……")
+      Text("欢迎来到健康生活·")
         .fontColor(Color.Black)
         .backgroundColor($r('app.color.highlightguide_module_back_ground'))
         .textAlign(TextAlign.Center)
@@ -245,7 +265,7 @@ export struct HighLightGuide {
         .height($r('app.integer.highlightguide_first_indicator_height'))
         .borderRadius($r('app.integer.highlightguide_border_radius'))
 
-      Text("欢迎来到健康生活")
+      Text("你说的对，但是《健康生活》是……")
         .fontColor(Color.White)
         .margin($r('app.integer.highlightguide_common_margin'))
       Button($r('app.string.highlightguide_access'))
@@ -268,6 +288,7 @@ export struct HighLightGuide {
 
   @Builder
   thirdIndicator() {
+
     Column()
       .onAppear(() => {
         promptAction.showDialog({
@@ -283,24 +304,26 @@ export struct HighLightGuide {
           ],
           isModal: false
         }).then(() => {
-          if (this.controller) {
-            this.controller.remove();
-            router.replaceUrl({ url: 'pages/MainPage' });
-          }
+          // if (this.controller) {
+          //   this.controller.remove();
+          //   //router.replaceUrl({ url: 'pages/MainPage' });
+          //   //clearInterval(this.intervalId);
+          //   // router.replaceUrl({ url: 'pages/MainPage' });
+          // }
           router.back({
             url: 'pages/MainPage',
 
           })
         })
       })
-      .onClick(() => {
+      // .onClick(() => {
+      //
+      //   router.back({
+      //     url: 'pages/MainPage',
+      //
+      //   })
 
-        router.back({
-          url: 'pages/MainPage',
-
-        })
-
-      })
+      // })
 
   }
 }

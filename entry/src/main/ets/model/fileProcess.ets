@@ -14,6 +14,10 @@ export interface UserInfo {
   // 可以添加其他用户信息字段
 }
 
+export function getAvatarPath(username: string) : string {
+  return filesDir + username + "_avatar.png";
+}
+
 function ensureFileExists(filename: string): void {
   let filePath = filename;
   if (!fileIo.accessSync(filePath)) {

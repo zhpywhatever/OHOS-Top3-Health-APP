@@ -15,6 +15,7 @@
 import { router } from '@kit.ArkUI';
 import {AddAvatarDialog} from './dialog/AddAvatarDialog';
 import {ShowAvatarDialog} from './dialog/AddAvatarDialog';
+import {getAvatarPath} from '../model/fileProcess';
 
 import common from '@ohos.app.ability.common';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
@@ -27,6 +28,10 @@ import { bundleManager } from '@kit.AbilityKit';
 export struct UserBaseInfo {
   @Prop nickname: string = 'Top3';
   @Prop signature: string = '遥遥领先遥遥领先';
+// <<<<<<< HEAD
+//   @StorageLink('LAST_LOGIN') LAST_LOGIN: string = "";
+//   @State CUR_USER_AVATAR: string = getAvatarPath(this.LAST_LOGIN);
+// =======
   @State IsLocalFlag:boolean=true;
   @State html: string = "权限状态未知";
   @State  pic :string ="";
@@ -112,6 +117,7 @@ export struct UserBaseInfo {
       }
     });
   }
+// >>>>>>> c1ac16dd01f58dd65f58f39b64bc42bdc4aa9f04
 
   controller: CustomDialogController = new CustomDialogController({
     builder: AddAvatarDialog({
@@ -164,6 +170,7 @@ export struct UserBaseInfo {
           .height($r('app.float.default_66'))
           .width($r('app.float.default_66'))
           .margin({ top: $r('app.float.default_71') })
+          .borderRadius(100)
           .onClick(
             () => {
               this.controller.open()
