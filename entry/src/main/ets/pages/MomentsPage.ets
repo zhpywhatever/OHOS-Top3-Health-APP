@@ -297,7 +297,7 @@ export struct MomentsIndex {
         clickAction: () => {
           console.info(`click add moments, len = ${this.momentList.length}`);
           // this.momentList.splice(0, 1);
-          this.momentList.splice(0, 0, new MomentClass('Me', $r("app.media.ic_head_1"), generateRandomText(), false, generateRandomImages()));
+          this.momentList.splice(0, 0, new MomentClass('Me', $r("app.media.ic_user"), generateRandomText(), false, generateRandomImages()));
           this.showC.splice(0,0,false);
           console.info(`after splice, len = ${this.momentList.length}`);
         }
