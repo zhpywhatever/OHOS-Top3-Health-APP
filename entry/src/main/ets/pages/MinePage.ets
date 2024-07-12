@@ -30,7 +30,7 @@ export struct MineIndex {
   @State password: string = "";
   @State signature: string = Const.SIGNATURE;
   @StorageLink('LAST_LOGIN') LAST_LOGIN: string = "";
-  @State CUR_USER_AVATAR: string = getAvatarPath(this.LAST_LOGIN);
+  @State CUR_USER_AVATAR: string = "";
   // @State isLoggedIn: boolean = false;
   @StorageLink('LOGIN_FLAG') LOGIN_FLAG: Boolean = false;
   @StorageLink('PASS_TUTOR') PASS_TUTOR: string = "";
