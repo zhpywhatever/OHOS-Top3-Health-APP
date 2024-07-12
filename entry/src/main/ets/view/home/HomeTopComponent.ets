@@ -37,6 +37,7 @@ export default struct HomeTopView {
         .titleTextStyle()
         .opacity(Const.OPACITY_6)
         .padding({ left: $r('app.float.default_24') })
+        .id("progress")
       Row() {
         HealthText({
           title: this.homeStore.getDonePercent(),

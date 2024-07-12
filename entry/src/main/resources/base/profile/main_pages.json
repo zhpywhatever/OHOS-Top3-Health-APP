@@ -7,6 +7,7 @@
     "pages/TaskEditPage",
     "pages/AboutPage",
     "pages/UpdatesPage",
+    "pages/highlight",
     "pages/MinePage",
     "pages/RegisterPage",
     "pages/UserinfoPage",

@@ -17,6 +17,44 @@ class MomentClass {
   }
 }
 
+const verbs = ['喜欢', '我正在', '今天完成了', '开始了', '准备'];
+const objects = ['早起', '喝水', '吃苹果', '微笑', '刷牙', '早睡', '吃早饭'];
+
+const images = [$r("app.media.1"), $r("app.media.2"), $r("app.media.3"), $r("app.media.4")];
+
+// 随机选择一个数组中的元素
+function getRandomElement(arr: string[]): string {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function getRandomElement2(arr: Resource[]): Resource {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+// 生成随机文案的函数
+function generateRandomText(): string {
+  const verb = getRandomElement(verbs);
+  const object = getRandomElement(objects);
+
+  // 生成随机文案
+  const sentence = `${verb}${object}。`;
+  return sentence;
+}
+
+// 生成随机数组b的函数
+function generateRandomImages(): ResourceStr[] {
+  // 生成0到9的随机长度
+  const length = Math.floor(Math.random() * 10);
+
+  // 生成随机数组b
+  const randomArray: Resource[] = [];
+  for (let i = 0; i < length; i++) {
+    randomArray.push(getRandomElement2(images));
+  }
+
+  return randomArray;
+}
+
 
 @Entry
 @Component
@@ -204,11 +242,16 @@ export struct MomentsIndex {
                       .backgroundColor("#fff7f7f7")
                       .onClick(()=> {
                         this.showC[index] = !(this.showC[index]);
-                        let i:number;
-                        for(i = 0; i<this.momentList.length;i++){
-                          console.info(`momentlist ${i}: ${this.momentList[i].showC}`)
+                        if(!this.showC[index]){
+                          return;
                         }
-
+                        let i:number;
+                        for(i = 0; i<this.showC.length;i++){
+                          console.info(`momentlist ${i}: ${this.momentList[i].showC}`);
+                          if(i!=index){
+                            this.showC[i] = false;
+                          }
+                        }
                       })
                   }
                   Text('删除')
@@ -251,7 +294,7 @@ export struct MomentsIndex {
         clickAction: () => {
           console.info(`click add moments, len = ${this.momentList.length}`);
           // this.momentList.splice(0, 1);
-          this.momentList.splice(0, 0, new MomentClass('Me', 'Test Add Moment', false, [$r("app.media.4")]));
+          this.momentList.splice(0, 0, new MomentClass('Me', generateRandomText(), false, generateRandomImages()));
           this.showC.splice(0,0,false);
           console.info(`after splice, len = ${this.momentList.length}`);
         }
