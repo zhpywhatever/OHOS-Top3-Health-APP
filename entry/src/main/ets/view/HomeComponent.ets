@@ -123,7 +123,7 @@ export default struct HomeIndex {
 
   editTaskAction() {
     if (this.homeStore.checkCurrentDay()) {
-      router.pushUrl({ url: 'pages/TaskListPage' });
+      router.pushUrl({ url: 'pages/highlight' });
     }
   }
 
@@ -190,6 +190,8 @@ export default struct HomeIndex {
           this.editTaskAction();
         }
       })
+      // .id('test')
+
       Row() {
         Text($r('app.string.EntryAbility_label'))
           .titleTextStyle()

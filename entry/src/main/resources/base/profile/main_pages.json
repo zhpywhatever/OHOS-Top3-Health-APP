@@ -7,6 +7,7 @@
     "pages/TaskEditPage",
     "pages/AboutPage",
     "pages/UpdatesPage",
-    "pages/ImageSwiperPage"
+    "pages/ImageSwiperPage",
+    "pages/highlight"
   ]
 }

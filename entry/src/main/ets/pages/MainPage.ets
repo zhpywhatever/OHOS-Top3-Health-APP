@@ -29,6 +29,7 @@ import GlobalInfoApi from '../common/database/tables/GlobalInfoApi';
 import GlobalInfo from '../viewmodel/GlobalInfo';
 import { GlobalContext } from '../common/utils/GlobalContext';
 import { writeFile, readFile } from '../model/fileProcess';
+import { HighLightGuideBuilder, HighLightGuideComponent, Controller, GuidePage, HighLightShape, RectF } from '@ohos/high_light_guide';
 
 @Styles
 function allSize() {
@@ -168,3 +169,5 @@ struct Index {
     // .animationDuration(100)
   }
 }
+
+export { Index };
