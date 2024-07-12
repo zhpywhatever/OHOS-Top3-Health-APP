@@ -328,9 +328,15 @@ struct Index {
         Image($r('app.media.tree_background'))
           .height('100%')
         Column(){
-          Image($r('app.media.tree'))
-            .height('45%')
-            .margin({top: '37%', left: '-3%'})
+          if(this.checkInDates > 0 && this.checkInDates <= 3) {
+            Image($r('app.media.sapling'))
+              .height('10%')
+              .margin({top: '103%', left: '-3%'})
+          } else if(this.checkInDates > 3) {
+            Image($r('app.media.tree'))
+              .height('45%')
+              .margin({top: '37%', left: '-3%'})
+          }
         }
         .width('100%')
         .alignItems(HorizontalAlign.Center)
